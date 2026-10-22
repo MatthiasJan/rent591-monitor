@@ -1,106 +1,6 @@
 {
   "subscriptions": [
     {
-      "id": "sub-001",
-      "name": "新北 板橋・三重・蘆洲・新莊 4房",
-      "enabled": true,
-      "group": "我",
-      "region": "3",
-      "sections": [
-        "43",
-        "47",
-        "44",
-        "26"
-      ],
-      "kind": "1",
-      "layout": [
-        "4"
-      ],
-      "shape": [
-        "2"
-      ],
-      "price_min": 0,
-      "price_max": 50000,
-      "acreage_min": 30,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
-      "id": "sub-002",
-      "name": "台北 松山・信義・大安・南港 4房",
-      "enabled": true,
-      "group": "我",
-      "region": "1",
-      "sections": [
-        "4",
-        "7",
-        "5",
-        "11"
-      ],
-      "kind": "1",
-      "layout": [
-        "4"
-      ],
-      "shape": [
-        "2"
-      ],
-      "price_min": 0,
-      "price_max": 50000,
-      "acreage_min": 30,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
-      "id": "sub-003",
-      "name": "台北 士林・中山・大同・中正・萬華 4房",
-      "enabled": true,
-      "group": "我",
-      "region": "1",
-      "sections": [
-        "8",
-        "3",
-        "2",
-        "1",
-        "6"
-      ],
-      "kind": "1",
-      "layout": [
-        "4"
-      ],
-      "shape": [
-        "2"
-      ],
-      "price_min": 0,
-      "price_max": 50000,
-      "acreage_min": 30,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
-      "id": "sub-004",
-      "name": "台北 北投・南港・文山 4房",
-      "enabled": true,
-      "group": "我",
-      "region": "1",
-      "sections": [
-        "9",
-        "11",
-        "12"
-      ],
-      "kind": "1",
-      "layout": [
-        "4"
-      ],
-      "shape": [
-        "2"
-      ],
-      "price_min": 0,
-      "price_max": 50000,
-      "acreage_min": 30,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
       "id": "sub-1787050187051",
       "type": "sale",
       "name": "三重 4房以上",
@@ -125,92 +25,49 @@
       "houseage_max": null
     },
     {
-      "id": "sub-1788677303859",
+      "id": "sub-1792677145017",
       "type": "rent",
-      "name": "單人",
-      "group": "單人",
-      "enabled": true,
-      "region": "3",
-      "sections": [
-        "43",
-        "47",
-        "44"
-      ],
-      "kind": "1",
-      "layout": [
-        "1"
-      ],
-      "shape": [],
-      "price_min": null,
-      "price_max": 15000,
-      "acreage_min": 8,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
-      "id": "sub-1788677370187",
-      "type": "rent",
-      "name": "單人台北 - 套房",
-      "group": "單人套房",
+      "name": "士林",
+      "group": "我",
       "enabled": true,
       "region": "1",
       "sections": [
-        "4",
-        "7",
-        "11",
-        "9"
-      ],
-      "kind": "2",
-      "layout": [],
-      "shape": [],
-      "price_min": null,
-      "price_max": 10000,
-      "acreage_min": 8,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
-      "id": "sub-1788677942025",
-      "type": "rent",
-      "name": "單人新北",
-      "group": "單人套房",
-      "enabled": true,
-      "region": "3",
-      "sections": [
-        "43",
-        "44",
-        "47",
-        "26"
-      ],
-      "kind": "2",
-      "layout": [],
-      "shape": [],
-      "price_min": null,
-      "price_max": 10000,
-      "acreage_min": 8,
-      "acreage_max": null,
-      "sort": "posttime_desc"
-    },
-    {
-      "id": "sub-1788678076742",
-      "type": "rent",
-      "name": "單人台北",
-      "group": "單人",
-      "enabled": true,
-      "region": "1",
-      "sections": [
-        "4",
-        "7",
-        "11",
-        "9"
+        "8"
       ],
       "kind": "1",
       "layout": [
-        "1"
+        "1",
+        "2"
       ],
       "shape": [],
-      "price_min": null,
-      "price_max": 15000,
+      "price_min": 24000,
+      "price_max": 32000,
+      "acreage_min": null,
+      "acreage_max": null,
+      "sort": "posttime_desc"
+    },
+    {
+      "id": "sub-1792677175117",
+      "type": "rent",
+      "name": "市中心(除士林)",
+      "group": "我",
+      "enabled": true,
+      "region": "1",
+      "sections": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "kind": "1",
+      "layout": [
+        "1",
+        "2"
+      ],
+      "shape": [],
+      "price_min": 24000,
+      "price_max": 32000,
       "acreage_min": null,
       "acreage_max": null,
       "sort": "posttime_desc"
