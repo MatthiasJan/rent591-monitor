@@ -191,7 +191,7 @@ def run(kind: str = "rent") -> dict:
         if tg_token and tg_chat:
             notify.send_blocked_alert(tg_token, tg_chat, stage="列表頁抓取（全區皆空）")
 
-    # 2. 比對新舊快照
+# 2. 比對新舊快照
     new_state, report = diff_snapshots(
         previous,
         current,
@@ -202,23 +202,21 @@ def run(kind: str = "rent") -> dict:
     )
 
     # 3. 第二階段：僅對租屋的「新增物件（new）」進行內頁 Enrich 與通勤篩選
-    report["out_commute"] = []
     report["unknown_commute"] = []
     if kind == "rent" and report.get("new"):
-        passed_new, out_new, unknown_new = enrich_and_filter_new_rentals(
+        passed_new, unknown_new = enrich_and_filter_new_rentals(
             report["new"], tg_token, tg_chat
         )
         report["new"] = passed_new
-        report["out_commute"] = out_new
         report["unknown_commute"] = unknown_new
 
-        # 將 enrich 取得的座標同步寫回快照紀錄
-        for item in passed_new + out_new + unknown_new:
+        # 將 enrich 取得的座標同步寫回快照紀錄，方便未來追蹤
+        for item in passed_new + unknown_new:
             lid = item["listing_id"]
             if lid in new_state["listings"]:
                 new_state["listings"][lid]["lat"] = item.get("lat")
                 new_state["listings"][lid]["lng"] = item.get("lng")
-              
+
     # 4. 關注清單與備註處理
     for lid, rec in new_state["listings"].items():
         rec["watched"] = lid in watchlist
@@ -226,7 +224,7 @@ def run(kind: str = "rent") -> dict:
             rec["note"] = watchlist[lid].get("note", rec.get("note", ""))
 
     # 5. 存檔與推播
-   payload = {
+    payload = {
         "generated_at": now.isoformat(timespec="seconds"),
         "kind": kind,
         "subscriptions": stats,
