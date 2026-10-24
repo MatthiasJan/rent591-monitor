@@ -99,28 +99,61 @@ def _drop_line(r, kind):
 
 # ---------- Telegram ----------
 
+# 在 notify.py 裡更新 format_report
 def format_report(report: dict, header: str = "591 租屋監控", kind: str = "rent") -> str | None:
-    new, drop, removed = report["new"], report["price_drop"], report["removed"]
-    if not (new or drop or removed):
+    new = report.get("new", [])
+    unknown = report.get("unknown_commute", [])
+    drop = report.get("price_drop", [])
+    removed = report.get("removed", [])
+
+    if not (new or unknown or drop or removed):
         return None
-    lines = [f"🔔 {header}",
-             f"🆕 新增 {len(new)}｜💰 降價 {len(drop)}｜❌ {_off_label(kind)} {len(removed)}"]
+
+    lines = [
+        f"🔔 {header}",
+        f"🆕 新增 {len(new)}｜❓ 未判斷交通 {len(unknown)}｜💰 降價 {len(drop)}｜❌ {_off_label(kind)} {len(removed)}"
+    ]
+
+    # 1. 符合交通條件的新物件
     if new:
-        lines.append("\n🆕 新增")
+        lines.append("\n🆕 新增（符合通勤範圍）")
         for d, rows in _group_by_district(new).items():
             lines.append(f"📍{d}")
             lines.extend(_new_line(r, kind) for r in rows)
+
+    # 2. 內頁被擋或無座標的新物件（全顯示）
+    if unknown:
+        lines.append("\n❓ 新增（⚠️ 未判斷交通時間：內頁被擋或無座標）")
+        for d, rows in _group_by_district(unknown).items():
+            lines.append(f"📍{d}")
+            lines.extend(_new_line(r, kind) for r in rows)
+
+    # 3. 降價物件
     if drop:
         lines.append("\n💰 降價")
         for d, rows in _group_by_district(drop).items():
             lines.append(f"📍{d}")
             lines.extend(_drop_line(r, kind) for r in rows)
+
+    # 4. 下架物件
     if removed:
         lines.append(f"\n❌ {_off_label(kind)}")
         for d, rows in _group_by_district(removed).items():
             lines.append(f"📍{d}")
             lines.extend(f"· {r.get('title','')}" for r in rows)
+
     return "\n".join(lines)
+
+
+def send_blocked_alert(token: str, chat_id: str, stage: str = "列表頁") -> None:
+    """當 Actions 機房 IP 遭到 591 封鎖時發送緊急警報"""
+    text = (
+        f"🚨 【591 爬蟲警報】IP 疑似遭到封鎖！\n"
+        f"⚠️ 階段：{stage}\n"
+        f"💡 說明：591 阻擋了 GitHub Actions 機房 IP（回傳 403 或驗證碼）。"
+        f"請留意後續是否需要更換執行節點或放寬排程間隔。"
+    )
+    send_telegram(text, token, chat_id)
 
 
 def _chunk(text, limit=TG_MAX_CHARS):
