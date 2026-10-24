@@ -160,7 +160,7 @@ def enrich_and_filter_new_rentals(
                 if tg_token and tg_chat:
                     notify.send_blocked_alert(tg_token, tg_chat, stage="內頁 Enrich")
 
-    return passed_items, out_items, unknown_items
+    return passed_items, unknown_items
 
 
 def run(kind: str = "rent") -> dict:
