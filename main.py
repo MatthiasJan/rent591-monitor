@@ -100,13 +100,14 @@ def enrich_and_filter_new_rentals(
     new_items: list[dict],
     tg_token: str | None,
     tg_chat: str | None,
-) -> tuple[list[dict], list[dict]]:
+) -> tuple[list[dict], list[dict], list[dict]]:
     """針對新增租屋物件抓取內頁經緯度並做通勤交集判定。
     
-    回傳 (通過名單, 未能判斷交通之名單)。
+    回傳 (符合通勤名單, 超出通勤名單, 未能判斷交通之名單)。
     """
     commute_filter = CommuteFilter()
     passed_items: list[dict] = []
+    out_items: list[dict] = []       # 新增：超出範圍清單
     unknown_items: list[dict] = []
     detail_is_blocked = False
 
@@ -122,13 +123,13 @@ def enrich_and_filter_new_rentals(
             lid = item["listing_id"]
             district = (item.get("district") or "").strip()
 
-            # 1. 白名單免判斷：中山區、大同區、松山區必在通勤圈內，直接放行且不發內頁請求
+            # 1. 白名單免判斷：中山區、大同區、松山區必在通勤圈內
             if district in EXEMPT_DISTRICTS:
                 log.info("[%s] 位於核心白名單區（%s），直接通過免查內頁。", lid, district)
                 passed_items.append(item)
                 continue
 
-            # 2. 若先前已發現內頁被封鎖，剩下非白名單物件一律納入未判斷交通，不再發起請求
+            # 2. 若先前已發現內頁被封鎖，剩下非白名單物件一律納入未判斷交通
             if detail_is_blocked:
                 unknown_items.append(item)
                 continue
@@ -143,11 +144,12 @@ def enrich_and_filter_new_rentals(
                 # 4. 幾何交集判定
                 status = commute_filter.check_item(item)
                 if status == "pass":
-                    log.info("[%s] 座標 (%s, %s) 落在交通交集區內，放行。", lid, lat, lng)
+                    log.info("[%s] 座標 (%s, %s) 落在交通交集區內，符合條件。", lid, lat, lng)
                     passed_items.append(item)
                 elif status == "out":
-                    log.info("[%s] 座標 (%s, %s) 超出交通交集區，已過濾不推播。", lid, lat, lng)
-                else:  # 'unknown'（無座標或等時圈檔案遺失）
+                    log.info("[%s] 座標 (%s, %s) 超出交通交集區，保留並標註超出。", lid, lat, lng)
+                    out_items.append(item)  # <-- 改為保留進 out_items
+                else:  # 'unknown'
                     unknown_items.append(item)
 
             except DetailBlockedError as exc:
@@ -155,11 +157,10 @@ def enrich_and_filter_new_rentals(
                 detail_is_blocked = True
                 unknown_items.append(item)
 
-                # 發送 Telegram IP 封鎖警報
                 if tg_token and tg_chat:
                     notify.send_blocked_alert(tg_token, tg_chat, stage="內頁 Enrich")
 
-    return passed_items, unknown_items
+    return passed_items, out_items, unknown_items
 
 
 def run(kind: str = "rent") -> dict:
