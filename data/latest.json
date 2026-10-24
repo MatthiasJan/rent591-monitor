@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T04:57:33+00:00",
+  "generated_at": "2026-10-24T06:00:30+00:00",
   "kind": "rent",
   "subscriptions": [
     {
@@ -20,44 +20,41 @@
   "report": {
     "new": [
       {
-        "listing_id": "22228350",
-        "title": "善導寺忠孝新生雙捷運東區商圈華山園區台大醫全新完工魔術大空間",
-        "url": "https://rent.591.com.tw/22228350",
-        "image": "https://img2.591.com.tw/house/2023/06/26/168776509840422407.jpg!510x400.jpg",
-        "district": "中正區",
-        "street": "杭州南路一段",
+        "listing_id": "22228392",
+        "title": "松江南京捷運站⚡伊通商圈挑高可站漂亮裝潢安靜採光飯店式管理",
+        "url": "https://rent.591.com.tw/22228392",
+        "image": "https://img2.591.com.tw/house/2026/09/24/179022203234852703.jpg!fit.1000x.water2.jpg",
+        "district": "中山區",
+        "street": "松江路77巷",
         "community": null,
         "kind_name": "整層住家",
         "rooms": 1,
         "halls": 1,
         "baths": null,
-        "size_ping": 18.0,
-        "floor": "2F",
-        "total_floor": "5F",
-        "price": 29999,
-        "extra_fee": 0,
-        "fee_included": [
-          "管理費",
-          "水費",
-          "瓦斯費等"
-        ],
-        "total_monthly": 29999,
+        "size_ping": 7.6,
+        "floor": "5F",
+        "total_floor": "11F",
+        "price": 29498,
+        "extra_fee": 1680,
+        "fee_included": [],
+        "total_monthly": 31178,
         "tags": [
+          "影片賞屋",
           "近捷運",
           "新上架",
-          "近商圈",
-          "隨時可遷入",
-          "可開伙"
+          "拎包入住",
+          "有電梯",
+          "隨時可遷入"
         ],
-        "poster_type": "代理人",
-        "poster_name": "Jerry",
-        "updated_rel": "4分鐘內更新",
+        "poster_type": "仲介",
+        "poster_name": "李先生",
+        "updated_rel": "48分鐘內更新",
         "posted_at": "2026-10-24",
         "first_seen": "2026-10-24",
         "last_seen": "2026-10-24",
         "status": "active",
         "down_price": 0,
-        "nearby_metro": "距善導寺 339公尺",
+        "nearby_metro": "距松江南京 257公尺",
         "subscription_id": "sub-1792677175117",
         "region": "台北市",
         "groups": [
@@ -66,53 +63,53 @@
         "price_history": [
           {
             "date": "2026-10-24",
-            "price": 29999
+            "price": 31178
           }
         ],
         "missing_count": 0,
+        "lat": null,
+        "lng": null,
         "watched": false
       }
     ],
     "price_drop": [],
-    "removed": [
+    "removed": [],
+    "unknown_commute": [
       {
-        "listing_id": "22225663",
-        "title": "善導寺忠孝新生雙捷運東區商圈華山園區台大醫全新完工魔術大空間",
-        "url": "https://rent.591.com.tw/22225663",
-        "image": "https://img1.591.com.tw/house/2023/06/26/168776509840422407.jpg!510x400.jpg",
-        "district": "中正區",
-        "street": "杭州南路一段",
+        "listing_id": "22228393",
+        "title": "東門捷運站⚡近永康公園靜巷電梯挑高採光社區專屬洗衣間",
+        "url": "https://rent.591.com.tw/22228393",
+        "image": "https://img1.591.com.tw/house/2026/10/02/179094978777351604.jpg!510x400.jpg",
+        "district": "大安區",
+        "street": "永康街17巷",
         "community": null,
         "kind_name": "整層住家",
         "rooms": 1,
         "halls": 1,
         "baths": null,
-        "size_ping": 18.0,
+        "size_ping": 16.9,
         "floor": "2F",
-        "total_floor": "5F",
-        "price": 29999,
-        "extra_fee": 0,
-        "fee_included": [
-          "管理費",
-          "水費",
-          "瓦斯費等"
-        ],
-        "total_monthly": 29999,
+        "total_floor": "6F",
+        "price": 28500,
+        "extra_fee": 1800,
+        "fee_included": [],
+        "total_monthly": 30300,
         "tags": [
           "近捷運",
           "新上架",
-          "近商圈",
+          "有電梯",
           "隨時可遷入",
           "可開伙"
         ],
-        "poster_type": "代理人",
-        "poster_name": "Jerry",
-        "updated_rel": "24小時內更新",
+        "poster_type": "仲介",
+        "poster_name": "李先生",
+        "updated_rel": "47分鐘內更新",
         "posted_at": "2026-10-24",
-        "first_seen": "2026-10-23",
+        "first_seen": "2026-10-24",
         "last_seen": "2026-10-24",
-        "status": "removed",
+        "status": "active",
         "down_price": 0,
+        "nearby_metro": "距東門 240公尺",
         "subscription_id": "sub-1792677175117",
         "region": "台北市",
         "groups": [
@@ -120,11 +117,13 @@
         ],
         "price_history": [
           {
-            "date": "2026-10-23",
-            "price": 29999
+            "date": "2026-10-24",
+            "price": 30300
           }
         ],
-        "missing_count": 2,
+        "missing_count": 0,
+        "lat": null,
+        "lng": null,
         "watched": false
       }
     ]
@@ -134,7 +133,7 @@
       "listing_id": "22141892",
       "title": "美樂~士林近SOGO靜巷一房~一層一戶`可報稅~有陽台",
       "url": "https://rent.591.com.tw/22141892",
-      "image": "https://img2.591.com.tw/house/2026/10/06/179126485689940605.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/06/179126485689940605.jpg!510x400.jpg",
       "district": "士林區",
       "street": "克強路10巷",
       "community": null,
@@ -159,7 +158,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "簡先生",
-      "updated_rel": "16小時內更新",
+      "updated_rel": "17小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -184,7 +183,7 @@
       "listing_id": "22129542",
       "title": "美樂*芝山*天母SOGO*電梯一房*有陽台*一層一戶*屋齡新",
       "url": "https://rent.591.com.tw/22129542",
-      "image": "https://img1.591.com.tw/house/2026/10/06/179126016877908208.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/06/179126016877908208.jpg!510x400.jpg",
       "district": "士林區",
       "street": "克強路10巷",
       "community": "依現場社區名稱",
@@ -286,7 +285,7 @@
       "listing_id": "22215230",
       "title": "【凌群】可租補/免服務費/景觀高樓層1+1房/可寵/含車位！",
       "url": "https://rent.591.com.tw/22215230",
-      "image": "https://img2.591.com.tw/house/2026/08/06/178601870238372801.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/08/06/178601870238372801.jpg!510x400.jpg",
       "district": "士林區",
       "street": "格致路",
       "community": "大衛營",
@@ -466,7 +465,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "薛先生",
-      "updated_rel": "22小時內更新",
+      "updated_rel": "23小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -491,7 +490,7 @@
       "listing_id": "22204382",
       "title": "可租補,3樓,正2房,近葫蘆國小,傢俱電齊全",
       "url": "https://rent.591.com.tw/22204382",
-      "image": "https://img2.591.com.tw/house/2026/09/17/178963133689254603.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/17/178963133689254603.jpg!510x400.jpg",
       "district": "士林區",
       "street": "延平北路五段231巷",
       "community": null,
@@ -588,7 +587,7 @@
       "listing_id": "22204270",
       "title": "可租補,2樓,正2房,陽台,浴缸,獨立洗衣機",
       "url": "https://rent.591.com.tw/22204270",
-      "image": "https://img1.591.com.tw/house/2026/10/12/179178749573276904.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/12/179178749573276904.jpg!510x400.jpg",
       "district": "士林區",
       "street": "延平北路五段",
       "community": null,
@@ -637,7 +636,7 @@
       "listing_id": "22201911",
       "title": "全新裝潢大格局兩房/陽台吧檯",
       "url": "https://rent.591.com.tw/22201911",
-      "image": "https://img2.591.com.tw/house/2026/10/19/179238082374307901.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/19/179238082374307901.jpg!510x400.jpg",
       "district": "士林區",
       "street": "延平北路五段",
       "community": null,
@@ -691,7 +690,7 @@
       "listing_id": "22193868",
       "title": "🌠士林全新裝潢稀有釋出，靜巷一樓全新美宅🎆",
       "url": "https://rent.591.com.tw/22193868",
-      "image": "https://img1.591.com.tw/house/2026/10/17/179221798343832808.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/17/179221798343832808.jpg!510x400.jpg",
       "district": "士林區",
       "street": "前街4號",
       "community": null,
@@ -763,8 +762,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "游小姐",
-      "updated_rel": "3天前更新",
-      "posted_at": "2026-10-21",
+      "updated_rel": "20分鐘內更新",
+      "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -862,7 +861,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "李先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -916,7 +915,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "廖小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -941,7 +940,7 @@
       "listing_id": "22180709",
       "title": "通河東街二段3號住家，辦公室，儲藏室出租/北市科旁",
       "url": "https://rent.591.com.tw/22180709",
-      "image": "https://img2.591.com.tw/house/2026/03/06/177279116523293009.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/03/06/177279116523293009.jpg!510x400.jpg",
       "district": "士林區",
       "street": "通河東街二段3號",
       "community": "國林長堤",
@@ -991,7 +990,7 @@
       "listing_id": "22176733",
       "title": "士林天母商圈｜環境優｜交通便利｜可租補｜免服務費【凌群】",
       "url": "https://rent.591.com.tw/22176733",
-      "image": "https://img1.591.com.tw/house/2026/10/14/179195819348774701.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/14/179195819348774701.jpg!510x400.jpg",
       "district": "士林區",
       "street": "德行東路",
       "community": "雨聲別墅華廈",
@@ -1091,7 +1090,7 @@
       "listing_id": "22169265",
       "title": "易居社會住宅✨社子全配兩房美寓｜採光佳通風好｜可租補",
       "url": "https://rent.591.com.tw/22169265",
-      "image": "https://img2.591.com.tw/house/2026/10/13/179186290296929605.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/13/179186290296929605.jpg!510x400.jpg",
       "district": "士林區",
       "street": "社子街",
       "community": null,
@@ -1139,7 +1138,7 @@
       "listing_id": "22112418",
       "title": "18.13坪兩房一廳｜家具家電齊全｜屋主自租",
       "url": "https://rent.591.com.tw/22112418",
-      "image": "https://img1.591.com.tw/house/2026/10/03/179100371771015000.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/03/179100371771015000.jpg!510x400.jpg",
       "district": "士林區",
       "street": "德行東路",
       "community": "雨聲別墅華廈",
@@ -1164,7 +1163,7 @@
       ],
       "poster_type": "代理人",
       "poster_name": "高小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -1189,7 +1188,7 @@
       "listing_id": "22166680",
       "title": "靜巷雅寓，１＋１房１廳１衛１陽台，月短租",
       "url": "https://rent.591.com.tw/22166680",
-      "image": "https://img2.591.com.tw/house/2024/12/13/173406610047956300.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2024/12/13/173406610047956300.jpg!510x400.jpg",
       "district": "士林區",
       "street": "承德路四段6巷",
       "community": null,
@@ -1385,7 +1384,7 @@
       "listing_id": "22141655",
       "title": "邊間1樓溫馨兩房",
       "url": "https://rent.591.com.tw/22141655",
-      "image": "https://img2.591.com.tw/house/2020/02/07/158105724107118701.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2020/02/07/158105724107118701.jpg!510x400.jpg",
       "district": "士林區",
       "street": "福德路81巷",
       "community": null,
@@ -1509,7 +1508,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "梅先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -1534,7 +1533,7 @@
       "listing_id": "22109840",
       "title": "【松信社宅】友善房源~歡迎設籍~歡迎青年可申請租補~免仲介費",
       "url": "https://rent.591.com.tw/22109840",
-      "image": "https://img2.591.com.tw/house/2026/10/02/179094482835203206.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/02/179094482835203206.jpg!510x400.jpg",
       "district": "士林區",
       "street": "文林路",
       "community": "德悦悦",
@@ -1633,7 +1632,7 @@
       "listing_id": "22091392",
       "title": "精品房源~劍潭站~通河東街一段~2房",
       "url": "https://rent.591.com.tw/22091392",
-      "image": "https://img2.591.com.tw/house/2026/09/30/179073982451647505.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/30/179073982451647505.jpg!510x400.jpg",
       "district": "士林區",
       "street": "通河東街一段108號",
       "community": null,
@@ -1656,8 +1655,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "許先生",
-      "updated_rel": "18天前更新",
-      "posted_at": "2026-10-06",
+      "updated_rel": "19天前更新",
+      "posted_at": "2026-10-05",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -1681,7 +1680,7 @@
       "listing_id": "22068245",
       "title": "近大葉高島屋/可租補入籍/台水台電/貓咪友善/1樓免爬",
       "url": "https://rent.591.com.tw/22068245",
-      "image": "https://img1.591.com.tw/house/2026/09/07/178877243738553509.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/07/178877243738553509.jpg!510x400.jpg",
       "district": "士林區",
       "street": "士東路",
       "community": null,
@@ -1708,7 +1707,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -1733,7 +1732,7 @@
       "listing_id": "20959069",
       "title": "🏡士林克強路靜巷電梯1房｜一層一戶・即可入住",
       "url": "https://rent.591.com.tw/20959069",
-      "image": "https://img2.591.com.tw/house/2026/10/01/179085505973285501.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/01/179085505973285501.jpg!510x400.jpg",
       "district": "士林區",
       "street": "克強路10巷",
       "community": "金星斐麗",
@@ -1758,7 +1757,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "邱小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -1783,7 +1782,7 @@
       "listing_id": "22228350",
       "title": "善導寺忠孝新生雙捷運東區商圈華山園區台大醫全新完工魔術大空間",
       "url": "https://rent.591.com.tw/22228350",
-      "image": "https://img2.591.com.tw/house/2023/06/26/168776509840422407.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2023/06/26/168776509840422407.jpg!510x400.jpg",
       "district": "中正區",
       "street": "杭州南路一段",
       "community": null,
@@ -1811,7 +1810,7 @@
       ],
       "poster_type": "代理人",
       "poster_name": "Jerry",
-      "updated_rel": "4分鐘內更新",
+      "updated_rel": "59分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-24",
       "last_seen": "2026-10-24",
@@ -1836,7 +1835,7 @@
       "listing_id": "22222862",
       "title": "小南門站質感2房1廳｜可寵物/可申請租補",
       "url": "https://rent.591.com.tw/22222862",
-      "image": "https://img2.591.com.tw/house/2026/10/22/179265648567409303.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/22/179265648567409303.jpg!510x400.jpg",
       "district": "中正區",
       "street": "中華路二段",
       "community": null,
@@ -1863,7 +1862,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "許先生",
-      "updated_rel": "14小時內更新",
+      "updated_rel": "15小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -1967,7 +1966,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "租屋顏小姐與林先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -1992,7 +1991,7 @@
       "listing_id": "22218991",
       "title": "低樓層新裝修生活機能佳",
       "url": "https://rent.591.com.tw/22218991",
-      "image": "https://img2.591.com.tw/house/2026/09/15/178946604901447905.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/15/178946604901447905.jpg!510x400.jpg",
       "district": "中正區",
       "street": "汀州路一段131巷8弄3號",
       "community": null,
@@ -2123,7 +2122,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "宋太太",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "1分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2175,7 +2174,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "魏小姐",
-      "updated_rel": "12小時內更新",
+      "updated_rel": "13小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2200,7 +2199,7 @@
       "listing_id": "22193661",
       "title": "可寵｜東門｜中正紀念堂｜流理台｜English",
       "url": "https://rent.591.com.tw/22193661",
-      "image": "https://img2.591.com.tw/house/2026/10/17/179221407780511407.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/17/179221407780511407.jpg!510x400.jpg",
       "district": "中正區",
       "street": "杭州南路一段",
       "community": "LINE:ID:@homy.rent",
@@ -2225,7 +2224,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "潘小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2250,7 +2249,7 @@
       "listing_id": "22197878",
       "title": "可租補🏘️寵物友善🐈廚房可開伙/門口可停車/全新整理",
       "url": "https://rent.591.com.tw/22197878",
-      "image": "https://img2.591.com.tw/house/2026/10/18/179230836353385900.jpeg!510x400.jpeg",
+      "image": "https://img1.591.com.tw/house/2026/10/18/179230836353385900.jpeg!510x400.jpeg",
       "district": "中正區",
       "street": "汀州路一段131巷8弄",
       "community": null,
@@ -2275,7 +2274,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "趙先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2300,7 +2299,7 @@
       "listing_id": "22189812",
       "title": "古亭捷運辦公",
       "url": "https://rent.591.com.tw/22189812",
-      "image": "https://img2.591.com.tw/house/2026/10/16/179213721883024906.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/16/179213721883024906.jpg!510x400.jpg",
       "district": "中正區",
       "street": "福州街",
       "community": null,
@@ -2346,7 +2345,7 @@
       "listing_id": "22188472",
       "title": "★同安街★捷運古亭★陽台★皆有窗★流理台可炊★禁菸寵物★",
       "url": "https://rent.591.com.tw/22188472",
-      "image": "https://img1.591.com.tw/house/2026/09/25/179031171114690700.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/25/179031171114690700.jpg!510x400.jpg",
       "district": "中正區",
       "street": "同安街",
       "community": null,
@@ -2374,7 +2373,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2399,7 +2398,7 @@
       "listing_id": "22186506",
       "title": "小南門站8分鐘｜中華路｜低樓層｜🉑租補｜代收垃圾｜🉑寵",
       "url": "https://rent.591.com.tw/22186506",
-      "image": "https://img2.591.com.tw/house/2026/10/16/179208285312393003.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/16/179208285312393003.jpg!510x400.jpg",
       "district": "中正區",
       "street": "中華路二段",
       "community": null,
@@ -2426,7 +2425,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "呂先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2451,7 +2450,7 @@
       "listing_id": "22184108",
       "title": "貓咪友善博愛特區新裝潢大兩房",
       "url": "https://rent.591.com.tw/22184108",
-      "image": "https://img1.591.com.tw/house/2025/09/14/175783171373202907.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2025/09/14/175783171373202907.jpg!510x400.jpg",
       "district": "中正區",
       "street": "開封街一段",
       "community": null,
@@ -2480,7 +2479,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "沈先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2609,7 +2608,7 @@
       "listing_id": "22175021",
       "title": "💕社宅可租補免服務費/可入戶籍/近國語實小全新冷氣*3",
       "url": "https://rent.591.com.tw/22175021",
-      "image": "https://img1.591.com.tw/house/2025/09/06/175714330095932802.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2025/09/06/175714330095932802.jpg!510x400.jpg",
       "district": "中正區",
       "street": "泉州街18巷",
       "community": null,
@@ -2661,7 +2660,7 @@
       "listing_id": "22173624",
       "title": "可租補古亭2分鐘採光通風有陽台",
       "url": "https://rent.591.com.tw/22173624",
-      "image": "https://img1.591.com.tw/house/2025/08/16/175527864833476107.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2025/08/16/175527864833476107.jpg!510x400.jpg",
       "district": "中正區",
       "street": "晉江街64巷",
       "community": null,
@@ -2690,7 +2689,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "陳小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2715,7 +2714,7 @@
       "listing_id": "21752033",
       "title": "台北車站、北門西門站、可租補、貓咪友善、獨洗外推窗",
       "url": "https://rent.591.com.tw/21752033",
-      "image": "https://img1.591.com.tw/house/2023/09/04/169376085595785286.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2023/09/04/169376085595785286.jpg!510x400.jpg",
       "district": "中正區",
       "street": "開封街一段",
       "community": "302",
@@ -2743,7 +2742,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "廖小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2793,7 +2792,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "唐先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "1分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2846,7 +2845,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -2871,7 +2870,7 @@
       "listing_id": "22163776",
       "title": "可寵|台北火車站|挑高|24H保全|電梯",
       "url": "https://rent.591.com.tw/22163776",
-      "image": "https://img2.591.com.tw/house/2024/09/07/172571857729573808.jpg!fit.1000x.water2.jpg",
+      "image": "https://img1.591.com.tw/house/2024/09/07/172571857729573808.jpg!fit.1000x.water2.jpg",
       "district": "中正區",
       "street": "重慶南路一段",
       "community": "富比仕大樓",
@@ -2995,7 +2994,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3020,7 +3019,7 @@
       "listing_id": "22069128",
       "title": "近古亭捷運~正兩房~流理臺~陽台~旁萬家福~稀有釋出~",
       "url": "https://rent.591.com.tw/22069128",
-      "image": "https://img1.591.com.tw/house/2026/08/07/178607919367428400.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/08/07/178607919367428400.jpg!510x400.jpg",
       "district": "中正區",
       "street": "同安街",
       "community": null,
@@ -3099,7 +3098,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "黃小姐",
-      "updated_rel": "5小時內更新",
+      "updated_rel": "6小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3124,7 +3123,7 @@
       "listing_id": "22147562",
       "title": "可租補!電梯大樓!",
       "url": "https://rent.591.com.tw/22147562",
-      "image": "https://img1.591.com.tw/house/2026/09/24/179023066562809809.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/24/179023066562809809.jpg!510x400.jpg",
       "district": "中正區",
       "street": "和平西路二段",
       "community": "植富園",
@@ -3230,7 +3229,7 @@
       "listing_id": "22138280",
       "title": "★衡陽街★西門捷運★二二八公園★台大醫院★電梯房★",
       "url": "https://rent.591.com.tw/22138280",
-      "image": "https://img2.591.com.tw/house/2026/10/13/179187529966372508.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/13/179187529966372508.jpg!510x400.jpg",
       "district": "中正區",
       "street": "衡陽路",
       "community": "-",
@@ -3256,7 +3255,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3281,7 +3280,7 @@
       "listing_id": "22135530",
       "title": "★開封街★台北車站★北門郵局★可貓★生活機能優★",
       "url": "https://rent.591.com.tw/22135530",
-      "image": "https://img1.591.com.tw/house/2026/10/07/179134330230974101.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/07/179134330230974101.jpg!510x400.jpg",
       "district": "中正區",
       "street": "開封街一段",
       "community": null,
@@ -3306,7 +3305,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3331,7 +3330,7 @@
       "listing_id": "22134225",
       "title": "公館捷運，全新裝潢套房一房，可住可辦公/工作室，生活機能佳",
       "url": "https://rent.591.com.tw/22134225",
-      "image": "https://img1.591.com.tw/house/2026/05/07/177815631664007402.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/05/07/177815631664007402.jpg!510x400.jpg",
       "district": "中正區",
       "street": "羅斯福路三段316巷",
       "community": null,
@@ -3356,7 +3355,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "23小時內更新",
+      "updated_rel": "24小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3381,7 +3380,7 @@
       "listing_id": "22132402",
       "title": "近台北車站可貓可租補獨立窗台洗曬大二房",
       "url": "https://rent.591.com.tw/22132402",
-      "image": "https://img1.591.com.tw/house/2026/10/06/179128173696345105.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/06/179128173696345105.jpg!510x400.jpg",
       "district": "中正區",
       "street": "開封街一段",
       "community": null,
@@ -3410,7 +3409,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "施先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "34分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3435,7 +3434,7 @@
       "listing_id": "21959320",
       "title": "東昇社宅/可租補/鄰近台北車站/西門商圈/交通便利",
       "url": "https://rent.591.com.tw/21959320",
-      "image": "https://img1.591.com.tw/house/2025/10/22/176112083359852509.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2025/10/22/176112083359852509.jpg!510x400.jpg",
       "district": "中正區",
       "street": "漢口街一段80巷6弄",
       "community": null,
@@ -3460,7 +3459,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "傅先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3514,7 +3513,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "施先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "34分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3639,7 +3638,7 @@
       "listing_id": "22119698",
       "title": "🏮近小南門站/一樓免爬高/流理台/獨洗/可貓/陽台101",
       "url": "https://rent.591.com.tw/22119698",
-      "image": "https://img1.591.com.tw/house/2026/10/04/179112932756385100.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/04/179112932756385100.jpg!510x400.jpg",
       "district": "中正區",
       "street": "博愛路230巷",
       "community": null,
@@ -3722,7 +3721,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "23小時內更新",
+      "updated_rel": "24小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3747,7 +3746,7 @@
       "listing_id": "22111947",
       "title": "博愛路★洗衣獨立陽台★可貓★小南門捷運★植物園南門國中小",
       "url": "https://rent.591.com.tw/22111947",
-      "image": "https://img1.591.com.tw/house/2026/10/09/179152274457601207.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/09/179152274457601207.jpg!510x400.jpg",
       "district": "中正區",
       "street": "博愛路230巷",
       "community": null,
@@ -3774,7 +3773,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3851,7 +3850,7 @@
       "listing_id": "21194715",
       "title": "🌈大降價❤️可租補~✅正2房✅機能佳✅後棟✅採光佳🌈搶租",
       "url": "https://rent.591.com.tw/21194715",
-      "image": "https://img2.591.com.tw/house/2026/10/12/179178434578734308.jpg!1000x.water2.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/12/179178434578734308.jpg!1000x.water2.jpg",
       "district": "中正區",
       "street": "博愛路",
       "community": "近漢口街~重慶南路~中華路~",
@@ -3879,7 +3878,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "蘇先生",
-      "updated_rel": "53分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3929,7 +3928,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "蘇先生",
-      "updated_rel": "53分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -3979,7 +3978,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "28分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4028,7 +4027,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "張小姐",
-      "updated_rel": "24小時內更新",
+      "updated_rel": "昨日更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4053,7 +4052,7 @@
       "listing_id": "22071180",
       "title": "鉑斯🌻中正紀念站🚅近西門町-南機場夜市汀州路💖美2房",
       "url": "https://rent.591.com.tw/22071180",
-      "image": "https://img2.591.com.tw/house/2026/09/25/179032888038043002.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/25/179032888038043002.jpg!510x400.jpg",
       "district": "中正區",
       "street": "汀州路一段131巷8弄",
       "community": null,
@@ -4124,7 +4123,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "楊小姐",
-      "updated_rel": "43分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-24",
@@ -4173,7 +4172,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-24",
@@ -4277,7 +4276,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4302,7 +4301,7 @@
       "listing_id": "22221031",
       "title": "近大橋頭圓山站漂亮裝潢大兩房兩廳",
       "url": "https://rent.591.com.tw/22221031",
-      "image": "https://img2.591.com.tw/house/2022/09/21/166372907759743354.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2022/09/21/166372907759743354.jpg!510x400.jpg",
       "district": "大同區",
       "street": "重慶北路三段152巷",
       "community": null,
@@ -4383,7 +4382,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4404,63 +4403,11 @@
       "missing_count": 0,
       "watched": false
     },
-    "18919342": {
-      "listing_id": "18919342",
-      "title": "❤️台北車站🌈電梯2房.可報稅.貓.長短租❗️搶租",
-      "url": "https://rent.591.com.tw/18919342",
-      "image": "https://img1.591.com.tw/house/2025/05/19/174766817247740503.jpg!fit.1000x.water2.jpg",
-      "district": "大同區",
-      "street": "長安西路",
-      "community": "❤️垃圾代收.獨洗獨衛",
-      "kind_name": "整層住家",
-      "rooms": 2,
-      "halls": 1,
-      "baths": null,
-      "size_ping": 12.0,
-      "floor": "頂樓加蓋",
-      "total_floor": "7F",
-      "price": 24500,
-      "extra_fee": 1000,
-      "fee_included": [
-        "水費"
-      ],
-      "total_monthly": 25500,
-      "tags": [
-        "影片賞屋",
-        "近捷運",
-        "新上架",
-        "可報稅",
-        "拎包入住",
-        "近商圈"
-      ],
-      "poster_type": "仲介",
-      "poster_name": "林小姐",
-      "updated_rel": "2小時內更新",
-      "posted_at": "2026-10-24",
-      "first_seen": "2026-10-22",
-      "last_seen": "2026-10-24",
-      "status": "active",
-      "down_price": 0,
-      "nearby_metro": "距北門 227公尺",
-      "subscription_id": "sub-1792677175117",
-      "region": "台北市",
-      "groups": [
-        "我"
-      ],
-      "price_history": [
-        {
-          "date": "2026-10-22",
-          "price": 25500
-        }
-      ],
-      "missing_count": 0,
-      "watched": false
-    },
     "22217077": {
       "listing_id": "22217077",
       "title": "北門站❤️電梯兩房+陽台🌸間間有窗⚡長短租🔥報稅✅可貓",
       "url": "https://rent.591.com.tw/22217077",
-      "image": "https://img2.591.com.tw/house/2026/09/29/179065756032209205.jpg!fit.1000x.water2.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/29/179065756032209205.jpg!fit.1000x.water2.jpg",
       "district": "大同區",
       "street": "長安西路",
       "community": "🌸質感兩房+陽台",
@@ -4487,7 +4434,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "楊小姐",
-      "updated_rel": "23分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4512,7 +4459,7 @@
       "listing_id": "22215596",
       "title": "超值兩房一廳、垃圾代收、可貓、台北車站、合租首選",
       "url": "https://rent.591.com.tw/22215596",
-      "image": "https://img1.591.com.tw/house/2024/11/07/173099046603662905.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2024/11/07/173099046603662905.jpg!510x400.jpg",
       "district": "大同區",
       "street": "承德路一段24巷",
       "community": null,
@@ -4539,7 +4486,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "張先生",
-      "updated_rel": "3小時內更新",
+      "updated_rel": "31分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4587,7 +4534,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "韋先生",
-      "updated_rel": "40分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4612,7 +4559,7 @@
       "listing_id": "22206698",
       "title": "💓圓山捷運站/可養寵物/可報稅入戶籍/兩房/短租可談",
       "url": "https://rent.591.com.tw/22206698",
-      "image": "https://img2.591.com.tw/house/2026/10/18/179233064844492506.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/18/179233064844492506.jpg!510x400.jpg",
       "district": "大同區",
       "street": "重慶北路三段",
       "community": null,
@@ -4637,7 +4584,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4739,7 +4686,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "13分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4764,7 +4711,7 @@
       "listing_id": "22199765",
       "title": "★延平北★大橋頭捷運★可寵★延三夜市★低樓層★獨洗可炊",
       "url": "https://rent.591.com.tw/22199765",
-      "image": "https://img1.591.com.tw/house/2026/09/21/178997528111381604.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/21/178997528111381604.jpg!510x400.jpg",
       "district": "大同區",
       "street": "延平北路三段",
       "community": null,
@@ -4793,7 +4740,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4868,7 +4815,7 @@
       "listing_id": "22196305",
       "title": "2房｜中山站12分｜寧夏夜市｜陽台｜寧夏商圈｜代收垃圾｜可寵",
       "url": "https://rent.591.com.tw/22196305",
-      "image": "https://img2.591.com.tw/house/2026/09/30/179077079234892102.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/30/179077079234892102.jpg!510x400.jpg",
       "district": "大同區",
       "street": "寧夏路",
       "community": null,
@@ -4895,7 +4842,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "呂先生",
-      "updated_rel": "18分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -4920,7 +4867,7 @@
       "listing_id": "22193416",
       "title": "艾登|寧夏夜市|可寵|垃圾代收、包裹｜生活機能佳",
       "url": "https://rent.591.com.tw/22193416",
-      "image": "https://img2.591.com.tw/house/2026/10/17/179221042018821100.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/17/179221042018821100.jpg!510x400.jpg",
       "district": "大同區",
       "street": "寧夏路",
       "community": null,
@@ -4949,7 +4896,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "33分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5003,7 +4950,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "楊小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "1分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5077,7 +5024,7 @@
       "listing_id": "22188702",
       "title": "近大橋頭站/官方賴預約時間/詳情文宣說明",
       "url": "https://rent.591.com.tw/22188702",
-      "image": "https://img2.591.com.tw/house/2026/10/16/179212920629937405.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/16/179212920629937405.jpg!510x400.jpg",
       "district": "大同區",
       "street": "環河北路二段",
       "community": null,
@@ -5198,7 +5145,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "楊先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5223,7 +5170,7 @@
       "listing_id": "22185491",
       "title": "💓中山寧夏捷運陽台兩房/可養寵物/租補不會過",
       "url": "https://rent.591.com.tw/22185491",
-      "image": "https://img1.591.com.tw/video/cover/2026-10-17/3284649.png!1000x.water2.png",
+      "image": "https://img2.591.com.tw/video/cover/2026-10-17/3284649.png!1000x.water2.png",
       "district": "大同區",
       "street": "寧夏路",
       "community": null,
@@ -5252,7 +5199,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉小姐",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "56分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5277,7 +5224,7 @@
       "listing_id": "22180299",
       "title": "萊恩/🏠代收包裹/中山北車/寧夏/可寵/可報稅",
       "url": "https://rent.591.com.tw/22180299",
-      "image": "https://img1.591.com.tw/house/2026/10/15/179199676255880408.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/15/179199676255880408.jpg!510x400.jpg",
       "district": "大同區",
       "street": "寧夏路",
       "community": null,
@@ -5306,7 +5253,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "魏小姐",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5360,7 +5307,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5485,7 +5432,7 @@
       "listing_id": "22161370",
       "title": "🔥台北車站🏡低樓層陽台2房✅報稅公司戶💡垃圾代收😸貓",
       "url": "https://rent.591.com.tw/22161370",
-      "image": "https://img1.591.com.tw/house/2026/04/22/177684086665286308.jpg!fit.1000x.water2.jpg",
+      "image": "https://img2.591.com.tw/house/2026/04/22/177684086665286308.jpg!fit.1000x.water2.jpg",
       "district": "大同區",
       "street": "承德路一段24巷",
       "community": "找家，也是找讓心舒服的位置🍀",
@@ -5512,7 +5459,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "許小姐",
-      "updated_rel": "33分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5562,7 +5509,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "林小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "1分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5611,7 +5558,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "呂先生",
-      "updated_rel": "昨日更新",
+      "updated_rel": "43分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5636,7 +5583,7 @@
       "listing_id": "22147956",
       "title": "鉑斯✨大橋頭站🚇環河北路美2房✨",
       "url": "https://rent.591.com.tw/22147956",
-      "image": "https://img1.591.com.tw/house/2026/10/09/179151372470815309.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/09/179151372470815309.jpg!510x400.jpg",
       "district": "大同區",
       "street": "環河北路二段",
       "community": null,
@@ -5708,7 +5655,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "郭小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5733,7 +5680,7 @@
       "listing_id": "22094284",
       "title": "寧夏路家樂福優質住家",
       "url": "https://rent.591.com.tw/22094284",
-      "image": "https://img1.591.com.tw/house/2024/08/03/172268276067437701.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2024/08/03/172268276067437701.jpg!510x400.jpg",
       "district": "大同區",
       "street": "寧夏路79號",
       "community": "寧夏財星大樓",
@@ -5812,7 +5759,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "王小姐",
-      "updated_rel": "38分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5862,7 +5809,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "28分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5887,7 +5834,7 @@
       "listing_id": "22089074",
       "title": "★長安西★中興醫院★捷運北門★收垃圾★可貓★電梯房★",
       "url": "https://rent.591.com.tw/22089074",
-      "image": "https://img1.591.com.tw/house/2026/09/23/179017561811048702.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/23/179017561811048702.jpg!510x400.jpg",
       "district": "大同區",
       "street": "長安西路",
       "community": "無",
@@ -5912,7 +5859,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5937,7 +5884,7 @@
       "listing_id": "22085058",
       "title": "️🔥北門站🏡優質電梯陽台2房💡垃圾代收✅報稅😸貓",
       "url": "https://rent.591.com.tw/22085058",
-      "image": "https://img2.591.com.tw/house/2026/09/29/179065744794674200.jpg!fit.1000x.water2.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/29/179065744794674200.jpg!fit.1000x.water2.jpg",
       "district": "大同區",
       "street": "長安西路",
       "community": null,
@@ -5964,7 +5911,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "許小姐",
-      "updated_rel": "33分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -5989,7 +5936,7 @@
       "listing_id": "22074780",
       "title": "🌸近大橋頭🌸精美兩房/台水台電/可養貓",
       "url": "https://rent.591.com.tw/22074780",
-      "image": "https://img2.591.com.tw/house/2026/09/17/178962954011013607.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/17/178962954011013607.jpg!510x400.jpg",
       "district": "大同區",
       "street": "環河北路二段",
       "community": null,
@@ -6039,7 +5986,7 @@
       "listing_id": "22072572",
       "title": "近雙連捷運一層一戶採光屋",
       "url": "https://rent.591.com.tw/22072572",
-      "image": "https://img1.591.com.tw/house/2018/12/03/154380446100042808.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2018/12/03/154380446100042808.jpg!510x400.jpg",
       "district": "大同區",
       "street": "赤峰街44巷",
       "community": null,
@@ -6068,7 +6015,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "蔡先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -6087,6 +6034,58 @@
         }
       ],
       "missing_count": 0,
+      "watched": false
+    },
+    "22228392": {
+      "listing_id": "22228392",
+      "title": "松江南京捷運站⚡伊通商圈挑高可站漂亮裝潢安靜採光飯店式管理",
+      "url": "https://rent.591.com.tw/22228392",
+      "image": "https://img2.591.com.tw/house/2026/09/24/179022203234852703.jpg!fit.1000x.water2.jpg",
+      "district": "中山區",
+      "street": "松江路77巷",
+      "community": null,
+      "kind_name": "整層住家",
+      "rooms": 1,
+      "halls": 1,
+      "baths": null,
+      "size_ping": 7.6,
+      "floor": "5F",
+      "total_floor": "11F",
+      "price": 29498,
+      "extra_fee": 1680,
+      "fee_included": [],
+      "total_monthly": 31178,
+      "tags": [
+        "影片賞屋",
+        "近捷運",
+        "新上架",
+        "拎包入住",
+        "有電梯",
+        "隨時可遷入"
+      ],
+      "poster_type": "仲介",
+      "poster_name": "李先生",
+      "updated_rel": "48分鐘內更新",
+      "posted_at": "2026-10-24",
+      "first_seen": "2026-10-24",
+      "last_seen": "2026-10-24",
+      "status": "active",
+      "down_price": 0,
+      "nearby_metro": "距松江南京 257公尺",
+      "subscription_id": "sub-1792677175117",
+      "region": "台北市",
+      "groups": [
+        "我"
+      ],
+      "price_history": [
+        {
+          "date": "2026-10-24",
+          "price": 31178
+        }
+      ],
+      "missing_count": 0,
+      "lat": null,
+      "lng": null,
       "watched": false
     },
     "22228133": {
@@ -6117,7 +6116,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "沈小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-24",
       "last_seen": "2026-10-24",
@@ -6142,7 +6141,7 @@
       "listing_id": "22228088",
       "title": "🍎雙捷運💎電梯採光質感1房1廳⭐收納多有浴缸獨洗烘可烹煮",
       "url": "https://rent.591.com.tw/22228088",
-      "image": "https://img1.591.com.tw/house/2023/11/21/170054579806336647.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2023/11/21/170054579806336647.jpg!510x400.jpg",
       "district": "中山區",
       "street": "林森北路107巷",
       "community": "1房1廳1衛廚房浴缸",
@@ -6170,7 +6169,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "吳小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-24",
       "last_seen": "2026-10-24",
@@ -6220,7 +6219,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "徐先生",
-      "updated_rel": "8小時內更新",
+      "updated_rel": "9小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-24",
       "last_seen": "2026-10-24",
@@ -6271,7 +6270,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "李小姐",
-      "updated_rel": "11小時內更新",
+      "updated_rel": "12小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-24",
       "last_seen": "2026-10-24",
@@ -6320,7 +6319,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "簡先生",
-      "updated_rel": "16小時內更新",
+      "updated_rel": "17小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -6372,7 +6371,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "3小時內更新",
+      "updated_rel": "4小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-24",
@@ -6397,7 +6396,7 @@
       "listing_id": "22225734",
       "title": "🍎近捷運松江南京站善導寺站💎採光質感美樓中樓有廚房有浴缸",
       "url": "https://rent.591.com.tw/22225734",
-      "image": "https://img1.591.com.tw/house/2023/07/20/168986788954920690.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2023/07/20/168986788954920690.jpg!510x400.jpg",
       "district": "中山區",
       "street": "林森北路85巷",
       "community": "獨立門牌台水台電帳單流理台可烹煮降板浴缸",
@@ -6425,7 +6424,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "吳小姐",
-      "updated_rel": "13小時內更新",
+      "updated_rel": "14小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-24",
@@ -6531,7 +6530,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -6556,7 +6555,7 @@
       "listing_id": "22223882",
       "title": "吉林路溫馨採光2房美寓-威爾森推薦",
       "url": "https://rent.591.com.tw/22223882",
-      "image": "https://img2.591.com.tw/house/2026/10/22/179266248032699809.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/22/179266248032699809.jpg!510x400.jpg",
       "district": "中山區",
       "street": "吉林路379巷",
       "community": null,
@@ -6608,7 +6607,7 @@
       "listing_id": "22223210",
       "title": "✅24H管理垃圾信件代收✅挑高3米6精美裝潢✅雙",
       "url": "https://rent.591.com.tw/22223210",
-      "image": "https://img1.591.com.tw/house/2026/10/22/179265834681658804.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/22/179265834681658804.jpg!510x400.jpg",
       "district": "中山區",
       "street": "林森北路",
       "community": null,
@@ -6656,114 +6655,11 @@
       "missing_count": 0,
       "watched": false
     },
-    "22223059": {
-      "listing_id": "22223059",
-      "title": "中山國小捷運電梯華廈",
-      "url": "https://rent.591.com.tw/22223059",
-      "image": "https://img1.591.com.tw/house/2022/11/28/166964037477153682.jpg!510x400.jpg",
-      "district": "中山區",
-      "street": "民權東路一段",
-      "community": "民權大樓",
-      "kind_name": "整層住家",
-      "rooms": 1,
-      "halls": 1,
-      "baths": null,
-      "size_ping": 18.0,
-      "floor": "11F",
-      "total_floor": "12F",
-      "price": 28000,
-      "extra_fee": 1600,
-      "fee_included": [],
-      "total_monthly": 29600,
-      "tags": [
-        "近捷運",
-        "新上架",
-        "可報稅",
-        "隨時可遷入",
-        "可開伙",
-        "有車位"
-      ],
-      "poster_type": "仲介",
-      "poster_name": "林小姐",
-      "updated_rel": "2天前更新",
-      "posted_at": "2026-10-22",
-      "first_seen": "2026-10-22",
-      "last_seen": "2026-10-24",
-      "status": "active",
-      "down_price": 0,
-      "nearby_metro": "距中山國小 134公尺",
-      "subscription_id": "sub-1792677175117",
-      "region": "台北市",
-      "groups": [
-        "我"
-      ],
-      "price_history": [
-        {
-          "date": "2026-10-22",
-          "price": 29600
-        }
-      ],
-      "missing_count": 0,
-      "watched": false
-    },
     "17215502": {
       "listing_id": "17215502",
       "title": "🔆合租首選🔆超值兩房🔆行天宮、中山國小🔆可養寵",
       "url": "https://rent.591.com.tw/17215502",
-      "image": "https://img1.591.com.tw/house/2026/10/20/179247098757788007.jpg!510x400.jpg",
-      "district": "中山區",
-      "street": "民權東路二段92巷2弄",
-      "community": null,
-      "kind_name": "整層住家",
-      "rooms": 2,
-      "halls": 1,
-      "baths": null,
-      "size_ping": 18.0,
-      "floor": "3F",
-      "total_floor": "3F",
-      "price": 25999,
-      "extra_fee": 0,
-      "fee_included": [
-        "網路",
-        "第四臺"
-      ],
-      "total_monthly": 25999,
-      "tags": [
-        "近捷運",
-        "新上架",
-        "拎包入住",
-        "近商圈",
-        "隨時可遷入",
-        "可開伙"
-      ],
-      "poster_type": "仲介",
-      "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
-      "posted_at": "2026-10-24",
-      "first_seen": "2026-10-22",
-      "last_seen": "2026-10-24",
-      "status": "active",
-      "down_price": 0,
-      "nearby_metro": "距行天宮 296公尺",
-      "subscription_id": "sub-1792677175117",
-      "region": "台北市",
-      "groups": [
-        "我"
-      ],
-      "price_history": [
-        {
-          "date": "2026-10-22",
-          "price": 25999
-        }
-      ],
-      "missing_count": 0,
-      "watched": false
-    },
-    "19726801": {
-      "listing_id": "19726801",
-      "title": "✨超值兩房一廳✨行天宮站、中山國小站✨傢俱全✨可寵",
-      "url": "https://rent.591.com.tw/19726801",
-      "image": "https://img2.591.com.tw/house/2026/10/20/179247097112639804.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/20/179247098757788007.jpg!510x400.jpg",
       "district": "中山區",
       "street": "民權東路二段92巷2弄",
       "community": null,
@@ -6792,6 +6688,59 @@
       "poster_type": "仲介",
       "poster_name": "洪先生",
       "updated_rel": "2小時內更新",
+      "posted_at": "2026-10-24",
+      "first_seen": "2026-10-22",
+      "last_seen": "2026-10-24",
+      "status": "active",
+      "down_price": 0,
+      "nearby_metro": "距行天宮 296公尺",
+      "subscription_id": "sub-1792677175117",
+      "region": "台北市",
+      "groups": [
+        "我"
+      ],
+      "price_history": [
+        {
+          "date": "2026-10-22",
+          "price": 25999
+        }
+      ],
+      "missing_count": 0,
+      "watched": false
+    },
+    "19726801": {
+      "listing_id": "19726801",
+      "title": "✨超值兩房一廳✨行天宮站、中山國小站✨傢俱全✨可寵",
+      "url": "https://rent.591.com.tw/19726801",
+      "image": "https://img1.591.com.tw/house/2026/10/20/179247097112639804.jpg!510x400.jpg",
+      "district": "中山區",
+      "street": "民權東路二段92巷2弄",
+      "community": null,
+      "kind_name": "整層住家",
+      "rooms": 2,
+      "halls": 1,
+      "baths": null,
+      "size_ping": 18.0,
+      "floor": "3F",
+      "total_floor": "3F",
+      "price": 25999,
+      "extra_fee": 0,
+      "fee_included": [
+        "網路",
+        "第四臺"
+      ],
+      "total_monthly": 25999,
+      "tags": [
+        "近捷運",
+        "新上架",
+        "拎包入住",
+        "近商圈",
+        "隨時可遷入",
+        "可開伙"
+      ],
+      "poster_type": "仲介",
+      "poster_name": "洪先生",
+      "updated_rel": "4小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -6869,7 +6818,7 @@
       "listing_id": "22190955",
       "title": "美樂*近松江南京*挑高可站*機能優採光佳*社區管理*",
       "url": "https://rent.591.com.tw/22190955",
-      "image": "https://img2.591.com.tw/house/2026/10/01/179082843761419602.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/01/179082843761419602.jpg!510x400.jpg",
       "district": "中山區",
       "street": "松江路77巷",
       "community": "法國玫瑰",
@@ -6969,7 +6918,7 @@
       "listing_id": "22215165",
       "title": "超值兩房一廳、可寵、行天宮站、傢俱齊全、可短租",
       "url": "https://rent.591.com.tw/22215165",
-      "image": "https://img2.591.com.tw/house/2026/10/21/179255523722509500.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/21/179255523722509500.jpg!510x400.jpg",
       "district": "中山區",
       "street": "民權東路二段92巷2弄",
       "community": null,
@@ -6997,7 +6946,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "張先生",
-      "updated_rel": "3小時內更新",
+      "updated_rel": "31分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7049,7 +6998,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "莊先生",
-      "updated_rel": "48分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7074,7 +7023,7 @@
       "listing_id": "22211974",
       "title": "松江南京站.挑高可站.管理優.乾濕分離",
       "url": "https://rent.591.com.tw/22211974",
-      "image": "https://img1.591.com.tw/house/2026/09/29/179069037801686905.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/29/179069037801686905.jpg!510x400.jpg",
       "district": "中山區",
       "street": "松江路77巷",
       "community": "近建國北路一段南京東路二段長安東路二段",
@@ -7124,7 +7073,7 @@
       "listing_id": "22203988",
       "title": "捷運雙連站●近馬偕●挑高有管理●採光佳●有陽台●可站立",
       "url": "https://rent.591.com.tw/22203988",
-      "image": "https://img1.591.com.tw/house/2026/10/19/179239460447433902.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/19/179239460447433902.jpg!510x400.jpg",
       "district": "中山區",
       "street": "中山北路二段59巷",
       "community": "美麗國賓花園廣場",
@@ -7198,7 +7147,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "31分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7371,7 +7320,7 @@
       "listing_id": "22196507",
       "title": "溫馨2房+1房(大同大學旁近花博)",
       "url": "https://rent.591.com.tw/22196507",
-      "image": "https://img2.591.com.tw/house/2025/11/06/176235956541413703.jpeg!510x400.jpeg",
+      "image": "https://img1.591.com.tw/house/2025/11/06/176235956541413703.jpeg!510x400.jpeg",
       "district": "中山區",
       "street": "雙城街28巷",
       "community": null,
@@ -7448,7 +7397,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "周先生",
-      "updated_rel": "24小時內更新",
+      "updated_rel": "昨日更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7473,7 +7422,7 @@
       "listing_id": "22195491",
       "title": "松江南京雙捷運兩房一廳",
       "url": "https://rent.591.com.tw/22195491",
-      "image": "https://img2.591.com.tw/house/2026/10/17/179223859712266303.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/17/179223859712266303.jpg!510x400.jpg",
       "district": "中山區",
       "street": "南京東路二段115巷3弄",
       "community": "四季芳庭(四平街)",
@@ -7598,7 +7547,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "昨日更新",
+      "updated_rel": "18分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7623,7 +7572,7 @@
       "listing_id": "22186959",
       "title": "可租補特聘名師裝潢設計.溫馨典雅.剛推出請把握",
       "url": "https://rent.591.com.tw/22186959",
-      "image": "https://img2.591.com.tw/house/2016/08/12/147093291490520204.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2016/08/12/147093291490520204.jpg!510x400.jpg",
       "district": "中山區",
       "street": "民生東路二段",
       "community": "翡冷翠花園大廈",
@@ -7648,7 +7597,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "黃太太",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7673,7 +7622,7 @@
       "listing_id": "22186416",
       "title": "台北車站🚉租補✅變頻冷氣❄️獨立洗曬👕採光通風✨格局方正",
       "url": "https://rent.591.com.tw/22186416",
-      "image": "https://img1.591.com.tw/house/2026/09/15/178944553559129307.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/15/178944553559129307.jpg!510x400.jpg",
       "district": "中山區",
       "street": "中山北路一段53巷",
       "community": null,
@@ -7701,7 +7650,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "羅先生",
-      "updated_rel": "19小時內更新",
+      "updated_rel": "20小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7726,7 +7675,7 @@
       "listing_id": "22183402",
       "title": "松江南京捷運三分鐘二房一廳垃圾代收",
       "url": "https://rent.591.com.tw/22183402",
-      "image": "https://img2.591.com.tw/house/2020/05/17/158972913239736407.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2020/05/17/158972913239736407.jpg!510x400.jpg",
       "district": "中山區",
       "street": "松江路156巷",
       "community": null,
@@ -7754,7 +7703,7 @@
       ],
       "poster_type": "代理人",
       "poster_name": "黃先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "1分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -7803,8 +7752,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "9天前更新",
-      "posted_at": "2026-10-15",
+      "updated_rel": "10天前更新",
+      "posted_at": "2026-10-14",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -7852,8 +7801,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "9天前更新",
-      "posted_at": "2026-10-15",
+      "updated_rel": "10天前更新",
+      "posted_at": "2026-10-14",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -7877,7 +7826,7 @@
       "listing_id": "22174701",
       "title": "可雙租補報稅！近捷運！黃金三樓！天然瓦斯垃圾代收",
       "url": "https://rent.591.com.tw/22174701",
-      "image": "https://img2.591.com.tw/house/2026/10/05/179121532489233402.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/05/179121532489233402.jpg!510x400.jpg",
       "district": "中山區",
       "street": "新生北路二段127巷",
       "community": null,
@@ -7906,7 +7855,7 @@
       ],
       "poster_type": "代理人",
       "poster_name": "高先生",
-      "updated_rel": "49分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8062,7 +8011,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "吳小姐",
-      "updated_rel": "54分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8116,7 +8065,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "簡先生",
-      "updated_rel": "57分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8141,7 +8090,7 @@
       "listing_id": "22178426",
       "title": "✨中山區｜正兩房都有光｜三台冷氣全配好",
       "url": "https://rent.591.com.tw/22178426",
-      "image": "https://img1.591.com.tw/video/cover/2026-10-14/3280218.png!1000x.water2.png",
+      "image": "https://img2.591.com.tw/video/cover/2026-10-14/3280218.png!1000x.water2.png",
       "district": "中山區",
       "street": "吉林路407巷",
       "community": null,
@@ -8266,7 +8215,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "傅小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "1分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8316,7 +8265,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "董先生",
-      "updated_rel": "13分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8412,7 +8361,7 @@
       ],
       "poster_type": "代理人",
       "poster_name": "蔡小姐",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8464,7 +8413,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "柯先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8489,7 +8438,7 @@
       "listing_id": "22163662",
       "title": "可租補可報稅❤️忠孝新生松江❤️三創華山旁❤️公寓3樓兩房",
       "url": "https://rent.591.com.tw/22163662",
-      "image": "https://img1.591.com.tw/house/2026/10/12/179178690345916000.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/12/179178690345916000.jpg!510x400.jpg",
       "district": "中山區",
       "street": "松江路16巷",
       "community": null,
@@ -8518,7 +8467,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "張先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8572,7 +8521,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "施先生",
-      "updated_rel": "22小時內更新",
+      "updated_rel": "34分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8626,7 +8575,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "沈先生",
-      "updated_rel": "58分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8730,7 +8679,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "簡先生",
-      "updated_rel": "56分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -8953,7 +8902,7 @@
       "listing_id": "22138216",
       "title": "近捷運中山國中【優質1房1廳】景觀戶★採光優★警衛管理",
       "url": "https://rent.591.com.tw/22138216",
-      "image": "https://img1.591.com.tw/house/2026/10/07/179136242987672305.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/07/179136242987672305.jpg!510x400.jpg",
       "district": "中山區",
       "street": "復興北路",
       "community": null,
@@ -9001,7 +8950,7 @@
       "listing_id": "22065411",
       "title": "鉑斯✨松江南京🩷挑高空間🩷",
       "url": "https://rent.591.com.tw/22065411",
-      "image": "https://img1.591.com.tw/house/2026/10/21/179255725903139802.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/21/179255725903139802.jpg!510x400.jpg",
       "district": "中山區",
       "street": "松江路77巷",
       "community": null,
@@ -9074,8 +9023,8 @@
       ],
       "poster_type": "屋主",
       "poster_name": "何先生",
-      "updated_rel": "5天前更新",
-      "posted_at": "2026-10-19",
+      "updated_rel": "6天前更新",
+      "posted_at": "2026-10-18",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -9171,7 +9120,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9196,7 +9145,7 @@
       "listing_id": "22097329",
       "title": "半年繳租金大優惠🔥全新裝修｜寵物友善｜近南京復興🔥",
       "url": "https://rent.591.com.tw/22097329",
-      "image": "https://img1.591.com.tw/house/2026/06/25/178237530519241204.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/06/25/178237530519241204.jpg!510x400.jpg",
       "district": "中山區",
       "street": "合江街61巷",
       "community": null,
@@ -9243,7 +9192,7 @@
       "listing_id": "22091788",
       "title": "🍊中山國小靜巷全新裝潢時尚2房",
       "url": "https://rent.591.com.tw/22091788",
-      "image": "https://img1.591.com.tw/video/cover/2025-08-09/2466109.png!1000x.water2.png",
+      "image": "https://img2.591.com.tw/video/cover/2025-08-09/2466109.png!1000x.water2.png",
       "district": "中山區",
       "street": "吉林路456巷",
       "community": null,
@@ -9342,7 +9291,7 @@
       "listing_id": "22089017",
       "title": "★長春路★兩房一廳★可寵獨立洗衣凸窗曬★近吉林新生★吉林國小",
       "url": "https://rent.591.com.tw/22089017",
-      "image": "https://img2.591.com.tw/house/2026/09/18/178971806774980007.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/18/178971806774980007.jpg!510x400.jpg",
       "district": "中山區",
       "street": "長春路",
       "community": null,
@@ -9371,7 +9320,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "洪先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9396,7 +9345,7 @@
       "listing_id": "22088338",
       "title": "松江南京1分.松江路.吉林路.伊通街.松江公園.長安國小",
       "url": "https://rent.591.com.tw/22088338",
-      "image": "https://img2.591.com.tw/house/2026/09/29/179068064602649300.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/29/179068064602649300.jpg!510x400.jpg",
       "district": "中山區",
       "street": "南京東路二段",
       "community": null,
@@ -9421,7 +9370,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "黃先生",
-      "updated_rel": "29分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9446,7 +9395,7 @@
       "listing_id": "21977572",
       "title": "🔥捷運中山國小🔥電梯單身貴族樓中樓❤️台水電",
       "url": "https://rent.591.com.tw/21977572",
-      "image": "https://img1.591.com.tw/house/2026/09/08/178885980119345504.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/08/178885980119345504.jpg!510x400.jpg",
       "district": "中山區",
       "street": "德惠街",
       "community": "國賓Villa",
@@ -9545,7 +9494,7 @@
       "listing_id": "22074929",
       "title": "中山國中、獨立洗衣機、陽台、流理台",
       "url": "https://rent.591.com.tw/22074929",
-      "image": "https://img1.591.com.tw/house/2026/09/21/178998867240244808.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/21/178998867240244808.jpg!510x400.jpg",
       "district": "中山區",
       "street": "合江街170巷",
       "community": "華仁長安大廈",
@@ -9574,7 +9523,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "昨日更新",
+      "updated_rel": "20分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9599,7 +9548,7 @@
       "listing_id": "22072370",
       "title": "捷運1分鐘，兩房（適合小家庭及情侶）",
       "url": "https://rent.591.com.tw/22072370",
-      "image": "https://img2.591.com.tw/video/cover/2026-09-26/3257907.png!1000x.water2.png",
+      "image": "https://img1.591.com.tw/video/cover/2026-09-26/3257907.png!1000x.water2.png",
       "district": "中山區",
       "street": "林森北路",
       "community": "無",
@@ -9628,7 +9577,7 @@
       ],
       "poster_type": "代理人",
       "poster_name": "呂小姐",
-      "updated_rel": "49分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9729,7 +9678,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "莊先生",
-      "updated_rel": "29分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9781,7 +9730,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "簡先生",
-      "updated_rel": "13小時內更新",
+      "updated_rel": "15小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9810,7 +9759,7 @@
       "listing_id": "22111733",
       "title": "美樂*近民生社區*挑高1+1房*獨立門牌*可租補*可寵含管",
       "url": "https://rent.591.com.tw/22111733",
-      "image": "https://img2.591.com.tw/house/2026/10/03/179099579103362100.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/03/179099579103362100.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區名稱",
@@ -9837,7 +9786,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "施小姐",
-      "updated_rel": "17小時內更新",
+      "updated_rel": "19小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9862,7 +9811,7 @@
       "listing_id": "22211849",
       "title": "美樂*松山雙鐵MRT*高樓景觀*採光通風*租金含管*社區管理",
       "url": "https://rent.591.com.tw/22211849",
-      "image": "https://img1.591.com.tw/house/2026/10/20/179249139725641109.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/20/179249139725641109.jpg!510x400.jpg",
       "district": "松山區",
       "street": "八德路四段",
       "community": "依現場社區名稱",
@@ -9889,7 +9838,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "施小姐",
-      "updated_rel": "17小時內更新",
+      "updated_rel": "19小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -9918,7 +9867,7 @@
       "listing_id": "22225467",
       "title": "💖松山車站旁｜後棟高樓1+1房💖中信書伃",
       "url": "https://rent.591.com.tw/22225467",
-      "image": "https://img2.591.com.tw/house/2026/10/11/179172044108263000.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/11/179172044108263000.jpg!510x400.jpg",
       "district": "松山區",
       "street": "八德路四段",
       "community": "濱河皇家",
@@ -9967,7 +9916,7 @@
       "listing_id": "22224703",
       "title": "南京三民/正兩房/前後陽台/收垃圾/可開伙/電梯",
       "url": "https://rent.591.com.tw/22224703",
-      "image": "https://img2.591.com.tw/house/2026/10/22/179268286887987807.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/22/179268286887987807.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路五段250巷18弄",
       "community": "一般華廈",
@@ -9991,7 +9940,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "謝先生",
-      "updated_rel": "18小時內更新",
+      "updated_rel": "19小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-24",
@@ -10043,7 +9992,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "徐小姐",
-      "updated_rel": "3小時內更新",
+      "updated_rel": "4小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -10072,7 +10021,7 @@
       "listing_id": "22223811",
       "title": "💖松山車站旁｜後棟高樓1+1房💖中信書伃",
       "url": "https://rent.591.com.tw/22223811",
-      "image": "https://img2.591.com.tw/house/2026/10/11/179172044108263000.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/11/179172044108263000.jpg!510x400.jpg",
       "district": "松山區",
       "street": "八德路四段",
       "community": "濱河皇家",
@@ -10147,7 +10096,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳小姐",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -10187,12 +10136,12 @@
       "size_ping": 19.1,
       "floor": "12F",
       "total_floor": "13F",
-      "price": 29499,
+      "price": 29500,
       "extra_fee": 0,
       "fee_included": [
         "管理費"
       ],
-      "total_monthly": 29499,
+      "total_monthly": 29500,
       "tags": [
         "近捷運",
         "新上架",
@@ -10203,8 +10152,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "萬先生",
-      "updated_rel": "2天前更新",
-      "posted_at": "2026-10-22",
+      "updated_rel": "35分鐘內更新",
+      "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -10219,6 +10168,10 @@
         {
           "date": "2026-10-22",
           "price": 29499
+        },
+        {
+          "date": "2026-10-24",
+          "price": 29500
         }
       ],
       "missing_count": 0,
@@ -10228,7 +10181,7 @@
       "listing_id": "22214680",
       "title": "《美樂》臨河濱☆寵物友善☆挑高空間☆代收垃圾☆可補助☆含管",
       "url": "https://rent.591.com.tw/22214680",
-      "image": "https://img1.591.com.tw/house/2026/10/02/179092759438582805.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/02/179092759438582805.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區",
@@ -10280,7 +10233,7 @@
       "listing_id": "22109046",
       "title": "美樂、松山塔悠河濱、挑高採光兩房格局、可租補報稅、寵物可商量",
       "url": "https://rent.591.com.tw/22109046",
-      "image": "https://img2.591.com.tw/house/2026/10/02/179093665548320708.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/02/179093665548320708.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區名稱",
@@ -10332,7 +10285,7 @@
       "listing_id": "22107639",
       "title": "美樂*近民生社區*挑高1+1房*獨立門牌*可租補*可寵含管",
       "url": "https://rent.591.com.tw/22107639",
-      "image": "https://img1.591.com.tw/house/2026/10/02/179092754298914908.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/02/179092754298914908.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區名稱",
@@ -10436,7 +10389,7 @@
       "listing_id": "22216182",
       "title": "免佣）捷運南京復興3分【電梯1房1廳】可營登★報稅養寵",
       "url": "https://rent.591.com.tw/22216182",
-      "image": "https://img2.591.com.tw/house/2026/10/04/179110336725651205.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/04/179110336725651205.jpg!510x400.jpg",
       "district": "松山區",
       "street": "復興北路",
       "community": null,
@@ -10486,7 +10439,7 @@
       "listing_id": "22172556",
       "title": "美樂*民生社區*松山採光好1+1房*可租補*可寵*含管理費*",
       "url": "https://rent.591.com.tw/22172556",
-      "image": "https://img1.591.com.tw/house/2026/10/02/179093030579547306.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/02/179093030579547306.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區名稱",
@@ -10538,7 +10491,7 @@
       "listing_id": "22215112",
       "title": "美樂*河濱美景*1+1房*挑高設計*民生生活圈*含管*寵可談",
       "url": "https://rent.591.com.tw/22215112",
-      "image": "https://img2.591.com.tw/house/2026/10/02/179093008871471300.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/02/179093008871471300.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區名稱",
@@ -10589,7 +10542,7 @@
       "listing_id": "22213714",
       "title": "小巨蛋全新裝潢獨立陽台可貓咪大兩房",
       "url": "https://rent.591.com.tw/22213714",
-      "image": "https://img1.591.com.tw/house/2025/08/29/175644780520349308.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2025/08/29/175644780520349308.jpg!510x400.jpg",
       "district": "松山區",
       "street": "八德路三段",
       "community": null,
@@ -10618,7 +10571,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "沈先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -10643,7 +10596,7 @@
       "listing_id": "22205511",
       "title": "南京三民🚝好規劃好收納✅代收垃圾❤️空間大",
       "url": "https://rent.591.com.tw/22205511",
-      "image": "https://img1.591.com.tw/house/2026/10/12/179180832246598807.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/12/179180832246598807.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路五段250巷18弄",
       "community": "看房加賴@074jnryb",
@@ -10668,7 +10621,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "曾先生",
-      "updated_rel": "14小時內更新",
+      "updated_rel": "15小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -10693,7 +10646,7 @@
       "listing_id": "22201391",
       "title": "南京三民站✨公寓5樓✨全新裝潢.附大露臺",
       "url": "https://rent.591.com.tw/22201391",
-      "image": "https://img2.591.com.tw/video/cover/2026-07-17/3168876.png!1000x.water2.png",
+      "image": "https://img1.591.com.tw/video/cover/2026-07-17/3168876.png!1000x.water2.png",
       "district": "松山區",
       "street": "八德路四段181巷17弄",
       "community": null,
@@ -10746,7 +10699,7 @@
       "listing_id": "22198068",
       "title": "鉑斯✅南京復興✅小巨蛋✅微風南京",
       "url": "https://rent.591.com.tw/22198068",
-      "image": "https://img2.591.com.tw/house/2026/09/23/179012902918641305.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/23/179012902918641305.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路三段335巷",
       "community": null,
@@ -10827,7 +10780,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "許先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -10852,7 +10805,7 @@
       "listing_id": "22107612",
       "title": "美樂~松山河濱*近民生社區*挑高採光兩房*可租補報稅*可乖寵",
       "url": "https://rent.591.com.tw/22107612",
-      "image": "https://img1.591.com.tw/house/2026/10/02/179092746517949506.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/02/179092746517949506.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "依現場社區名稱",
@@ -10878,8 +10831,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "游小姐",
-      "updated_rel": "3天前更新",
-      "posted_at": "2026-10-21",
+      "updated_rel": "20分鐘內更新",
+      "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -10903,7 +10856,7 @@
       "listing_id": "22190405",
       "title": "南京三民4分，大空間兩房，前後陽台，貓洽，垃圾代收，小廚房",
       "url": "https://rent.591.com.tw/22190405",
-      "image": "https://img2.591.com.tw/house/2026/10/16/179214166942313706.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/16/179214166942313706.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路五段250巷18弄",
       "community": "無",
@@ -10928,7 +10881,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "高先生",
-      "updated_rel": "19小時內更新",
+      "updated_rel": "20小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -10957,7 +10910,7 @@
       "listing_id": "22177268",
       "title": "【松信社宅】友善房源~歡迎設籍~歡迎青年可申請租補~免仲介費",
       "url": "https://rent.591.com.tw/22177268",
-      "image": "https://img2.591.com.tw/house/2026/09/20/178986514973840709.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/09/20/178986514973840709.jpg!510x400.jpg",
       "district": "松山區",
       "street": "八德路四段445號",
       "community": "信義星池",
@@ -11133,7 +11086,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "張先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "22分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11184,7 +11137,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "周先生",
-      "updated_rel": "24小時內更新",
+      "updated_rel": "昨日更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11234,7 +11187,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "蘇先生",
-      "updated_rel": "54分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11332,7 +11285,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "胡先生",
-      "updated_rel": "3小時內更新",
+      "updated_rel": "4小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11357,7 +11310,7 @@
       "listing_id": "22147349",
       "title": "南京三民🏠免爬高🌟採光通風🌟包裹垃圾收🌟大空間🌟炊",
       "url": "https://rent.591.com.tw/22147349",
-      "image": "https://img1.591.com.tw/video/cover/2026-10-09/3272943.png!1000x.water2.png",
+      "image": "https://img2.591.com.tw/video/cover/2026-10-09/3272943.png!1000x.water2.png",
       "district": "松山區",
       "street": "南京東路五段250巷18弄",
       "community": "南京華城",
@@ -11382,7 +11335,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "余先生",
-      "updated_rel": "4小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11432,7 +11385,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "左先生",
-      "updated_rel": "15小時內更新",
+      "updated_rel": "16小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11507,7 +11460,7 @@
       "listing_id": "22140827",
       "title": "小巨蛋捷運共生宅電梯1房",
       "url": "https://rent.591.com.tw/22140827",
-      "image": "https://img2.591.com.tw/house/2026/05/21/177936239676092501.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/05/21/177936239676092501.jpg!510x400.jpg",
       "district": "松山區",
       "street": "八德路三段12巷7弄",
       "community": "八德路三段12巷華廈",
@@ -11557,7 +11510,7 @@
       "listing_id": "15681983",
       "title": "電梯華廈空間寬敞生活機能優近南京三民捷運",
       "url": "https://rent.591.com.tw/15681983",
-      "image": "https://img2.591.com.tw/house/2026/10/07/179138473356726301.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/07/179138473356726301.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路五段250巷18弄",
       "community": "武昌華厦",
@@ -11606,7 +11559,7 @@
       "listing_id": "22138403",
       "title": "捷運南京復興3分【電梯1房1廳】可報稅★養寵物★採光優",
       "url": "https://rent.591.com.tw/22138403",
-      "image": "https://img1.591.com.tw/house/2026/10/07/179136378289485705.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/10/07/179136378289485705.jpg!510x400.jpg",
       "district": "松山區",
       "street": "復興北路",
       "community": null,
@@ -11679,7 +11632,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "簡若婷",
-      "updated_rel": "5小時內更新",
+      "updated_rel": "6小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11729,7 +11682,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "楊小姐",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11782,7 +11735,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "23小時內更新",
+      "updated_rel": "24小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11807,7 +11760,7 @@
       "listing_id": "22114302",
       "title": "🌈美樂*近民生社區*平面挑高1+1房*採光佳*歡迎賞屋🌈",
       "url": "https://rent.591.com.tw/22114302",
-      "image": "https://img2.591.com.tw/house/2026/10/03/179102284410654907.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/03/179102284410654907.jpg!510x400.jpg",
       "district": "松山區",
       "street": "塔悠路",
       "community": "河賞",
@@ -11858,7 +11811,7 @@
       "listing_id": "22110236",
       "title": "南京復興站3分鐘、可住辦/營登/稅、大樓管理、生活機能強",
       "url": "https://rent.591.com.tw/22110236",
-      "image": "https://img2.591.com.tw/house/2026/10/02/179095032407091003.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/02/179095032407091003.jpg!510x400.jpg",
       "district": "松山區",
       "street": "復興北路",
       "community": "漢城大廈",
@@ -11883,8 +11836,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "王小姐",
-      "updated_rel": "4天前更新",
-      "posted_at": "2026-10-20",
+      "updated_rel": "5天前更新",
+      "posted_at": "2026-10-19",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -11908,7 +11861,7 @@
       "listing_id": "22109803",
       "title": "合租兩房、寵物友善、獨立陽台、天然瓦斯",
       "url": "https://rent.591.com.tw/22109803",
-      "image": "https://img1.591.com.tw/house/2024/10/21/172948735930855609.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2024/10/21/172948735930855609.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路五段",
       "community": null,
@@ -11937,7 +11890,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -11962,7 +11915,7 @@
       "listing_id": "22106334",
       "title": "南京三民站、寵物友善、獨洗陽台、天然瓦斯",
       "url": "https://rent.591.com.tw/22106334",
-      "image": "https://img1.591.com.tw/house/2025/05/28/174844148684918904.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2025/05/28/174844148684918904.jpg!510x400.jpg",
       "district": "松山區",
       "street": "南京東路五段",
       "community": "503",
@@ -11991,7 +11944,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "廖小姐",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12016,7 +11969,7 @@
       "listing_id": "22105232",
       "title": "【松山區質感首租】全新裝修一房一廳｜捷運站步行5分",
       "url": "https://rent.591.com.tw/22105232",
-      "image": "https://img1.591.com.tw/house/2026/07/13/178394049181068403.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/07/13/178394049181068403.jpg!510x400.jpg",
       "district": "松山區",
       "street": "吉祥路",
       "community": "全新裝修 近南京三民站",
@@ -12041,7 +11994,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "劉小姐",
-      "updated_rel": "11小時內更新",
+      "updated_rel": "12小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12141,7 +12094,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "王先生",
-      "updated_rel": "29分鐘內更新",
+      "updated_rel": "32分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12240,7 +12193,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12261,11 +12214,62 @@
       "missing_count": 0,
       "watched": false
     },
+    "22228393": {
+      "listing_id": "22228393",
+      "title": "東門捷運站⚡近永康公園靜巷電梯挑高採光社區專屬洗衣間",
+      "url": "https://rent.591.com.tw/22228393",
+      "image": "https://img1.591.com.tw/house/2026/10/02/179094978777351604.jpg!510x400.jpg",
+      "district": "大安區",
+      "street": "永康街17巷",
+      "community": null,
+      "kind_name": "整層住家",
+      "rooms": 1,
+      "halls": 1,
+      "baths": null,
+      "size_ping": 16.9,
+      "floor": "2F",
+      "total_floor": "6F",
+      "price": 28500,
+      "extra_fee": 1800,
+      "fee_included": [],
+      "total_monthly": 30300,
+      "tags": [
+        "近捷運",
+        "新上架",
+        "有電梯",
+        "隨時可遷入",
+        "可開伙"
+      ],
+      "poster_type": "仲介",
+      "poster_name": "李先生",
+      "updated_rel": "47分鐘內更新",
+      "posted_at": "2026-10-24",
+      "first_seen": "2026-10-24",
+      "last_seen": "2026-10-24",
+      "status": "active",
+      "down_price": 0,
+      "nearby_metro": "距東門 240公尺",
+      "subscription_id": "sub-1792677175117",
+      "region": "台北市",
+      "groups": [
+        "我"
+      ],
+      "price_history": [
+        {
+          "date": "2026-10-24",
+          "price": 30300
+        }
+      ],
+      "missing_count": 0,
+      "lat": null,
+      "lng": null,
+      "watched": false
+    },
     "22007186": {
       "listing_id": "22007186",
       "title": "信義安和站❤️電梯四樓二房一陽台~有廚房~天然瓦斯~可租補",
       "url": "https://rent.591.com.tw/22007186",
-      "image": "https://img2.591.com.tw/video/cover/2026-09-07/3236381.png!1000x.water2.png",
+      "image": "https://img1.591.com.tw/video/cover/2026-09-07/3236381.png!1000x.water2.png",
       "district": "大安區",
       "street": "安和路二段",
       "community": "無",
@@ -12290,7 +12294,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "10小時內更新",
+      "updated_rel": "11小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12315,7 +12319,7 @@
       "listing_id": "22226855",
       "title": "搶‼️科技大樓捷運大套房獨洗衛浴開窗採光通風絕佳變頻冷暖露台",
       "url": "https://rent.591.com.tw/22226855",
-      "image": "https://img2.591.com.tw/house/2026/10/23/179273606944889100.png!fit.1000x.water2.png",
+      "image": "https://img1.591.com.tw/house/2026/10/23/179273606944889100.png!fit.1000x.water2.png",
       "district": "大安區",
       "street": "復興南路二段151巷",
       "community": null,
@@ -12340,7 +12344,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "24分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-24",
@@ -12365,7 +12369,7 @@
       "listing_id": "22221971",
       "title": "信義安和、101捷運、商圈，一層一戶靜巷2房",
       "url": "https://rent.591.com.tw/22221971",
-      "image": "https://img1.591.com.tw/house/2023/06/20/168725485774926804.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2023/06/20/168725485774926804.jpg!510x400.jpg",
       "district": "大安區",
       "street": "臨江街2巷",
       "community": null,
@@ -12390,8 +12394,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳小姐",
-      "updated_rel": "2天前更新",
-      "posted_at": "2026-10-22",
+      "updated_rel": "3天前更新",
+      "posted_at": "2026-10-21",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -12438,8 +12442,8 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳小姐",
-      "updated_rel": "2天前更新",
-      "posted_at": "2026-10-22",
+      "updated_rel": "3天前更新",
+      "posted_at": "2026-10-21",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -12463,7 +12467,7 @@
       "listing_id": "22221104",
       "title": "信義安和六張犁漂亮裝潢大兩房可補助",
       "url": "https://rent.591.com.tw/22221104",
-      "image": "https://img1.591.com.tw/house/2023/07/18/168964452444837896.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2023/07/18/168964452444837896.jpg!510x400.jpg",
       "district": "大安區",
       "street": "通化街140巷",
       "community": null,
@@ -12516,7 +12520,7 @@
       "listing_id": "22221099",
       "title": "信義安和六張犁漂亮裝潢兩房可補助",
       "url": "https://rent.591.com.tw/22221099",
-      "image": "https://img1.591.com.tw/house/2023/07/02/168822894983547725.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2023/07/02/168822894983547725.jpg!510x400.jpg",
       "district": "大安區",
       "street": "通化街140巷",
       "community": null,
@@ -12594,7 +12598,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "楊小姐",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12619,7 +12623,7 @@
       "listing_id": "22218807",
       "title": "雙捷運敦南林蔭邊間高樓亮麗美居",
       "url": "https://rent.591.com.tw/22218807",
-      "image": "https://img2.591.com.tw/house/2026/10/21/179259025020772602.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/21/179259025020772602.jpg!510x400.jpg",
       "district": "大安區",
       "street": "敦化南路二段",
       "community": "無",
@@ -12721,7 +12725,7 @@
       "listing_id": "22216673",
       "title": "捷運六張犁【優質2房1廳】附傢俱★皆有窗★有陽台",
       "url": "https://rent.591.com.tw/22216673",
-      "image": "https://img2.591.com.tw/house/2026/10/21/179256807974169302.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/21/179256807974169302.jpg!510x400.jpg",
       "district": "大安區",
       "street": "樂利路",
       "community": null,
@@ -12845,7 +12849,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "23小時內更新",
+      "updated_rel": "24小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12920,7 +12924,7 @@
       "listing_id": "22199431",
       "title": "*信義安和*捷運5分鐘.1房1廳1衛2陽台",
       "url": "https://rent.591.com.tw/22199431",
-      "image": "https://img1.591.com.tw/house/2026/09/18/178973003064660107.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/18/178973003064660107.jpg!510x400.jpg",
       "district": "大安區",
       "street": "臨江街",
       "community": null,
@@ -12944,7 +12948,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "史先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -12996,7 +13000,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "陳先生",
-      "updated_rel": "23小時內更新",
+      "updated_rel": "24小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13095,7 +13099,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "3小時內更新",
+      "updated_rel": "5小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13120,7 +13124,7 @@
       "listing_id": "22197149",
       "title": "信義安和，電梯2房，陽台獨洗，租屋補助採光通風B",
       "url": "https://rent.591.com.tw/22197149",
-      "image": "https://img1.591.com.tw/house/2026/09/17/178962200858494305.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/17/178962200858494305.jpg!510x400.jpg",
       "district": "大安區",
       "street": "安和路二段",
       "community": "安和大廈",
@@ -13170,7 +13174,7 @@
       "listing_id": "22193807",
       "title": "信義安和🚉陽台獨洗曬☀️變頻冷氣❄️乾濕分離🧼網路電視",
       "url": "https://rent.591.com.tw/22193807",
-      "image": "https://img1.591.com.tw/house/2026/09/17/178957691160444105.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/17/178957691160444105.jpg!510x400.jpg",
       "district": "大安區",
       "street": "光復南路692巷4弄",
       "community": null,
@@ -13196,7 +13200,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "羅先生",
-      "updated_rel": "19小時內更新",
+      "updated_rel": "20小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13246,7 +13250,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "黃小姐",
-      "updated_rel": "39分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13350,8 +13354,8 @@
       ],
       "poster_type": "代理人",
       "poster_name": "劉先生",
-      "updated_rel": "2天前更新",
-      "posted_at": "2026-10-22",
+      "updated_rel": "42分鐘內更新",
+      "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
       "status": "active",
@@ -13400,7 +13404,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "張先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13474,7 +13478,7 @@
       "listing_id": "22177680",
       "title": "捷運東門站3分【電梯1房1廳】樓中樓★小廚房★採光優",
       "url": "https://rent.591.com.tw/22177680",
-      "image": "https://img1.591.com.tw/house/2024/10/22/172952888345358202.png!510x400.png",
+      "image": "https://img2.591.com.tw/house/2024/10/22/172952888345358202.png!510x400.png",
       "district": "大安區",
       "street": "永康街",
       "community": null,
@@ -13571,7 +13575,7 @@
       "listing_id": "22113411",
       "title": "近捷運忠孝敦化【超值1房1廳】傢俱齊★新裝潢★垃圾代收",
       "url": "https://rent.591.com.tw/22113411",
-      "image": "https://img2.591.com.tw/house/2026/10/03/179101314388842009.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2026/10/03/179101314388842009.jpg!510x400.jpg",
       "district": "大安區",
       "street": "仁愛路四段",
       "community": null,
@@ -13599,7 +13603,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "曾先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13652,7 +13656,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "林先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "52分鐘內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13702,7 +13706,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "鄭先生",
-      "updated_rel": "29分鐘內更新",
+      "updated_rel": "2小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -13777,7 +13781,7 @@
       "listing_id": "22155747",
       "title": "安和遠百美兩房（可租補）",
       "url": "https://rent.591.com.tw/22155747",
-      "image": "https://img1.591.com.tw/house/2026/09/02/178835678577750107.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/02/178835678577750107.jpg!510x400.jpg",
       "district": "大安區",
       "street": "安和路二段",
       "community": "無",
@@ -13826,7 +13830,7 @@
       "listing_id": "22149417",
       "title": "安和遠百美兩房（可租補）",
       "url": "https://rent.591.com.tw/22149417",
-      "image": "https://img1.591.com.tw/house/2026/09/02/178835678577750107.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2026/09/02/178835678577750107.jpg!510x400.jpg",
       "district": "大安區",
       "street": "安和路二段",
       "community": "無",
@@ -13900,7 +13904,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "李先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -14072,7 +14076,7 @@
       "listing_id": "22117858",
       "title": "六張犁麟光公寓整層",
       "url": "https://rent.591.com.tw/22117858",
-      "image": "https://img1.591.com.tw/house/2020/09/17/160030823025637986.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2020/09/17/160030823025637986.jpg!510x400.jpg",
       "district": "大安區",
       "street": "安居街",
       "community": null,
@@ -14096,7 +14100,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "張先生",
-      "updated_rel": "2小時內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-24",
       "last_seen": "2026-10-24",
@@ -14197,7 +14201,7 @@
       ],
       "poster_type": "仲介",
       "poster_name": "胡先生",
-      "updated_rel": "17小時內更新",
+      "updated_rel": "18小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -14222,7 +14226,7 @@
       "listing_id": "22092767",
       "title": "台灣大學獨立門戶重新修繕溫州街",
       "url": "https://rent.591.com.tw/22092767",
-      "image": "https://img2.591.com.tw/house/2021/06/06/162297252885596402.jpg!510x400.jpg",
+      "image": "https://img1.591.com.tw/house/2021/06/06/162297252885596402.jpg!510x400.jpg",
       "district": "大安區",
       "street": "溫州街74巷4弄",
       "community": "溫州國宅",
@@ -14249,7 +14253,7 @@
       ],
       "poster_type": "屋主",
       "poster_name": "何先生",
-      "updated_rel": "59分鐘內更新",
+      "updated_rel": "3小時內更新",
       "posted_at": "2026-10-24",
       "first_seen": "2026-10-22",
       "last_seen": "2026-10-24",
@@ -14324,7 +14328,7 @@
       "listing_id": "17280044",
       "title": "🏆【大南門冠軍團隊】古亭捷運電梯有管理",
       "url": "https://rent.591.com.tw/17280044",
-      "image": "https://img1.591.com.tw/house/2020/11/09/160491541166345209.jpg!510x400.jpg",
+      "image": "https://img2.591.com.tw/house/2020/11/09/160491541166345209.jpg!510x400.jpg",
       "district": "大安區",
       "street": "羅斯福路二段",
       "community": "百事吉大廈",
@@ -14366,6 +14370,108 @@
         }
       ],
       "missing_count": 0,
+      "watched": false
+    },
+    "18919342": {
+      "listing_id": "18919342",
+      "title": "❤️台北車站🌈電梯2房.可報稅.貓.長短租❗️搶租",
+      "url": "https://rent.591.com.tw/18919342",
+      "image": "https://img1.591.com.tw/house/2025/05/19/174766817247740503.jpg!fit.1000x.water2.jpg",
+      "district": "大同區",
+      "street": "長安西路",
+      "community": "❤️垃圾代收.獨洗獨衛",
+      "kind_name": "整層住家",
+      "rooms": 2,
+      "halls": 1,
+      "baths": null,
+      "size_ping": 12.0,
+      "floor": "頂樓加蓋",
+      "total_floor": "7F",
+      "price": 24500,
+      "extra_fee": 1000,
+      "fee_included": [
+        "水費"
+      ],
+      "total_monthly": 25500,
+      "tags": [
+        "影片賞屋",
+        "近捷運",
+        "新上架",
+        "可報稅",
+        "拎包入住",
+        "近商圈"
+      ],
+      "poster_type": "仲介",
+      "poster_name": "林小姐",
+      "updated_rel": "2小時內更新",
+      "posted_at": "2026-10-24",
+      "first_seen": "2026-10-22",
+      "last_seen": "2026-10-24",
+      "status": "missing",
+      "down_price": 0,
+      "nearby_metro": "距北門 227公尺",
+      "subscription_id": "sub-1792677175117",
+      "region": "台北市",
+      "groups": [
+        "我"
+      ],
+      "price_history": [
+        {
+          "date": "2026-10-22",
+          "price": 25500
+        }
+      ],
+      "missing_count": 1,
+      "watched": false
+    },
+    "22223059": {
+      "listing_id": "22223059",
+      "title": "中山國小捷運電梯華廈",
+      "url": "https://rent.591.com.tw/22223059",
+      "image": "https://img1.591.com.tw/house/2022/11/28/166964037477153682.jpg!510x400.jpg",
+      "district": "中山區",
+      "street": "民權東路一段",
+      "community": "民權大樓",
+      "kind_name": "整層住家",
+      "rooms": 1,
+      "halls": 1,
+      "baths": null,
+      "size_ping": 18.0,
+      "floor": "11F",
+      "total_floor": "12F",
+      "price": 28000,
+      "extra_fee": 1600,
+      "fee_included": [],
+      "total_monthly": 29600,
+      "tags": [
+        "近捷運",
+        "新上架",
+        "可報稅",
+        "隨時可遷入",
+        "可開伙",
+        "有車位"
+      ],
+      "poster_type": "仲介",
+      "poster_name": "林小姐",
+      "updated_rel": "2天前更新",
+      "posted_at": "2026-10-22",
+      "first_seen": "2026-10-22",
+      "last_seen": "2026-10-24",
+      "status": "missing",
+      "down_price": 0,
+      "nearby_metro": "距中山國小 134公尺",
+      "subscription_id": "sub-1792677175117",
+      "region": "台北市",
+      "groups": [
+        "我"
+      ],
+      "price_history": [
+        {
+          "date": "2026-10-22",
+          "price": 29600
+        }
+      ],
+      "missing_count": 1,
       "watched": false
     },
     "22225663": {
@@ -14417,7 +14523,7 @@
           "price": 29999
         }
       ],
-      "missing_count": 2,
+      "missing_count": 3,
       "watched": false
     },
     "22206640": {
@@ -14470,7 +14576,7 @@
           "price": 28000
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22206562": {
@@ -14523,7 +14629,7 @@
           "price": 27500
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22225678": {
@@ -14575,7 +14681,7 @@
           "price": 28000
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22182613": {
@@ -14624,7 +14730,7 @@
           "price": 28199
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22216803": {
@@ -14673,7 +14779,7 @@
           "price": 31178
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22196494": {
@@ -14722,7 +14828,7 @@
           "price": 32000
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22203453": {
@@ -14770,7 +14876,7 @@
           "price": 30300
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22172447": {
@@ -14819,7 +14925,7 @@
           "price": 31066
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22108822": {
@@ -14868,7 +14974,7 @@
           "price": 30800
         }
       ],
-      "missing_count": 3,
+      "missing_count": 4,
       "watched": false
     },
     "22202852": {
@@ -14917,7 +15023,7 @@
           "price": 30000
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22217598": {
@@ -14968,7 +15074,7 @@
           "price": 24500
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22123608": {
@@ -15017,7 +15123,7 @@
           "price": 29700
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22218421": {
@@ -15070,7 +15176,7 @@
           "price": 27800
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22214713": {
@@ -15122,7 +15228,7 @@
           "price": 24999
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22198216": {
@@ -15171,7 +15277,7 @@
           "price": 30999
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22058452": {
@@ -15223,7 +15329,7 @@
           "price": 27000
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22061718": {
@@ -15270,7 +15376,7 @@
           "price": 32000
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22061292": {
@@ -15319,7 +15425,7 @@
           "price": 30000
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22192378": {
@@ -15368,7 +15474,7 @@
           "price": 27700
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22073907": {
@@ -15416,7 +15522,7 @@
           "price": 31260
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22061720": {
@@ -15465,7 +15571,7 @@
           "price": 28700
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22197246": {
@@ -15514,7 +15620,7 @@
           "price": 32690
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22143788": {
@@ -15562,7 +15668,7 @@
           "price": 31200
         }
       ],
-      "missing_count": 4,
+      "missing_count": 5,
       "watched": false
     },
     "22221487": {
@@ -15614,7 +15720,7 @@
           "price": 29999
         }
       ],
-      "missing_count": 5,
+      "missing_count": 6,
       "watched": false
     },
     "22220088": {
@@ -15666,7 +15772,7 @@
           "price": 28000
         }
       ],
-      "missing_count": 5,
+      "missing_count": 6,
       "watched": false
     },
     "22204134": {
@@ -15713,7 +15819,7 @@
           "price": 25000
         }
       ],
-      "missing_count": 5,
+      "missing_count": 6,
       "watched": false
     },
     "22034482": {
@@ -15762,7 +15868,7 @@
           "price": 28000
         }
       ],
-      "missing_count": 5,
+      "missing_count": 6,
       "watched": false
     },
     "22081999": {
@@ -15815,7 +15921,7 @@
           "price": 27800
         }
       ],
-      "missing_count": 5,
+      "missing_count": 6,
       "watched": false
     },
     "22204664": {
@@ -19052,7 +19158,7 @@
           "price": 52000
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22129987": {
@@ -19301,7 +19407,7 @@
           "price": 14800
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22216052": {
@@ -19350,7 +19456,7 @@
           "price": 48000
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22223158": {
@@ -19397,7 +19503,7 @@
           "price": 40000
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22213895": {
@@ -19445,7 +19551,7 @@
           "price": 47000
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22086134": {
@@ -19496,7 +19602,7 @@
           "price": 40000
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22072099": {
@@ -19577,7 +19683,7 @@
           "price": 34000
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22199397": {
@@ -19629,7 +19735,7 @@
           "price": 51200
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22198341": {
@@ -21283,7 +21389,7 @@
           "price": 9198
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22138440": {
@@ -21335,7 +21441,7 @@
           "price": 9800
         }
       ],
-      "missing_count": 7,
+      "missing_count": 8,
       "watched": false
     },
     "22178320": {
@@ -24423,7 +24529,7 @@
           "price": 51200
         }
       ],
-      "missing_count": 13,
+      "missing_count": 14,
       "watched": false
     },
     "22184318": {
@@ -24472,7 +24578,7 @@
           "price": 39000
         }
       ],
-      "missing_count": 13,
+      "missing_count": 14,
       "watched": false
     },
     "22209089": {
@@ -25271,7 +25377,7 @@
           "price": 9800
         }
       ],
-      "missing_count": 21,
+      "missing_count": 22,
       "watched": false
     },
     "22039823": {
@@ -27093,7 +27199,7 @@
           "price": 51300
         }
       ],
-      "missing_count": 37,
+      "missing_count": 38,
       "watched": false
     },
     "22174595": {
@@ -27649,7 +27755,7 @@
           "price": 23000
         }
       ],
-      "missing_count": 41,
+      "missing_count": 42,
       "watched": false
     },
     "22110799": {
@@ -28288,7 +28394,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 45,
+      "missing_count": 46,
       "watched": false
     },
     "22130413": {
@@ -29971,7 +30077,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 54,
+      "missing_count": 55,
       "watched": false
     },
     "22120386": {
@@ -30214,7 +30320,7 @@
           "price": 51300
         }
       ],
-      "missing_count": 56,
+      "missing_count": 57,
       "watched": false
     },
     "22134913": {
@@ -30623,7 +30729,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 58,
+      "missing_count": 59,
       "watched": false
     },
     "22153731": {
@@ -32019,7 +32125,7 @@
           "price": 9198
         }
       ],
-      "missing_count": 65,
+      "missing_count": 66,
       "watched": false
     },
     "22036868": {
@@ -32376,7 +32482,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 68,
+      "missing_count": 69,
       "watched": false
     },
     "22125517": {
@@ -32778,7 +32884,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 72,
+      "missing_count": 73,
       "watched": false
     },
     "22118608": {
@@ -33378,7 +33484,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 76,
+      "missing_count": 77,
       "watched": false
     },
     "22015678": {
@@ -33580,7 +33686,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 78,
+      "missing_count": 79,
       "watched": false
     },
     "22044529": {
@@ -35549,7 +35655,7 @@
           "price": 48699
         }
       ],
-      "missing_count": 96,
+      "missing_count": 97,
       "watched": false
     },
     "21934995": {
@@ -36263,7 +36369,7 @@
           "price": 48715
         }
       ],
-      "missing_count": 100,
+      "missing_count": 101,
       "watched": false
     },
     "22043304": {
@@ -36458,7 +36564,7 @@
           "price": 49715
         }
       ],
-      "missing_count": 103,
+      "missing_count": 104,
       "watched": false
     },
     "21921742": {
@@ -37809,7 +37915,7 @@
           "price": 9199
         }
       ],
-      "missing_count": 116,
+      "missing_count": 117,
       "watched": false
     },
     "21903657": {
@@ -38234,7 +38340,7 @@
           "price": 31500
         }
       ],
-      "missing_count": 120,
+      "missing_count": 121,
       "watched": false
     },
     "22068413": {
@@ -38666,7 +38772,7 @@
           "price": 7500
         }
       ],
-      "missing_count": 124,
+      "missing_count": 125,
       "watched": false
     },
     "22043260": {
@@ -38770,7 +38876,7 @@
           "price": 40000
         }
       ],
-      "missing_count": 125,
+      "missing_count": 126,
       "watched": false
     },
     "22046109": {
@@ -40838,7 +40944,7 @@
           "price": 51699
         }
       ],
-      "missing_count": 146,
+      "missing_count": 147,
       "watched": false
     },
     "21901180": {
@@ -41203,7 +41309,7 @@
           "price": 49250
         }
       ],
-      "missing_count": 149,
+      "missing_count": 150,
       "watched": false
     },
     "21998211": {
@@ -43209,7 +43315,7 @@
           "price": 39000
         }
       ],
-      "missing_count": 170,
+      "missing_count": 171,
       "watched": false
     },
     "18477164": {
@@ -43258,7 +43364,7 @@
           "price": 51300
         }
       ],
-      "missing_count": 170,
+      "missing_count": 171,
       "watched": false
     },
     "21998187": {
@@ -44667,7 +44773,7 @@
           "price": 49499
         }
       ],
-      "missing_count": 182,
+      "missing_count": 183,
       "watched": false
     },
     "21946817": {
@@ -45858,7 +45964,7 @@
           "price": 49499
         }
       ],
-      "missing_count": 187,
+      "missing_count": 188,
       "watched": false
     },
     "21979007": {
@@ -46927,7 +47033,7 @@
           "price": 15000
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21965544": {
@@ -46980,7 +47086,7 @@
           "price": 14988
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21961003": {
@@ -47028,7 +47134,7 @@
           "price": 13210
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21960953": {
@@ -47077,7 +47183,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21958886": {
@@ -47126,7 +47232,7 @@
           "price": 13710
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21957592": {
@@ -47179,7 +47285,7 @@
           "price": 13000
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21947493": {
@@ -47228,7 +47334,7 @@
           "price": 15000
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21943545": {
@@ -47276,7 +47382,7 @@
           "price": 13000
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21900878": {
@@ -47328,7 +47434,7 @@
           "price": 11000
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21800929": {
@@ -47380,7 +47486,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 202,
+      "missing_count": 203,
       "watched": false
     },
     "21972175": {
@@ -54015,7 +54121,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 207,
+      "missing_count": 208,
       "watched": false
     },
     "21794074": {
@@ -54061,7 +54167,7 @@
           "price": 13000
         }
       ],
-      "missing_count": 207,
+      "missing_count": 208,
       "watched": false
     },
     "21964663": {
@@ -55038,7 +55144,7 @@
           "price": 12499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21964597": {
@@ -55087,7 +55193,7 @@
           "price": 15000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21881612": {
@@ -55136,7 +55242,7 @@
           "price": 14495
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21964417": {
@@ -55187,7 +55293,7 @@
           "price": 11142
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21962965": {
@@ -55240,7 +55346,7 @@
           "price": 15000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21962848": {
@@ -55293,7 +55399,7 @@
           "price": 11499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21962819": {
@@ -55346,7 +55452,7 @@
           "price": 7999
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21918556": {
@@ -55395,7 +55501,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21909912": {
@@ -55443,7 +55549,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21958317": {
@@ -55495,7 +55601,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21958296": {
@@ -55546,7 +55652,7 @@
           "price": 14499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21958052": {
@@ -55599,7 +55705,7 @@
           "price": 14499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21957113": {
@@ -55652,7 +55758,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21955880": {
@@ -55705,7 +55811,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21955867": {
@@ -55757,7 +55863,7 @@
           "price": 9000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21955363": {
@@ -55806,7 +55912,7 @@
           "price": 14496
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21955091": {
@@ -55859,7 +55965,7 @@
           "price": 11498
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21954783": {
@@ -55911,7 +56017,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21954758": {
@@ -55962,7 +56068,7 @@
           "price": 9000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21954064": {
@@ -56014,7 +56120,7 @@
           "price": 11499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21954035": {
@@ -56065,7 +56171,7 @@
           "price": 11499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21953264": {
@@ -56116,7 +56222,7 @@
           "price": 14999
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21953254": {
@@ -56167,7 +56273,7 @@
           "price": 14497
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21951431": {
@@ -56219,7 +56325,7 @@
           "price": 12500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21951399": {
@@ -56269,7 +56375,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21929480": {
@@ -56320,7 +56426,7 @@
           "price": 12500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21929562": {
@@ -56373,7 +56479,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21929629": {
@@ -56424,7 +56530,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21929406": {
@@ -56473,7 +56579,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21943343": {
@@ -56525,7 +56631,7 @@
           "price": 9500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21942562": {
@@ -56576,7 +56682,7 @@
           "price": 8000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21942244": {
@@ -56626,7 +56732,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21942046": {
@@ -56679,7 +56785,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21941321": {
@@ -56730,7 +56836,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21941309": {
@@ -56782,7 +56888,7 @@
           "price": 14000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21935635": {
@@ -56834,7 +56940,7 @@
           "price": 14000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21935392": {
@@ -56886,7 +56992,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21878615": {
@@ -56939,7 +57045,7 @@
           "price": 7499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21930597": {
@@ -56992,7 +57098,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21929558": {
@@ -57040,7 +57146,7 @@
           "price": 14500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21928101": {
@@ -57093,7 +57199,7 @@
           "price": 11000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21924875": {
@@ -57142,7 +57248,7 @@
           "price": 13999
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21921904": {
@@ -57193,7 +57299,7 @@
           "price": 10148
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21921161": {
@@ -57246,7 +57352,7 @@
           "price": 12799
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21921089": {
@@ -57299,7 +57405,7 @@
           "price": 8999
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21920930": {
@@ -57350,7 +57456,7 @@
           "price": 11999
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21920921": {
@@ -57403,7 +57509,7 @@
           "price": 13000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21909599": {
@@ -57455,7 +57561,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21906680": {
@@ -57506,7 +57612,7 @@
           "price": 10960
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21904732": {
@@ -57555,7 +57661,7 @@
           "price": 10997
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21893523": {
@@ -57606,7 +57712,7 @@
           "price": 10963
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21892804": {
@@ -57656,7 +57762,7 @@
           "price": 15000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21882487": {
@@ -57706,7 +57812,7 @@
           "price": 12500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21865422": {
@@ -57755,7 +57861,7 @@
           "price": 12499
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21843154": {
@@ -57807,7 +57913,7 @@
           "price": 14999
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21833490": {
@@ -57853,7 +57959,7 @@
           "price": 13500
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21827696": {
@@ -57905,7 +58011,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21759425": {
@@ -57955,7 +58061,7 @@
           "price": 11000
         }
       ],
-      "missing_count": 212,
+      "missing_count": 213,
       "watched": false
     },
     "21964421": {
@@ -82573,7 +82679,7 @@
           "price": 51700
         }
       ],
-      "missing_count": 228,
+      "missing_count": 229,
       "watched": false
     },
     "21931700": {
@@ -83525,7 +83631,7 @@
           "price": 49499
         }
       ],
-      "missing_count": 245,
+      "missing_count": 246,
       "watched": false
     },
     "21740726": {
@@ -83719,7 +83825,7 @@
           "price": 39000
         }
       ],
-      "missing_count": 250,
+      "missing_count": 251,
       "watched": false
     },
     "21893853": {
@@ -83874,7 +83980,7 @@
           "price": 50750
         }
       ],
-      "missing_count": 251,
+      "missing_count": 252,
       "watched": false
     },
     "21901087": {
@@ -84229,7 +84335,7 @@
           "price": 49499
         }
       ],
-      "missing_count": 258,
+      "missing_count": 259,
       "watched": false
     },
     "21721277": {
@@ -84471,7 +84577,7 @@
           "price": 45000
         }
       ],
-      "missing_count": 256,
+      "missing_count": 257,
       "watched": false
     },
     "21791367": {
@@ -84733,7 +84839,7 @@
           "price": 31000
         }
       ],
-      "missing_count": 263,
+      "missing_count": 264,
       "watched": false
     },
     "21795432": {
@@ -84837,7 +84943,7 @@
           "price": 12000
         }
       ],
-      "missing_count": 268,
+      "missing_count": 269,
       "watched": false
     },
     "21843204": {
@@ -86184,7 +86290,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 326,
+      "missing_count": 327,
       "watched": false
     },
     "21821678": {
@@ -86232,7 +86338,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 322,
+      "missing_count": 323,
       "watched": false
     },
     "21782150": {
@@ -86283,7 +86389,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 327,
+      "missing_count": 328,
       "watched": false
     },
     "21852183": {
@@ -86740,7 +86846,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 343,
+      "missing_count": 344,
       "watched": false
     },
     "21670099": {
@@ -87389,7 +87495,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 362,
+      "missing_count": 363,
       "watched": false
     },
     "21738494": {
@@ -87680,7 +87786,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 374,
+      "missing_count": 375,
       "watched": false
     },
     "21786841": {
@@ -87730,7 +87836,7 @@
           "price": 49499
         }
       ],
-      "missing_count": 375,
+      "missing_count": 376,
       "watched": false
     },
     "21803283": {
@@ -87924,7 +88030,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 385,
+      "missing_count": 386,
       "watched": false
     },
     "21782419": {
@@ -87974,7 +88080,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 386,
+      "missing_count": 387,
       "watched": false
     },
     "21652936": {
@@ -88072,7 +88178,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 390,
+      "missing_count": 391,
       "watched": false
     },
     "21719673": {
@@ -88211,7 +88317,7 @@
           "price": 54800
         }
       ],
-      "missing_count": 394,
+      "missing_count": 395,
       "watched": false
     },
     "21648648": {
@@ -88355,7 +88461,7 @@
           "price": 48590
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21829977": {
@@ -88405,7 +88511,7 @@
           "price": 80000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21828673": {
@@ -88455,7 +88561,7 @@
           "price": 37999
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21824802": {
@@ -88502,7 +88608,7 @@
           "price": 48590
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21824414": {
@@ -88550,7 +88656,7 @@
           "price": 66000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21821344": {
@@ -88599,7 +88705,7 @@
           "price": 39999
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21816832": {
@@ -88647,7 +88753,7 @@
           "price": 69002
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21739718": {
@@ -88695,7 +88801,7 @@
           "price": 75502
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21669783": {
@@ -88745,7 +88851,7 @@
           "price": 39999
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21808985": {
@@ -88792,7 +88898,7 @@
           "price": 52500
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21806218": {
@@ -88840,7 +88946,7 @@
           "price": 57135
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21763882": {
@@ -88891,7 +88997,7 @@
           "price": 78000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21793874": {
@@ -88941,7 +89047,7 @@
           "price": 39999
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21788398": {
@@ -88991,7 +89097,7 @@
           "price": 66000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21783235": {
@@ -89040,7 +89146,7 @@
           "price": 48000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21782731": {
@@ -89091,7 +89197,7 @@
           "price": 78000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21778574": {
@@ -89139,7 +89245,7 @@
           "price": 66000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21778512": {
@@ -89187,7 +89293,7 @@
           "price": 76200
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21775953": {
@@ -89238,7 +89344,7 @@
           "price": 78000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21749404": {
@@ -89287,7 +89393,7 @@
           "price": 76000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21736222": {
@@ -89337,7 +89443,7 @@
           "price": 66000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21720823": {
@@ -89387,7 +89493,7 @@
           "price": 80000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21715277": {
@@ -89437,7 +89543,7 @@
           "price": 39999
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21715189": {
@@ -89483,7 +89589,7 @@
           "price": 77200
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21699458": {
@@ -89531,7 +89637,7 @@
           "price": 91700
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21690969": {
@@ -89582,7 +89688,7 @@
           "price": 57000
         }
       ],
-      "missing_count": 395,
+      "missing_count": 396,
       "watched": false
     },
     "21808070": {
@@ -89630,7 +89736,7 @@
           "price": 60243
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21785542": {
@@ -89678,7 +89784,7 @@
           "price": 63867
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21831546": {
@@ -89726,7 +89832,7 @@
           "price": 42999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21724869": {
@@ -89774,7 +89880,7 @@
           "price": 71999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21831498": {
@@ -89822,7 +89928,7 @@
           "price": 42840
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21832492": {
@@ -89870,7 +89976,7 @@
           "price": 55000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21817824": {
@@ -89918,7 +90024,7 @@
           "price": 60867
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21828510": {
@@ -89966,7 +90072,7 @@
           "price": 91999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21721161": {
@@ -90014,7 +90120,7 @@
           "price": 60140
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21829947": {
@@ -90062,7 +90168,7 @@
           "price": 43000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21793538": {
@@ -90110,7 +90216,7 @@
           "price": 63867
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21804376": {
@@ -90158,7 +90264,7 @@
           "price": 60867
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21699581": {
@@ -90207,7 +90313,7 @@
           "price": 43000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "20922702": {
@@ -90255,7 +90361,7 @@
           "price": 59099
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21760093": {
@@ -90302,7 +90408,7 @@
           "price": 50600
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21785768": {
@@ -90351,7 +90457,7 @@
           "price": 72000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21825814": {
@@ -90399,7 +90505,7 @@
           "price": 74100
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21824837": {
@@ -90447,7 +90553,7 @@
           "price": 79500
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21824350": {
@@ -90494,7 +90600,7 @@
           "price": 69800
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21823878": {
@@ -90544,7 +90650,7 @@
           "price": 72000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21671784": {
@@ -90592,7 +90698,7 @@
           "price": 92000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21817645": {
@@ -90642,7 +90748,7 @@
           "price": 60000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21817402": {
@@ -90693,7 +90799,7 @@
           "price": 45000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21817358": {
@@ -90741,7 +90847,7 @@
           "price": 60650
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21814614": {
@@ -90789,7 +90895,7 @@
           "price": 91998
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21813746": {
@@ -90839,7 +90945,7 @@
           "price": 68000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21813704": {
@@ -90889,7 +90995,7 @@
           "price": 68000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21676346": {
@@ -90937,7 +91043,7 @@
           "price": 60119
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21831093": {
@@ -90985,7 +91091,7 @@
           "price": 86499
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21735303": {
@@ -91033,7 +91139,7 @@
           "price": 60120
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21814286": {
@@ -91081,7 +91187,7 @@
           "price": 40749
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21807449": {
@@ -91129,7 +91235,7 @@
           "price": 44000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21806140": {
@@ -91177,7 +91283,7 @@
           "price": 71008
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21805463": {
@@ -91225,7 +91331,7 @@
           "price": 59365
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21805178": {
@@ -91275,7 +91381,7 @@
           "price": 43000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21799609": {
@@ -91323,7 +91429,7 @@
           "price": 86496
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21795517": {
@@ -91374,7 +91480,7 @@
           "price": 37000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21790297": {
@@ -91421,7 +91527,7 @@
           "price": 86496
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21789881": {
@@ -91469,7 +91575,7 @@
           "price": 71200
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21726774": {
@@ -91517,7 +91623,7 @@
           "price": 78888
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21776659": {
@@ -91567,7 +91673,7 @@
           "price": 65000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21771837": {
@@ -91614,7 +91720,7 @@
           "price": 64365
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21771254": {
@@ -91666,7 +91772,7 @@
           "price": 58000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21758285": {
@@ -91715,7 +91821,7 @@
           "price": 45000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21752096": {
@@ -91763,7 +91869,7 @@
           "price": 36000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21750233": {
@@ -91811,7 +91917,7 @@
           "price": 70000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21749075": {
@@ -91859,7 +91965,7 @@
           "price": 74000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21741040": {
@@ -91908,7 +92014,7 @@
           "price": 45000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21733197": {
@@ -91955,7 +92061,7 @@
           "price": 80500
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21718684": {
@@ -92003,7 +92109,7 @@
           "price": 74949
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21717456": {
@@ -92053,7 +92159,7 @@
           "price": 75000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21563929": {
@@ -92101,7 +92207,7 @@
           "price": 39200
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21687016": {
@@ -92147,7 +92253,7 @@
           "price": 58000
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "21512473": {
@@ -92193,7 +92299,7 @@
           "price": 40750
         }
       ],
-      "missing_count": 398,
+      "missing_count": 399,
       "watched": false
     },
     "19338557": {
@@ -92243,7 +92349,7 @@
           "price": 68000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21832595": {
@@ -92294,7 +92400,7 @@
           "price": 80000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21819124": {
@@ -92341,7 +92447,7 @@
           "price": 60000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21780068": {
@@ -92389,7 +92495,7 @@
           "price": 76500
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21831084": {
@@ -92439,7 +92545,7 @@
           "price": 50000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21830781": {
@@ -92487,7 +92593,7 @@
           "price": 75500
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21829758": {
@@ -92535,7 +92641,7 @@
           "price": 68000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21662282": {
@@ -92582,7 +92688,7 @@
           "price": 69300
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21734540": {
@@ -92631,7 +92737,7 @@
           "price": 65000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21685126": {
@@ -92678,7 +92784,7 @@
           "price": 39000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21645116": {
@@ -92726,7 +92832,7 @@
           "price": 74000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21400593": {
@@ -92776,7 +92882,7 @@
           "price": 69999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21251447": {
@@ -92826,7 +92932,7 @@
           "price": 76000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21219933": {
@@ -92875,7 +92981,7 @@
           "price": 59999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21645187": {
@@ -92922,7 +93028,7 @@
           "price": 59999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21787889": {
@@ -92968,7 +93074,7 @@
           "price": 61000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21720035": {
@@ -93014,7 +93120,7 @@
           "price": 83140
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21131931": {
@@ -93064,7 +93170,7 @@
           "price": 80000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "20408141": {
@@ -93114,7 +93220,7 @@
           "price": 76000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "20924096": {
@@ -93161,7 +93267,7 @@
           "price": 69600
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21131547": {
@@ -93210,7 +93316,7 @@
           "price": 75000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21275259": {
@@ -93260,7 +93366,7 @@
           "price": 75000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21459759": {
@@ -93308,7 +93414,7 @@
           "price": 63699
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21728015": {
@@ -93356,7 +93462,7 @@
           "price": 55399
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21456975": {
@@ -93404,7 +93510,7 @@
           "price": 78999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21806084": {
@@ -93451,7 +93557,7 @@
           "price": 93799
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21645138": {
@@ -93498,7 +93604,7 @@
           "price": 68100
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21357190": {
@@ -93545,7 +93651,7 @@
           "price": 58999
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21571164": {
@@ -93593,7 +93699,7 @@
           "price": 84508
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21753460": {
@@ -93641,7 +93747,7 @@
           "price": 72000
         }
       ],
-      "missing_count": 401,
+      "missing_count": 402,
       "watched": false
     },
     "21724732": {
@@ -93689,7 +93795,7 @@
           "price": 50000
         }
       ],
-      "missing_count": 402,
+      "missing_count": 403,
       "watched": false
     },
     "21752025": {
@@ -93739,7 +93845,7 @@
           "price": 71999
         }
       ],
-      "missing_count": 402,
+      "missing_count": 403,
       "watched": false
     },
     "21831254": {
@@ -93787,7 +93893,7 @@
           "price": 59800
         }
       ],
-      "missing_count": 402,
+      "missing_count": 403,
       "watched": false
     },
     "21824485": {
@@ -93837,7 +93943,7 @@
           "price": 71999
         }
       ],
-      "missing_count": 402,
+      "missing_count": 403,
       "watched": false
     },
     "21521106": {
@@ -93886,7 +93992,7 @@
           "price": 75000
         }
       ],
-      "missing_count": 402,
+      "missing_count": 403,
       "watched": false
     },
     "21829254": {
@@ -93934,7 +94040,7 @@
           "price": 77640
         }
       ],
-      "missing_count": 402,
+      "missing_count": 403,
       "watched": false
     },
     "21642020": {
@@ -94022,7 +94128,7 @@
           "price": 51599
         }
       ],
-      "missing_count": 404,
+      "missing_count": 405,
       "watched": false
     },
     "21726553": {
@@ -94066,7 +94172,7 @@
           "price": 51600
         }
       ],
-      "missing_count": 404,
+      "missing_count": 405,
       "watched": false
     },
     "21742348": {
@@ -94159,7 +94265,7 @@
           "price": 49500
         }
       ],
-      "missing_count": 408,
+      "missing_count": 409,
       "watched": false
     },
     "21822145": {
@@ -94393,7 +94499,7 @@
           "price": 49499
         }
       ],
-      "missing_count": 413,
+      "missing_count": 414,
       "watched": false
     },
     "21728864": {
@@ -94526,7 +94632,7 @@
           "price": 47000
         }
       ],
-      "missing_count": 417,
+      "missing_count": 418,
       "watched": false
     }
   }
