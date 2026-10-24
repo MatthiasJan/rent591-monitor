@@ -38,7 +38,7 @@ def _off_label(kind: str) -> str:
     return "下架/成交" if kind == "sale" else "下架"
 
 
-# 租屋：維持原格式（有測試對應）
+# 租屋：維持原格式，並於後方可選帶入捷運資訊
 def _spec_rent(r):
     parts = []
     if r.get("rooms"):
@@ -47,7 +47,15 @@ def _spec_rent(r):
         parts.append(f"{r['size_ping']}坪")
     if r.get("floor"):
         parts.append(str(r["floor"]))
-    return "／".join(parts)
+    
+    spec = "／".join(parts)
+    
+    # 若有捷運距離資訊，以符號分隔補充在規格後
+    metro = r.get("nearby_metro")
+    if metro:
+        spec = f"{spec}｜🚇 {metro}" if spec else f"🚇 {metro}"
+        
+    return spec
 
 
 def _spec_sale(r):
@@ -63,7 +71,13 @@ def _spec_sale(r):
         parts.append(f"{r['unit_price']:g}萬/坪")
     if r.get("has_carport"):
         parts.append(r.get("cart_model") or "有車位")
-    return "／".join(parts)
+    
+    spec = "／".join(parts)
+    metro = r.get("nearby_metro")
+    if metro:
+        spec = f"{spec}｜🚇 {metro}" if spec else f"🚇 {metro}"
+        
+    return spec
 
 
 def _new_line(r, kind):
@@ -74,11 +88,13 @@ def _new_line(r, kind):
 
 
 def _drop_line(r, kind):
+    spec = _spec_sale(r) if kind == "sale" else _spec_rent(r)
+    spec_str = f"（{spec}）" if spec else ""
     if kind == "sale":
         return (f"· {r.get('title','')} {r['old_price']:g}→{r['new_price']:g}萬"
-                f"（↓{r['drop_pct']}%）\n  {r.get('url','')}")
+                f"（↓{r['drop_pct']}%）{spec_str}\n  {r.get('url','')}")
     return (f"· {r.get('title','')} ${r['old_price']}→${r['new_price']}"
-            f"（↓{r['drop_pct']}%）\n  {r.get('url','')}")
+            f"（↓{r['drop_pct']}%）{spec_str}\n  {r.get('url','')}")
 
 
 # ---------- Telegram ----------
@@ -148,11 +164,15 @@ def _discord_embed(r, flag, kind):
         desc.append(f"{r['total_price']:g}萬")
     elif r.get("total_monthly") is not None:
         desc.append(f"${r['total_monthly']:,}／月")
+        
     spec = _spec_sale(r) if kind == "sale" else _spec_rent(r)
     if spec:
         desc.append(spec)
     if r.get("district"):
         desc.append(r["district"])
+    if r.get("nearby_metro"):
+        desc.append(f"🚇 {r['nearby_metro']}")
+
     embed = {"title": f"{emoji} {r.get('title','')}"[:250], "url": r.get("url"),
              "color": color, "description": " · ".join(desc)}
     if r.get("image"):
