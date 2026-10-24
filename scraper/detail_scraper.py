@@ -1,8 +1,10 @@
-"""內頁抓取：抓取單一物件內頁，提取經緯度座標。"""
+"""內頁抓取：抓取單一物件內頁，提取經緯度座標與地址。"""
 from __future__ import annotations
 
+import json
 import logging
 import re
+import subprocess
 import httpx
 import config
 
@@ -14,60 +16,66 @@ class DetailBlockedError(Exception):
     pass
 
 
-def _extract_coords_from_nuxt(html: str) -> tuple[float | None, float | None]:
-    """從 Nuxt 序列化函式中提取 positionRound 的 (lat, lng)。"""
-    # 1. 找出 positionRound 中的變數名稱，例如 lat:ch,lng:ci
-    pos_match = re.search(r'positionRound:\{[^}]*?lat:([a-zA-Z0-9_$]+),lng:([a-zA-Z0-9_$]+)', html)
-    
-    # 2. 找出函式結尾傳入的真實引數清單 ( ... }(arg1, arg2, ...))
-    args_match = re.search(r'\}\((.*?)\)\)\s*(?:</script>|$)', html, re.DOTALL)
+def _extract_by_node(html: str) -> tuple[float | None, float | None]:
+    """利用 Node.js 執行 __NUXT__ 函式，直接取得 positionRound 內解析後的 lat/lng。"""
+    # 提取 window.__NUXT__=(function(...){...}(...));
+    m = re.search(r"<script>\s*(window\.__NUXT__=\s*\(function\(.*?\)\(.*?\)\));?\s*</script>", html, re.DOTALL)
+    if not m:
+        return None, None
 
-    if pos_match and args_match:
-        lat_var = pos_match.group(1)
-        lng_var = pos_match.group(2)
+    js_code = m.group(1)
+    # 用 Node.js 執行這段 JS 並輸出 positionRound 的 lat/lng
+    runner = f"""
+    let window = {{}};
+    {js_code}
+    try {{
+        let d = window.__NUXT__;
+        let dataObj = d.data || {{}};
+        let lat = null, lng = null;
+        for (let k in dataObj) {{
+            let p = dataObj[k]?.data?.positionRound;
+            if (p && p.lat && p.lng) {{
+                lat = parseFloat(p.lat);
+                lng = parseFloat(p.lng);
+                break;
+            }}
+        }}
+        console.log(JSON.stringify({{lat: lat, lng: lng}}));
+    }} catch(e) {{
+        console.log(JSON.stringify({{lat: null, lng: null}}));
+    }}
+    """
+    try:
+        proc = subprocess.run(
+            ["node", "-e", runner],
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=True
+        )
+        res = json.loads(proc.stdout.strip())
+        return res.get("lat"), res.get("lng")
+    except Exception as exc:
+        log.warning("Node 解析內頁座標失敗: %s", exc)
+        return None, None
 
-        # 3. 找出宣告的參數名稱清單 window.__NUXT__=(function(a,b,c,...){
-        params_match = re.search(r'window\.__NUXT__=\(function\(([^)]+)\)', html)
-        if params_match:
-            params = [p.strip() for p in params_match.group(1).split(",")]
-            # 簡易拆解尾端引數（注意處理字串內含逗號）
-            # 用正則切分最外層引數
-            args_str = args_match.group(1)
-            raw_args = [a.strip().strip('"\'') for a in re.split(r',(?=(?:[^\'"]*[\'"][^\'"]*[\'"])*[^\'"]*$)', args_str)]
 
-            if lat_var in params and lng_var in params:
-                lat_idx = params.index(lat_var)
-                lng_idx = params.index(lng_var)
-
-                if lat_idx < len(raw_args) and lng_idx < len(raw_args):
-                    try:
-                        lat = float(raw_args[lat_idx])
-                        lng = float(raw_args[lng_idx])
-                        if 24.5 <= lat <= 25.5 and 121.0 <= lng <= 122.0:
-                            return lat, lng
-                    except ValueError:
-                        pass
-
-    # 4. 備援方案：若 Nuxt 混淆變數比對失敗，直接在 HTML 搜尋台北經緯度數值對
-    # 尋找 "25.xxxx" 和 "121.xxxx" 彼此相距在 30 字元以內的組合
-    coord_pair = re.search(
-        r'["\']?(25\.\d{4,8})["\']?\s*,\s*["\']?(121\.\d{4,8})["\']?|["\']?(121\.\d{4,8})["\']?\s*,\s*["\']?(25\.\d{4,8})["\']?',
-        html
-    )
-    if coord_pair:
-        g = coord_pair.groups()
-        if g[0] and g[1]:
-            return float(g[0]), float(g[1])
-        elif g[2] and g[3]:
-            return float(g[3]), float(g[2])
-
+def _extract_by_regex_fallback(html: str) -> tuple[float | None, float | None]:
+    """純 Python 備援方案：若無 Node.js，直接比對尾端經緯度參數。"""
+    # 591 台北物件經緯度範圍特徵：24.9~25.2 與 121.4~121.7
+    coords = re.findall(r'["\']?(25\.\d{4,8})["\']?\s*,\s*["\']?(121\.\d{4,8})["\']?|["\']?(121\.\d{4,8})["\']?\s*,\s*["\']?(25\.\d{4,8})["\']?', html)
+    if coords:
+        # 取第一組符合台北經緯度的座標
+        for c in coords:
+            if c[0] and c[1]:
+                return float(c[0]), float(c[1])
+            elif c[2] and c[3]:
+                return float(c[3]), float(c[2])
     return None, None
 
 
 def fetch_detail_coords(listing_id: str, client: httpx.Client) -> tuple[float | None, float | None]:
-    """抓單一內頁 HTML，提取 (lat, lng)。
-    若被 403 阻擋拋出 DetailBlockedError。
-    """
+    """抓單一內頁 HTML，提取 (lat, lng)。若被 403 阻擋拋出 DetailBlockedError。"""
     url = f"https://rent.591.com.tw/{listing_id}"
     try:
         resp = client.get(url, timeout=config.REQUEST_TIMEOUT_SEC)
@@ -82,7 +90,13 @@ def fetch_detail_coords(listing_id: str, client: httpx.Client) -> tuple[float | 
         if "驗證碼" in text or "robot" in text.lower():
             raise DetailBlockedError("內頁出現驗證碼反爬")
 
-        return _extract_coords_from_nuxt(text)
+        # 先嘗試用 Node.js 執行原生 JS（最精準）
+        lat, lng = _extract_by_node(text)
+        if lat and lng:
+            return lat, lng
+
+        # 備援純正則
+        return _extract_by_regex_fallback(text)
 
     except httpx.HTTPStatusError as exc:
         if exc.response.status_code == 403:
