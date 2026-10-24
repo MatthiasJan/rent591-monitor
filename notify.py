@@ -20,11 +20,16 @@ TG_API = "https://api.telegram.org/bot{token}/sendMessage"
 TG_MAX_CHARS = 3800
 DISCORD_MAX_EMBEDS = 10
 MAX_ITEMS = 24
-COLOR_NEW, COLOR_DROP, COLOR_OFF = 0x2E8B57, 0xC8641E, 0xA33A2E
+COLOR_NEW, COLOR_UNKNOWN, COLOR_DROP, COLOR_OFF = 0x2E8B57, 0xE6A23C, 0xC8641E, 0xA33A2E
 
 
 def has_changes(report: dict) -> bool:
-    return bool(report["new"] or report["price_drop"] or report["removed"])
+    return bool(
+        report.get("new")
+        or report.get("unknown_commute")
+        or report.get("price_drop")
+        or report.get("removed")
+    )
 
 
 def _group_by_district(rows):
@@ -38,7 +43,7 @@ def _off_label(kind: str) -> str:
     return "下架/成交" if kind == "sale" else "下架"
 
 
-# 租屋：維持原格式，並於後方可選帶入捷運資訊
+# 租屋規格格式化（帶入捷運資訊）
 def _spec_rent(r):
     parts = []
     if r.get("rooms"):
@@ -47,17 +52,15 @@ def _spec_rent(r):
         parts.append(f"{r['size_ping']}坪")
     if r.get("floor"):
         parts.append(str(r["floor"]))
-    
+
     spec = "／".join(parts)
-    
-    # 若有捷運距離資訊，以符號分隔補充在規格後
     metro = r.get("nearby_metro")
     if metro:
         spec = f"{spec}｜🚇 {metro}" if spec else f"🚇 {metro}"
-        
     return spec
 
 
+# 買屋規格格式化（帶入捷運資訊）
 def _spec_sale(r):
     parts = []
     rm = "".join(f"{r[k]}{u}" for k, u in [("rooms", "房"), ("halls", "廳"), ("baths", "衛")] if r.get(k))
@@ -71,12 +74,11 @@ def _spec_sale(r):
         parts.append(f"{r['unit_price']:g}萬/坪")
     if r.get("has_carport"):
         parts.append(r.get("cart_model") or "有車位")
-    
+
     spec = "／".join(parts)
     metro = r.get("nearby_metro")
     if metro:
         spec = f"{spec}｜🚇 {metro}" if spec else f"🚇 {metro}"
-        
     return spec
 
 
@@ -99,7 +101,6 @@ def _drop_line(r, kind):
 
 # ---------- Telegram ----------
 
-# 在 notify.py 裡更新 format_report
 def format_report(report: dict, header: str = "591 租屋監控", kind: str = "rent") -> str | None:
     new = report.get("new", [])
     unknown = report.get("unknown_commute", [])
@@ -109,19 +110,25 @@ def format_report(report: dict, header: str = "591 租屋監控", kind: str = "r
     if not (new or unknown or drop or removed):
         return None
 
+    counts = [f"🆕 新增 {len(new)}"]
+    if unknown:
+        counts.append(f"❓ 未判斷交通 {len(unknown)}")
+    counts.extend([f"💰 降價 {len(drop)}", f"❌ {_off_label(kind)} {len(removed)}"])
+
     lines = [
         f"🔔 {header}",
-        f"🆕 新增 {len(new)}｜❓ 未判斷交通 {len(unknown)}｜💰 降價 {len(drop)}｜❌ {_off_label(kind)} {len(removed)}"
+        "｜".join(counts),
     ]
 
-    # 1. 符合交通條件的新物件
+    # 1. 符合交通範圍的新增物件
     if new:
-        lines.append("\n🆕 新增（符合通勤範圍）")
+        label = "🆕 新增（符合通勤範圍）" if unknown or report.get("unknown_commute") is not None else "🆕 新增"
+        lines.append(f"\n{label}")
         for d, rows in _group_by_district(new).items():
             lines.append(f"📍{d}")
             lines.extend(_new_line(r, kind) for r in rows)
 
-    # 2. 內頁被擋或無座標的新物件（全顯示）
+    # 2. 內頁被擋或無座標的新增物件
     if unknown:
         lines.append("\n❓ 新增（⚠️ 未判斷交通時間：內頁被擋或無座標）")
         for d, rows in _group_by_district(unknown).items():
@@ -143,17 +150,6 @@ def format_report(report: dict, header: str = "591 租屋監控", kind: str = "r
             lines.extend(f"· {r.get('title','')}" for r in rows)
 
     return "\n".join(lines)
-
-
-def send_blocked_alert(token: str, chat_id: str, stage: str = "列表頁") -> None:
-    """當 Actions 機房 IP 遭到 591 封鎖時發送緊急警報"""
-    text = (
-        f"🚨 【591 爬蟲警報】IP 疑似遭到封鎖！\n"
-        f"⚠️ 階段：{stage}\n"
-        f"💡 說明：591 阻擋了 GitHub Actions 機房 IP（回傳 403 或驗證碼）。"
-        f"請留意後續是否需要更換執行節點或放寬排程間隔。"
-    )
-    send_telegram(text, token, chat_id)
 
 
 def _chunk(text, limit=TG_MAX_CHARS):
@@ -182,12 +178,27 @@ def send_telegram(text, token, chat_id) -> bool:
     return ok
 
 
+def send_blocked_alert(token: str, chat_id: str, stage: str = "列表頁") -> bool:
+    """當 Actions 機房 IP 遭到 591 封鎖時發送緊急警報。"""
+    text = (
+        f"🚨 【591 爬蟲警報】IP 疑似遭到封鎖！\n"
+        f"⚠️ 階段：{stage}\n"
+        f"💡 說明：591 阻擋了 GitHub Actions 機房 IP（回傳 403 或驗證碼）。"
+        f"系統已自動啟用安全容錯，未判斷交通之新物件將照常全數送出。"
+    )
+    return send_telegram(text, token, chat_id)
+
+
 # ---------- Discord ----------
 
 def _discord_embed(r, flag, kind):
-    emoji = {"new": "🆕", "drop": "💰", "off": "❌"}[flag]
-    color = {"new": COLOR_NEW, "drop": COLOR_DROP, "off": COLOR_OFF}[flag]
+    emoji = {"new": "🆕", "unknown": "❓", "drop": "💰", "off": "❌"}[flag]
+    color = {"new": COLOR_NEW, "unknown": COLOR_UNKNOWN, "drop": COLOR_DROP, "off": COLOR_OFF}[flag]
     desc = []
+
+    if flag == "unknown":
+        desc.append("⚠️ 未判斷交通時間")
+
     if flag == "drop":
         if kind == "sale":
             desc.append(f"💰 {r['old_price']:g}→{r['new_price']:g}萬（↓{r['drop_pct']}%）")
@@ -197,7 +208,7 @@ def _discord_embed(r, flag, kind):
         desc.append(f"{r['total_price']:g}萬")
     elif r.get("total_monthly") is not None:
         desc.append(f"${r['total_monthly']:,}／月")
-        
+
     spec = _spec_sale(r) if kind == "sale" else _spec_rent(r)
     if spec:
         desc.append(spec)
@@ -214,18 +225,30 @@ def _discord_embed(r, flag, kind):
 
 
 def format_discord(report: dict, header: str = "591 租屋監控", kind: str = "rent") -> list[dict]:
-    new, drop, removed = report["new"], report["price_drop"], report["removed"]
-    if not (new or drop or removed):
+    new = report.get("new", [])
+    unknown = report.get("unknown_commute", [])
+    drop = report.get("price_drop", [])
+    removed = report.get("removed", [])
+
+    if not (new or unknown or drop or removed):
         return []
+
     embeds = ([_discord_embed(r, "new", kind) for r in new]
+              + [_discord_embed(r, "unknown", kind) for r in unknown]
               + [_discord_embed(r, "drop", kind) for r in drop]
               + [_discord_embed(r, "off", kind) for r in removed])
     overflow = max(0, len(embeds) - MAX_ITEMS)
     embeds = embeds[:MAX_ITEMS]
-    content = (f"🔔 **{header}**\n"
-               f"🆕 新增 {len(new)}｜💰 降價 {len(drop)}｜❌ {_off_label(kind)} {len(removed)}")
+
+    counts = [f"🆕 新增 {len(new)}"]
+    if unknown:
+        counts.append(f"❓ 未判斷交通 {len(unknown)}")
+    counts.extend([f"💰 降價 {len(drop)}", f"❌ {_off_label(kind)} {len(removed)}"])
+
+    content = f"🔔 **{header}**\n" + "｜".join(counts)
     if overflow:
         content += f"\n（另有 {overflow} 筆未列出，詳見網頁）"
+
     payloads = []
     for i in range(0, len(embeds), DISCORD_MAX_EMBEDS):
         p = {"embeds": embeds[i:i + DISCORD_MAX_EMBEDS]}
@@ -252,8 +275,12 @@ def send_discord(payloads, webhook_url) -> bool:
 def _filter_by_group(report: dict, group: str) -> dict:
     def keep(rows):
         return [r for r in rows if group in (r.get("groups") or [])]
-    return {"new": keep(report["new"]), "price_drop": keep(report["price_drop"]),
-            "removed": keep(report["removed"])}
+    return {
+        "new": keep(report.get("new", [])),
+        "unknown_commute": keep(report.get("unknown_commute", [])),
+        "price_drop": keep(report.get("price_drop", [])),
+        "removed": keep(report.get("removed", [])),
+    }
 
 
 def _routes(env_name: str) -> dict:
