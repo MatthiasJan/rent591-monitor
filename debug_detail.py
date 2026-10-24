@@ -20,3 +20,17 @@ with httpx.Client(headers=HEADERS, follow_redirects=True, timeout=15.0) as clien
     print("\n--- 測試 正則備援解析 ---")
     reg_lat, reg_lng = _extract_by_regex_fallback(html)
     print(f"正則結果: lat={reg_lat}, lng={reg_lng}")
+
+
+from commute_filter import CommuteFilter
+
+commute = CommuteFilter()
+mock_item = {
+    "listing_id": "22228503",
+    "district": "士林區",
+    "lat": 25.092009,
+    "lng": 121.503258
+}
+
+result = commute.check_item(mock_item)
+print(f"通勤判定結果: {result}")  # 'pass' 表示符合交集，'out' 表示超出通勤範圍
