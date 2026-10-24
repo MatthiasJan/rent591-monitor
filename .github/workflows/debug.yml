@@ -1,0 +1,24 @@
+name: 測試抓取單一物件內頁
+
+on:
+  workflow_dispatch: {} # 允許手動點擊觸發
+
+jobs:
+  run-debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install httpx
+
+      - name: Run Debug Script
+        run: |
+          python debug_detail.py
