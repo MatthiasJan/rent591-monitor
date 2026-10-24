@@ -61,6 +61,29 @@ def _rel_to_date(rel: str, fetched_at: datetime) -> str | None:
     return fetched_at.date().isoformat()
 
 
+def _parse_surrounding(surr: dict | None) -> str | None:
+    """解析周邊捷運與地標距離資訊。
+    
+    範例：
+      surrounding: {'type': 'metro', 'desc': '距捷運大直站', 'distance': '289公尺'}
+      -> '距捷運大直站 289公尺'
+    """
+    if not isinstance(surr, dict):
+        return None
+    
+    desc = (surr.get("desc") or "").strip()
+    distance = str(surr.get("distance") or "").strip()
+    
+    if desc and distance:
+        # 若 distance 只有純數字，自動補上「公尺」
+        if distance.isdigit():
+            distance = f"{distance}公尺"
+        return f"{desc} {distance}"
+    elif desc:
+        return desc
+    return None
+
+
 def _map(r: dict, fetched_iso: str, fetched_at: datetime) -> dict:
     lid = str(r.get("id"))
     rooms, halls, baths = _parse_layout(r.get("layoutStr", ""))
@@ -73,6 +96,10 @@ def _map(r: dict, fetched_iso: str, fetched_at: datetime) -> dict:
     poster_type, poster_name = _parse_poster(r.get("role_name") or "")
     photos = r.get("photoList") or []
     image = (photos[0] if photos else None) or r.get("cover")
+    
+    # 提取捷運/地標距離
+    nearby_metro = _parse_surrounding(r.get("surrounding"))
+    
     return {
         "listing_id": lid,
         "title": r.get("title"),
@@ -97,6 +124,8 @@ def _map(r: dict, fetched_iso: str, fetched_at: datetime) -> dict:
         "status": "active",
         # 591 自算的降價資訊（保留備用）
         "down_price": int(r.get("diff_price") or 0),
+        # 新增欄位
+        "nearby_metro": nearby_metro,
     }
 
 
