@@ -226,7 +226,7 @@ def run(kind: str = "rent") -> dict:
             rec["note"] = watchlist[lid].get("note", rec.get("note", ""))
 
     # 5. 存檔與推播
-    payload = {
+   payload = {
         "generated_at": now.isoformat(timespec="seconds"),
         "kind": kind,
         "subscriptions": stats,
@@ -236,11 +236,10 @@ def run(kind: str = "rent") -> dict:
     save_snapshot(payload, timestamp, cfgk["latest"], cfgk["snapshots"])
     notify.notify(report, subs, kind=kind)
 
-log.info(
-        "[%s] 完成：🆕%d（通過） ⚠️%d（超出） ❓%d（未判斷） 💰%d ❌%d（狀態共 %d 筆）",
+    log.info(
+        "[%s] 完成：🆕%d（通過） ❓%d（未判斷） 💰%d ❌%d（狀態共 %d 筆）",
         kind,
         len(report["new"]),
-        len(report.get("out_commute", [])),
         len(report.get("unknown_commute", [])),
         len(report["price_drop"]),
         len(report["removed"]),
