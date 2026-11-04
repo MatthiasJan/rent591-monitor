@@ -66,8 +66,36 @@
         "2"
       ],
       "shape": [],
-      "price_min": 24000,
-      "price_max": 32000,
+      "price_min": 25000,
+      "price_max": 33000,
+      "acreage_min": null,
+      "acreage_max": null,
+      "sort": "posttime_desc"
+    },
+    {
+      "id": "sub-1793773238952",
+      "type": "rent",
+      "name": "中正・中山・大同・松山・大安・士林・南港・信義 1房",
+      "group": "我",
+      "enabled": true,
+      "region": "1",
+      "sections": [
+        "1",
+        "3",
+        "2",
+        "4",
+        "5",
+        "8",
+        "11",
+        "7"
+      ],
+      "kind": "3",
+      "layout": [
+        "1"
+      ],
+      "shape": [],
+      "price_min": 25000,
+      "price_max": 33000,
       "acreage_min": null,
       "acreage_max": null,
       "sort": "posttime_desc"
