@@ -40,8 +40,8 @@
         "2"
       ],
       "shape": [],
-      "price_min": 24000,
-      "price_max": 32000,
+      "price_min": 25000,
+      "price_max": 33000,
       "acreage_min": null,
       "acreage_max": null,
       "sort": "posttime_desc"
@@ -66,8 +66,8 @@
         "2"
       ],
       "shape": [],
-      "price_min": 25000,
-      "price_max": 33000,
+      "price_min": 24000,
+      "price_max": 32000,
       "acreage_min": null,
       "acreage_max": null,
       "sort": "posttime_desc"
