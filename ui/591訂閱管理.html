@@ -57,6 +57,7 @@ button{font-family:inherit;cursor:pointer;border:none;border-radius:10px;font-si
 .lcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--stripe,var(--accent))}
 .lcard.removed{opacity:.7}
 .lcard.removed-history{opacity:.6;border-style:dashed;background-color:#F7F9F8}
+
 /* 已看過樣式：秒反映變淡與刪除線 */
 .lcard.is-read{opacity:.42 !important;filter:grayscale(25%);background-color:#F2F5F3 !important}
 .lcard.is-read .l-title a{text-decoration:line-through;color:var(--muted)}
@@ -123,6 +124,8 @@ input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(
 .chk input{width:16px;height:16px;cursor:pointer}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:12px;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:99;max-width:90%;text-align:center}
 .toast.show{opacity:1}
+
+/* 儲存條樣式（訂閱變更 & 已看過同步）*/
 .savebar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:100;max-width:94%}
 .savebar.show{display:flex}
 .savebar .sb-msg{font-size:13px;line-height:1.3}
@@ -204,7 +207,7 @@ input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(
     <h2>編輯用的 GitHub Token</h2>
     <div class="note-box">
       <b>看資料不需要設定</b>（owner/repo 已從網址自動判斷、公開檔直接讀）。<br>
-      只有<b>編輯訂閱、加入關注、立即更新</b>才需要 Token：用 <b>fine-grained token</b>，
+      只有<b>編輯訂閱、加入關注、立即更新、同步已看過</b>才需要 Token：用 <b>fine-grained token</b>，
       授權此 repo 的 <b>Contents: Read and write</b>（要用立即更新再加 <b>Actions: Read and write</b>）。<br>
       Token 只存在此瀏覽器；瀏覽器會問你要不要儲存密碼，存了即可跨裝置自動填入。
     </div>
@@ -222,11 +225,19 @@ input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(
   </div>
 </div>
 
+<!-- 訂閱變更儲存條 -->
 <div class="savebar" id="saveBar">
   <div class="sb-msg"><b>有未儲存的訂閱變更</b><br>全部改完再按儲存，一次更新（約數分鐘後排程生效）</div>
   <button class="sb-discard" onclick="discardChanges()">捨棄</button>
   <button class="sb-save" id="saveBarBtn" onclick="commitChanges()">💾 儲存全部變更</button>
 </div>
+
+<!-- 「已看過」跨裝置同步儲存條 -->
+<div class="savebar" id="saveReadBar" style="background:#136F63;">
+  <div class="sb-msg"><b id="readSaveMsg">已標記看過物件</b><br>刷完房後按此鍵一次性同步至 GitHub</div>
+  <button class="sb-save" id="saveReadBarBtn" onclick="commitReadChanges()">☁️ 批次同步至雲端</button>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -242,17 +253,19 @@ const SALE_SHAPES={"1":"公寓","2":"電梯大樓","3":"透天厝","4":"別墅",
 const SALE_KINDS={"9":"住宅","5":"店面","6":"辦公","12":"住辦"};
 const EDGE=["#136F63","#B4530A","#3B5BA5","#7A4E8C","#946B2D","#A33A2E"];
 const CFG_KEY="rent591-gh-config";
-const READ_KEY="rent591_read_ids";
+const LOCAL_READ_KEY="rent591_read_ids_local";
 
 // ===== 狀態 =====
 let cfg=loadCfg();
 let mode="rent";                     // rent | sale（租/買 模式）
 let subsDoc=null;                    // subscriptions.json 內容（含租+買）
 let watchDoc={items:{}};             // watchlist.json 內容
+let readDoc={items:[]};              // read_state.json 雲端內容
 let latestRent=null, latestSale=null;// 兩種模式的資料
 let latest=null;                     // 目前模式的 latest（=latestRent/latestSale）
 let editingId=null;
-let subsDirty=false;                 // 訂閱有未存回 GitHub 的本地變更（批次存檔用）
+let subsDirty=false;                 // 訂閱有未存變更
+let readDirty=false;                 // 已看過狀態有未同步變更
 let statusFilter="";              // 狀態頁「只看區域」篩選
 let personFilter="";              // 狀態頁「看誰的」篩選
 let watchFilter="";               // 關注頁「只看區域」篩選
@@ -284,24 +297,63 @@ function configuredGroups(){return [...new Set(((subsDoc&&subsDoc.subscriptions)
 function hasToken(){return !!(cfg&&cfg.token);}
 function needToken(){showToast("此動作需要 GitHub Token，請先在設定填入");openSettings();}
 
-// ===== 「已看過」LocalStorage 記憶邏輯 =====
-function getReadSet(){
-  try{ return new Set(JSON.parse(localStorage.getItem(READ_KEY)||"[]")); }
-  catch(e){ return new Set(); }
+// ===== 「已看過」雙層快照與批次同步機制 =====
+function isRead(id){
+  return readDoc.items.includes(String(id));
 }
-function isRead(id){ return getReadSet().has(String(id)); }
+
 function toggleRead(id){
   const strId = String(id);
-  const set = getReadSet();
-  if(set.has(strId)) set.delete(strId);
-  else set.add(strId);
-  localStorage.setItem(READ_KEY, JSON.stringify([...set]));
+  const idx = readDoc.items.indexOf(strId);
+  if(idx >= 0){
+    readDoc.items.splice(idx, 1);
+  } else {
+    readDoc.items.push(strId);
+  }
   
-  // 秒反映 DOM 樣式變更
+  // 1. 本地 DOM 秒反映（完全不卡頓）
   const card = document.getElementById(`card-${strId}`);
   const chk = document.getElementById(`chk-${strId}`);
-  if(card) card.classList.toggle("is-read", set.has(strId));
-  if(chk) chk.checked = set.has(strId);
+  const nowRead = readDoc.items.includes(strId);
+  if(card) card.classList.toggle("is-read", nowRead);
+  if(chk) chk.checked = nowRead;
+
+  // 2. 寫入 LocalStorage 快取，防止未儲存前重新整理消失
+  try{ localStorage.setItem(LOCAL_READ_KEY, JSON.stringify(readDoc.items)); }catch(e){}
+
+  // 3. 標記變更並顯示底部儲存條
+  readDirty = true;
+  updateReadSaveBar();
+}
+
+function updateReadSaveBar(){
+  const bar = document.getElementById("saveReadBar");
+  const msg = document.getElementById("readSaveMsg");
+  if(readDirty){
+    msg.textContent = `已變更 ${readDoc.items.length} 則物件判定`;
+    bar.classList.add("show");
+  } else {
+    bar.classList.remove("show");
+  }
+}
+
+async function commitReadChanges(){
+  if(!readDirty) return;
+  if(!hasToken()){needToken();return;}
+  const btn = document.getElementById("saveReadBarBtn");
+  btn.disabled = true;
+  btn.textContent = "同步至雲端中…";
+  try{
+    await ghPutFile("read_state.json", readDoc, "更新已看過清單");
+    readDirty = false;
+    updateReadSaveBar();
+    showToast("已同步看過標記至 GitHub ✓");
+  }catch(e){
+    showToast("⚠️ " + e.message);
+  }finally{
+    btn.disabled = false;
+    btn.textContent = "☁️ 批次同步至雲端";
+  }
 }
 
 // ===== base64 (UTF-8) =====
@@ -334,15 +386,23 @@ async function ghPutFile(path,obj,message){
 async function boot(){
   cfg=loadCfg();
   try{
-    const [l,sale,s,w]=await Promise.all([
+    const [l,sale,s,w,rState]=await Promise.all([
       pubGet("../data/latest.json").catch(()=>null),
       pubGet("../data/sale.json").catch(()=>null),
       pubGet("../subscriptions.json"),
       pubGet("../watchlist.json").catch(()=>null),
+      pubGet("../read_state.json").catch(()=>null),
     ]);
     latestRent=l; latestSale=sale;
     subsDoc=s||{subscriptions:[],settings:{}};
     watchDoc=w?(w.items?w:{items:w}):{items:{}};
+    
+    // 合併雲端 read_state 與本地尚未同步的暫存
+    const remoteItems = (rState && rState.items) || [];
+    let localItems = [];
+    try { localItems = JSON.parse(localStorage.getItem(LOCAL_READ_KEY)||"[]"); } catch(e){}
+    readDoc = { items: [...new Set([...remoteItems, ...localItems])] };
+
   }catch(e){
     document.getElementById("genAt").textContent="載入失敗："+e.message;
     showToast("⚠️ "+e.message);
@@ -354,6 +414,7 @@ async function boot(){
   renderStatus();renderSubs();renderWatch();
   switchView(tab);
 }
+
 function applyMode(){
   latest = mode==="sale" ? latestSale : latestRent;
   document.querySelectorAll(".modebtn").forEach(b=>b.classList.toggle("on",b.dataset.mode===mode));
@@ -444,10 +505,10 @@ function dateLine(r){
 }
 
 function listingCard(r,{flag,stripe,drop,isRemovedHistory}={}){
-  const lid = r.listing_id;
+  const lid = String(r.listing_id);
   const readState = isRead(lid);
   const star=`<button class="star ${isWatched(lid)?"on":""}" title="加入/移除關注" onclick="toggleWatch('${lid}')">${isWatched(lid)?"★":"☆"}</button>`;
-  const readChk=`<label class="chk-read-label" title="勾選後此裝置將記憶已看過並降顯"><input type="checkbox" id="chk-${lid}" ${readState?"checked":""} onchange="toggleRead('${lid}')"> 已看過</label>`;
+  const readChk=`<label class="chk-read-label" title="勾選後本地秒變淡，可按底部按鈕同步至雲端"><input type="checkbox" id="chk-${lid}" ${readState?"checked":""} onchange="toggleRead('${lid}')"> 已看過</label>`;
   const flagHtml=flag?`<span class="l-flag ${flag.cls}">${flag.txt}</span>`:"";
   
   let meta;
@@ -514,7 +575,6 @@ function renderStatus(){
   const rep=latest.report||{new:[],price_drop:[],removed:[]};
   const allListings=Object.values(latest.listings||{});
   
-  // 在架物件與歷史下架物件拆分
   const active=allListings.filter(r=>r.status==="active"||!r.status);
   const historyRemoved=allListings.filter(r=>r.status==="removed");
 
@@ -653,7 +713,12 @@ function maybeRestoreDraft(){
   }
   updateSaveBar();
 }
-window.addEventListener("beforeunload",(e)=>{if(subsDirty){e.preventDefault();e.returnValue="";}});
+window.addEventListener("beforeunload",(e)=>{
+  if(subsDirty || readDirty){
+    e.preventDefault();
+    e.returnValue="";
+  }
+});
 
 function openEditor(id){
   editingId=id||null;
