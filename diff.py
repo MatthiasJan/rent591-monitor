@@ -1,4 +1,4 @@
-"""快照比對：算出新增 / 降價 / 下架。
+"""快照比對：算出新增 / 降價 / 下架與歷史留存。
 
 純函式、無 I/O（快照讀寫在 storage.py），方便單元測試。
 
@@ -6,18 +6,21 @@
     {
       "generated_at": "...",
       "listings": {
-        "<id>": { ...列表欄位..., "price_history": [{date, price}],
-                  "missing_count": 0, "status": "active"|"removed",
-                  "first_seen": "...", "last_seen": "..." }
+        "<id>": {
+            ...列表欄位..., "lat": ..., "lng": ...,
+            "price_history": [{date, price}],
+            "missing_count": 0, "status": "active"|"missing"|"removed",
+            "first_seen": "...", "last_seen": "...", "removed_at": "..."
+        }
       }
     }
 
-比對規則（對照 CLAUDE.md）：
-- 新 ID → 🆕 新增
+比對規則：
+- 新 ID 或 已下架重新上架 → 🆕 新增
 - 同 ID 且 total_monthly 下降 → 💰 降價（寫入 price_history）
-- 舊 ID 消失 → missing_count +1；達門檻（預設 2 輪）才判 ❌ 下架
-  （避免暫時被擋就誤判下架；只在「跨過門檻的那一輪」列入下架報告，不重複通知）
-比價一律用 total_monthly（含額外費用），而非單看租金。
+- 舊 ID 消失 → missing_count +1；達門檻（預設 2 輪）才判 ❌ 下架並記錄 removed_at
+  （已下架物件永久保留於 listings 中，供網頁歷史分區檢視與估價參考）
+- 比價一律用 total_monthly（含額外費用），而非單看租金。
 """
 from __future__ import annotations
 
@@ -40,7 +43,7 @@ def diff_snapshots(
     """比對前次狀態與本輪抓取結果。
 
     回傳 (new_state, report)。report 內每筆保留完整物件 dict，方便通知分組。
-    today 為本輪日期字串（YYYY-MM-DD），供 price_history 記錄；不在函式內取系統時間。
+    today 為本輪日期字串（YYYY-MM-DD），供 price_history 與 removed_at 記錄。
 
     covered_districts：這輪「有成功抓到」的行政區集合；None 代表全部涵蓋。
     消失的物件若其所在區這輪沒抓到（被擋），則原狀保留、不算 missing、不會被判下架。
@@ -51,9 +54,11 @@ def diff_snapshots(
     new_state_listings: dict[str, dict] = {}
     report = {"new": [], "price_drop": [], "removed": []}
 
-    # 1) 本輪出現的物件：判斷新增 / 降價 / 續存
+    # 1) 本輪出現的物件：判斷新增 / 重新上架 / 降價 / 續存
     for lid, cur in current_by_id.items():
         cur_total = cur.get(price_key)
+
+        # 情況 A：完全全新的物件
         if lid not in prev_listings:
             rec = {
                 **cur,
@@ -69,21 +74,33 @@ def diff_snapshots(
             report["new"].append(rec)
             continue
 
+        # 情況 B：舊物件再次出現（包含原本 active / missing / removed）
         prev = prev_listings[lid]
+        prev_status = prev.get("status", "active")
         prev_price = _last_price(prev, price_key)
         history = list(prev.get("price_history") or [])
 
+        # 合併舊資料與最新抓到的資料（**prev 放在前面，確保舊有 lat, lng, watched 等不被覆蓋）
         rec = {
-            **cur,  # 以最新抓到的欄位為主（標題、坪數等可能更新）
+            **prev,
+            **cur,
             "price_history": history,
             "missing_count": 0,
             "status": "active",
             "first_seen": prev.get("first_seen", cur.get("first_seen", today)),
             "last_seen": today,
         }
+        # 重新上架者移除原本的下架時間標籤
+        rec.pop("removed_at", None)
 
-        # 價格變動：寫入 history；下降才列入降價報告
-        if cur_total is not None and cur_total != prev_price:
+        # 若先前已被標記為 removed，重新出現時視為「重新上架」，加入 new 報告
+        if prev_status == "removed":
+            if cur_total is not None and not history:
+                history.append({"date": today, "price": cur_total})
+            report["new"].append(rec)
+
+        # 價格變動判定：寫入 price_history；價格下降則加入降價報告
+        elif cur_total is not None and cur_total != prev_price:
             history.append({"date": today, "price": cur_total})
             if prev_price is not None and cur_total < prev_price:
                 drop = prev_price - cur_total
@@ -95,27 +112,39 @@ def diff_snapshots(
                     "drop": drop,
                     "drop_pct": pct,
                 })
+
         new_state_listings[lid] = rec
 
-    # 2) 本輪消失的物件：累積 missing，達門檻才判下架
+    # 2) 本輪未抓到的物件：累積 missing，達門檻轉為 removed 並下記下架日期
     for lid, prev in prev_listings.items():
         if lid in current_by_id:
             continue
-        # 此物件所在區這輪沒抓到（被擋）→ 原狀保留，不算 missing、不誤判下架
+
+        # 若此物件所在行政區這輪沒抓到（被擋）→ 原狀保留，不算 missing
         if covered_districts is not None and prev.get("district") not in covered_districts:
             new_state_listings[lid] = {**prev}
             continue
+
         prev_status = prev.get("status", "active")
+        
+        # 已經是已下架狀態的物件，直接完整留存在快照中（不重複算 missing，也不重複通報）
+        if prev_status == "removed":
+            new_state_listings[lid] = {**prev}
+            continue
+
         missing = prev.get("missing_count", 0) + 1
         rec = {**prev, "missing_count": missing}
 
+        # 達到下架門檻
         if missing >= missing_rounds_before_removed:
             rec["status"] = "removed"
-            # 只在「剛跨過門檻」那輪列入報告，避免每輪重複通知
+            rec["removed_at"] = today  # 記錄下架日期 (YYYY-MM-DD)
+            # 僅在「剛跨過下架門檻」的那一輪列入推播報告
             if prev_status != "removed":
                 report["removed"].append(rec)
         else:
             rec["status"] = "missing"
+
         new_state_listings[lid] = rec
 
     new_state = {"generated_at": today, "listings": new_state_listings}
