@@ -210,12 +210,15 @@ def run(kind: str = "rent") -> dict:
         report["new"] = passed_new
         report["unknown_commute"] = unknown_new
 
-        # 將 enrich 取得的座標同步寫回快照紀錄，方便未來追蹤
+        # 將 enrich 取得的座標與捷運資訊同步寫回快照紀錄，確保網頁與 JSON 都能留存
         for item in passed_new + unknown_new:
             lid = item["listing_id"]
             if lid in new_state["listings"]:
                 new_state["listings"][lid]["lat"] = item.get("lat")
                 new_state["listings"][lid]["lng"] = item.get("lng")
+                if item.get("nearby_metro"):
+                    new_state["listings"][lid]["nearby_metro"] = item.get("nearby_metro")
+修改後 Commit 並 Push，下一輪排程執行時，網頁上的房源卡片就會顯示 🚇 距xx站xxx米 的
 
     # 4. 關注清單與備註處理
     for lid, rec in new_state["listings"].items():
