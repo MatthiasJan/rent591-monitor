@@ -125,7 +125,7 @@ input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:12px;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:99;max-width:90%;text-align:center}
 .toast.show{opacity:1}
 
-/* 儲存條樣式（訂閱變更 & 已看過同步）*/
+/* 儲存條通用樣式 */
 .savebar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:none;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:100;max-width:94%}
 .savebar.show{display:flex}
 .savebar .sb-msg{font-size:13px;line-height:1.3}
@@ -207,7 +207,7 @@ input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(
     <h2>編輯用的 GitHub Token</h2>
     <div class="note-box">
       <b>看資料不需要設定</b>（owner/repo 已從網址自動判斷、公開檔直接讀）。<br>
-      只有<b>編輯訂閱、加入關注、立即更新、同步已看過</b>才需要 Token：用 <b>fine-grained token</b>，
+      只有<b>編輯訂閱、批次關注、立即更新、同步已看過</b>才需要 Token：用 <b>fine-grained token</b>，
       授權此 repo 的 <b>Contents: Read and write</b>（要用立即更新再加 <b>Actions: Read and write</b>）。<br>
       Token 只存在此瀏覽器；瀏覽器會問你要不要儲存密碼，存了即可跨裝置自動填入。
     </div>
@@ -235,7 +235,13 @@ input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(
 <!-- 「已看過」跨裝置同步儲存條 -->
 <div class="savebar" id="saveReadBar" style="background:#136F63;">
   <div class="sb-msg"><b id="readSaveMsg">已標記看過物件</b><br>刷完房後按此鍵一次性同步至 GitHub</div>
-  <button class="sb-save" id="saveReadBarBtn" onclick="commitReadChanges()">☁️ 批次同步至雲端</button>
+  <button class="sb-save" id="saveReadBarBtn" onclick="commitReadChanges()">☁️ 批次同步已看過</button>
+</div>
+
+<!-- 「關注清單」跨裝置同步儲存條 -->
+<div class="savebar" id="saveWatchBar" style="background:#B4530A;">
+  <div class="sb-msg"><b id="watchSaveMsg">關注清單有變更</b><br>按此鍵一次性同步關注狀態至 GitHub</div>
+  <button class="sb-save" id="saveWatchBarBtn" onclick="commitWatchChanges()">⭐ 批次同步關注至雲端</button>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -254,18 +260,20 @@ const SALE_KINDS={"9":"住宅","5":"店面","6":"辦公","12":"住辦"};
 const EDGE=["#136F63","#B4530A","#3B5BA5","#7A4E8C","#946B2D","#A33A2E"];
 const CFG_KEY="rent591-gh-config";
 const LOCAL_READ_KEY="rent591_read_ids_local";
+const LOCAL_WATCH_KEY="rent591_watch_local";
 
 // ===== 狀態 =====
 let cfg=loadCfg();
 let mode="rent";                     // rent | sale（租/買 模式）
-let subsDoc=null;                    // subscriptions.json 內容（含租+買）
+let subsDoc=null;                    // subscriptions.json 內容
 let watchDoc={items:{}};             // watchlist.json 內容
 let readDoc={items:[]};              // read_state.json 雲端內容
 let latestRent=null, latestSale=null;// 兩種模式的資料
-let latest=null;                     // 目前模式的 latest（=latestRent/latestSale）
+let latest=null;                     // 目前模式的 latest
 let editingId=null;
 let subsDirty=false;                 // 訂閱有未存變更
-let readDirty=false;                 // 已看過狀態有未同步變更
+let readDirty=false;                 // 已看過有未同步變更
+let watchDirty=false;                // 關注有未同步變更
 let statusFilter="";              // 狀態頁「只看區域」篩選
 let personFilter="";              // 狀態頁「看誰的」篩選
 let watchFilter="";               // 關注頁「只看區域」篩選
@@ -311,17 +319,14 @@ function toggleRead(id){
     readDoc.items.push(strId);
   }
   
-  // 1. 本地 DOM 秒反映（完全不卡頓）
   const card = document.getElementById(`card-${strId}`);
   const chk = document.getElementById(`chk-${strId}`);
   const nowRead = readDoc.items.includes(strId);
   if(card) card.classList.toggle("is-read", nowRead);
   if(chk) chk.checked = nowRead;
 
-  // 2. 寫入 LocalStorage 快取，防止未儲存前重新整理消失
   try{ localStorage.setItem(LOCAL_READ_KEY, JSON.stringify(readDoc.items)); }catch(e){}
 
-  // 3. 標記變更並顯示底部儲存條
   readDirty = true;
   updateReadSaveBar();
 }
@@ -352,7 +357,69 @@ async function commitReadChanges(){
     showToast("⚠️ " + e.message);
   }finally{
     btn.disabled = false;
-    btn.textContent = "☁️ 批次同步至雲端";
+    btn.textContent = "☁️ 批次同步已看過";
+  }
+}
+
+// ===== 「關注」雙層快照與批次同步機制 =====
+function isWatched(id){return !!(watchDoc.items && watchDoc.items[id]);}
+
+function toggleWatch(id){
+  const strId = String(id);
+  if(!watchDoc.items) watchDoc.items = {};
+  
+  if(watchDoc.items[strId]){
+    delete watchDoc.items[strId];
+  } else {
+    const r = (latest && latest.listings && latest.listings[strId]) || {};
+    watchDoc.items[strId] = {
+      added_at: new Date().toISOString().slice(0,10),
+      note: r.note || "",
+      title: r.title || "",
+      url: r.url || `https://rent.591.com.tw/${strId}`
+    };
+  }
+
+  // 1. 本地暫存，重新整理不消失
+  try{ localStorage.setItem(LOCAL_WATCH_KEY, JSON.stringify(watchDoc.items)); }catch(e){}
+
+  // 2. 秒反映 DOM 畫面
+  renderStatus();
+  renderWatch();
+
+  // 3. 標記變更並顯示關注儲存條
+  watchDirty = true;
+  updateWatchSaveBar();
+}
+
+function updateWatchSaveBar(){
+  const bar = document.getElementById("saveWatchBar");
+  const msg = document.getElementById("watchSaveMsg");
+  const count = Object.keys(watchDoc.items || {}).length;
+  if(watchDirty){
+    msg.textContent = `關注清單變更中（共 ${count} 筆）`;
+    bar.classList.add("show");
+  } else {
+    bar.classList.remove("show");
+  }
+}
+
+async function commitWatchChanges(){
+  if(!watchDirty) return;
+  if(!hasToken()){needToken();return;}
+  const btn = document.getElementById("saveWatchBarBtn");
+  btn.disabled = true;
+  btn.textContent = "同步關注中…";
+  try{
+    await ghPutFile("watchlist.json", watchDoc, "更新關注清單");
+    watchDirty = false;
+    updateWatchSaveBar();
+    showToast("已同步關注清單至 GitHub ✓");
+  }catch(e){
+    showToast("⚠️ " + e.message);
+  }finally{
+    btn.disabled = false;
+    btn.textContent = "⭐ 批次同步關注至雲端";
   }
 }
 
@@ -395,9 +462,14 @@ async function boot(){
     ]);
     latestRent=l; latestSale=sale;
     subsDoc=s||{subscriptions:[],settings:{}};
-    watchDoc=w?(w.items?w:{items:w}):{items:{}};
     
-    // 合併雲端 read_state 與本地尚未同步的暫存
+    // 合併雲端 watchlist 與本地未同步暫存
+    const remoteWatch = w ? (w.items ? w.items : w) : {};
+    let localWatch = {};
+    try { localWatch = JSON.parse(localStorage.getItem(LOCAL_WATCH_KEY)||"{}"); } catch(e){}
+    watchDoc = { items: { ...remoteWatch, ...localWatch } };
+
+    // 合併雲端 read_state 與本地未同步暫存
     const remoteItems = (rState && rState.items) || [];
     let localItems = [];
     try { localItems = JSON.parse(localStorage.getItem(LOCAL_READ_KEY)||"[]"); } catch(e){}
@@ -467,439 +539,6 @@ function switchView(v){
 }
 
 // ===== 狀態總覽 =====
-function isWatched(id){return !!watchDoc.items[id];}
 function saleMeta(r){
   const m=[];
-  if(r.total_price!=null) m.push(`<span class="mchip price">${r.total_price}萬</span>`);
-  if(r.unit_price) m.push(`<span class="mchip price">${r.unit_price}萬/坪</span>`);
-  if(r.rooms){let g=`${r.rooms}房`;if(r.halls)g+=`${r.halls}廳`;if(r.baths)g+=`${r.baths}衛`;m.push(`<span class="mchip">${g}</span>`);}
-  if(r.size_ping) m.push(`<span class="mchip">${r.size_ping}坪</span>`);
-  if(r.houseage!=null) m.push(`<span class="mchip">屋齡${r.houseage}年</span>`);
-  if(r.shape_name) m.push(`<span class="mchip">${esc(r.shape_name)}</span>`);
-  if(r.floor) m.push(`<span class="mchip">${esc(r.floor)}</span>`);
-  if(r.has_carport) m.push(`<span class="mchip">${esc(r.cart_model||"有車位")}</span>`);
-  if(r.nearby_metro) m.push(`<span class="mchip">🚇 ${esc(r.nearby_metro)}</span>`);
-  
-  return m.join("");
-}
-function listingMeta(r){
-  if(mode==="sale") return saleMeta(r);
-  const m=[];
-  if(r.total_monthly!=null) m.push(`<span class="mchip price">$${Number(r.total_monthly).toLocaleString()}/月</span>`);
-  if(r.extra_fee>0) m.push(`<span class="mchip price">含額外費 $${Number(r.extra_fee).toLocaleString()}</span>`);
-  if(r.rooms){let g=`${r.rooms}房`;if(r.halls)g+=`${r.halls}廳`;if(r.baths)g+=`${r.baths}衛`;m.push(`<span class="mchip">${g}</span>`);}
-  if(r.size_ping) m.push(`<span class="mchip">${r.size_ping}坪</span>`);
-  if(r.floor) m.push(`<span class="mchip">${esc(r.floor)}</span>`);
-  if(r.nearby_metro) m.push(`<span class="mchip">🚇 ${esc(r.nearby_metro)}</span>`);
-  // 管理費
-  const fees=r.fee_included||[],tags=r.tags||[];
-  if(fees.includes("管理費")) m.push(`<span class="mchip">含管理費</span>`);
-  else if(tags.includes("免管理費")) m.push(`<span class="mchip">免管理費</span>`);
-  if(fees.some(f=>f.includes("車位"))) m.push(`<span class="mchip">含車位</span>`);
-  else if(tags.includes("有車位")) m.push(`<span class="mchip">有車位</span>`);
-  return m.join("");
-}
-function dateLine(r){
-  const parts=[];
-  if(r.removed_at) parts.push(`🕒 已下架 (${esc(r.removed_at)})`);
-  else if(r.updated_rel) parts.push(`🕒 ${esc(r.updated_rel)}${r.posted_at?`（約 ${esc(r.posted_at)}）`:""}`);
-  else if(r.posted_at) parts.push(`🕒 更新 ${esc(r.posted_at)}`);
-  if(r.first_seen) parts.push(`發現 ${esc(r.first_seen)}`);
-  return parts.length?`<div class="l-note">${parts.join(" · ")}</div>`:"";
-}
-
-function listingCard(r,{flag,stripe,drop,isRemovedHistory}={}){
-  const lid = String(r.listing_id);
-  const readState = isRead(lid);
-  const star=`<button class="star ${isWatched(lid)?"on":""}" title="加入/移除關注" onclick="toggleWatch('${lid}')">${isWatched(lid)?"★":"☆"}</button>`;
-  const readChk=`<label class="chk-read-label" title="勾選後本地秒變淡，可按底部按鈕同步至雲端"><input type="checkbox" id="chk-${lid}" ${readState?"checked":""} onchange="toggleRead('${lid}')"> 已看過</label>`;
-  const flagHtml=flag?`<span class="l-flag ${flag.cls}">${flag.txt}</span>`:"";
-  
-  let meta;
-  if(drop && mode==="sale") meta=`<span class="mchip price">${drop.new_price}萬</span><span class="strike">${drop.old_price}萬</span><span class="mchip price">↓${drop.drop_pct}%</span>`;
-  else if(drop) meta=`<span class="mchip price">$${Number(drop.new_price).toLocaleString()}</span><span class="strike">$${Number(drop.old_price).toLocaleString()}</span><span class="mchip price">↓${drop.drop_pct}%</span>`;
-  else meta=listingMeta(r);
-  
-  const loc=[r.district,r.community].filter(Boolean).join("・");
-  const thumb=r.image?`<a href="${esc(r.url)}" target="_blank" rel="noopener"><img class="l-thumb" src="${esc(r.image)}" loading="lazy" alt=""></a>`:"";
-  
-  const cardClass = [
-    'lcard',
-    flag && flag.cls==='flag-off' ? 'removed' : '',
-    isRemovedHistory ? 'removed-history' : '',
-    readState ? 'is-read' : ''
-  ].filter(Boolean).join(' ');
-
-  return `<div class="${cardClass}" id="card-${lid}" style="--stripe:${stripe||'var(--accent)'}">
-    <div class="lcard-row">
-      ${thumb}
-      <div class="l-body">
-        <div class="l-top">
-          <div class="l-title"><a href="${esc(r.url)}" target="_blank" rel="noopener">${flagHtml} ${esc(r.title)}</a></div>
-          <div class="action-group">
-            ${readChk}
-            ${star}
-          </div>
-        </div>
-        <div class="l-meta">${meta}${loc?`<span class="mchip plain">${esc(loc)}</span>`:""}</div>
-        ${dateLine(r)}
-        ${r.note?`<div class="l-note">✍️ ${esc(r.note)}</div>`:""}
-      </div>
-    </div>
-  </div>`;
-}
-
-function groupByDistrict(rows){const g={};rows.forEach(r=>{(g[r.district||"其他"]=g[r.district||"其他"]||[]).push(r);});return g;}
-function byRecency(a,b){
-  const pa=a.posted_at||"",pb=b.posted_at||"";
-  if(pa!==pb) return pb<pa?-1:1;
-  return (Number(b.listing_id)||0)-(Number(a.listing_id)||0);
-}
-function section(title,rows,opt){
-  if(!rows||!rows.length) return "";
-  let html=`<div class="sec-title">${title}（${rows.length}）</div>`;
-  const g=groupByDistrict(rows.slice().sort(byRecency));
-  for(const d of Object.keys(g)){
-    html+=`<div class="grp-h">${esc(d)}（${g[d].length}）</div>`;
-    html+=g[d].map(r=>listingCard(r,opt)).join("");
-  }
-  return html;
-}
-
-function onStatusFilter(v){statusFilter=v;writeUrl();renderStatus();document.getElementById("view-status").scrollIntoView({block:"start"});}
-function onPersonFilter(v){personFilter=v;statusFilter="";writeUrl();renderStatus();document.getElementById("view-status").scrollIntoView({block:"start"});}
-
-function renderStatus(){
-  const el=document.getElementById("view-status");
-  if(!latest){
-    el.innerHTML=`<div style="margin-bottom:8px"><button class="btn-main" onclick="triggerRun(this)">🔄 立即更新</button></div>`+
-      `<div class="empty">${mode==="sale"?"買屋":"租屋"}尚無快照。<br>新增訂閱後，按上方「立即更新」跑一輪（需 token），或等排程。</div>`;
-    return;
-  }
-  const rep=latest.report||{new:[],price_drop:[],removed:[]};
-  const allListings=Object.values(latest.listings||{});
-  
-  const active=allListings.filter(r=>r.status==="active"||!r.status);
-  const historyRemoved=allListings.filter(r=>r.status==="removed");
-
-  const gcnt={};active.forEach(r=>(r.groups||["我"]).forEach(g=>{gcnt[g]=(gcnt[g]||0)+1;}));
-  const groups=[...new Set([...configuredGroups(),...Object.keys(gcnt)])];
-  if(personFilter&&!groups.includes(personFilter)) personFilter="";
-  const byPerson=r=>!personFilter||(r.groups||["我"]).includes(personFilter);
-
-  const pActive=active.filter(byPerson);
-  const cnt={};pActive.forEach(r=>{const d=r.district||"其他";cnt[d]=(cnt[d]||0)+1;});
-  const dists=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]);
-  if(statusFilter&&!cnt[statusFilter]) statusFilter="";
-  const flt=rows=>rows.filter(r=>byPerson(r)&&(!statusFilter||(r.district||"其他")===statusFilter));
-  
-  const nNew=flt(rep.new);
-  const nDrop=flt(rep.price_drop);
-  const nOff=flt(rep.removed);
-  const nAct=flt(active);
-  const nHistoryRemoved=flt(historyRemoved);
-
-  const personSelect=groups.length>1
-    ? `<div class="field" style="margin-bottom:10px"><label>看誰的</label>`+
-      `<select class="sel-input" onchange="onPersonFilter(this.value)">`+
-      `<option value="">全部人（${active.length}）</option>`+
-      groups.map(g=>`<option value="${esc(g)}" ${personFilter===g?"selected":""}>${esc(g)}（${gcnt[g]||0}）</option>`).join("")+
-      `</select></div>` : "";
-
-  el.innerHTML=`<div style="margin-bottom:8px"><button class="btn-main" onclick="triggerRun(this)">🔄 立即更新</button></div>`+
-    `<div class="summary">自動更新：每 2 小時巡邏一次</div>`+
-    personSelect+
-    `<div class="field" style="margin-bottom:12px"><label>只看區域</label>`+
-    `<select class="sel-input" onchange="onStatusFilter(this.value)">`+
-    `<option value="">全部區域（${pActive.length}）</option>`+
-    dists.map(d=>`<option value="${esc(d)}" ${statusFilter===d?"selected":""}>${esc(d)}（${cnt[d]}）</option>`).join("")+
-    `</select></div>`+
-    `<div class="summary">本輪變動 ${fmtTime(latest.generated_at)} 🆕 ${nNew.length}｜💰 ${nDrop.length}｜❌ ${nOff.length}</div>`;
-
-  if(nNew.length+nDrop.length+nOff.length===0) el.insertAdjacentHTML("beforeend",`<div class="empty">本輪沒有新增／降價／下架${statusFilter?"（此區）":""}。</div>`);
-  if(nNew.length) el.insertAdjacentHTML("beforeend",section("🆕 本輪新增",nNew,{flag:{cls:"flag-new",txt:"🆕"},stripe:"var(--accent)"}));
-  if(nDrop.length){
-    el.insertAdjacentHTML("beforeend",`<div class="sec-title">💰 本輪降價（${nDrop.length}）</div>`);
-    const g=groupByDistrict(nDrop.slice().sort(byRecency));
-    for(const d of Object.keys(g)){
-      el.insertAdjacentHTML("beforeend",`<div class="grp-h">${esc(d)}（${g[d].length}）</div>`);
-      g[d].forEach(r=>el.insertAdjacentHTML("beforeend",listingCard(r,{flag:{cls:"flag-down",txt:"💰"},stripe:"var(--price)",drop:r})));
-    }
-  }
-  if(nOff.length) el.insertAdjacentHTML("beforeend",section(mode==="sale"?"❌ 本輪下架／成交":"❌ 本輪下架",nOff,{flag:{cls:"flag-off",txt:"❌"},stripe:"var(--danger)"}));
-  
-  // 🟢 在架物件區
-  el.insertAdjacentHTML("beforeend",section(statusFilter?`📋 ${statusFilter} 在架中`:"📋 全部在架中",nAct,{stripe:"var(--accent)"}));
-  
-  // 📁 歷史下架／行情參考區
-  if(nHistoryRemoved.length){
-    el.insertAdjacentHTML("beforeend", `<div style="margin-top:24px;"></div>`);
-    el.insertAdjacentHTML("beforeend", section("📁 歷史下架／成交參考區", nHistoryRemoved, {
-      flag:{cls:"flag-off", txt:mode==="sale"?"已下架/成交":"已下架"},
-      stripe:"#8C9790",
-      isRemovedHistory: true
-    }));
-  }
-}
-
-// ===== 訂閱管理 =====
-function summaryChips(s){
-  const secNames=(s.sections||[]).map(id=>REGIONS[s.region].sections[id]||id).join("、")||"全區";
-  const c=[`<span class="chip">📍 ${REGIONS[s.region].name}｜${secNames}</span>`];
-  if((s.type||"rent")==="sale"){
-    c.push(`<span class="chip">${SALE_KINDS[s.kind]||"住宅"}</span>`);
-    if((s.layout||[]).length) c.push(`<span class="chip">${s.layout.map(l=>LAYOUTS[l]).join("、")}</span>`);
-    if((s.shape||[]).length) c.push(`<span class="chip">${s.shape.map(x=>SALE_SHAPES[x]).join("、")}</span>`);
-    if(s.price_min!=null||s.price_max!=null) c.push(`<span class="chip price">🏷️ ${s.price_min||0} ～ ${s.price_max!=null?s.price_max+" 萬":"不限"}</span>`);
-    if(s.acreage_min!=null||s.acreage_max!=null) c.push(`<span class="chip">📐 ${s.acreage_min!=null?s.acreage_min:0} ～ ${s.acreage_max!=null?s.acreage_max+" 坪":"不限"}</span>`);
-    if(s.houseage_max!=null) c.push(`<span class="chip">屋齡≤${s.houseage_max}年</span>`);
-    return c.join("");
-  }
-  c.push(`<span class="chip">${KINDS[s.kind]||"不限類型"}</span>`);
-  if((s.layout||[]).length) c.push(`<span class="chip">${s.layout.map(l=>LAYOUTS[l]).join("、")}</span>`);
-  if((s.shape||[]).length) c.push(`<span class="chip">${s.shape.map(x=>SHAPES[x]).join("、")}</span>`);
-  if(s.price_min!=null||s.price_max!=null) c.push(`<span class="chip price">💰 ${s.price_min!=null?Number(s.price_min).toLocaleString():"0"} ～ ${s.price_max!=null?Number(s.price_max).toLocaleString()+" 元":"不限"}</span>`);
-  if(s.acreage_min!=null||s.acreage_max!=null) c.push(`<span class="chip">📐 ${s.acreage_min!=null?s.acreage_min:0} ～ ${s.acreage_max!=null?s.acreage_max+" 坪":"不限"}</span>`);
-  return c.join("");
-}
-
-function renderSubs(){
-  const el=document.getElementById("subList");
-  const subs=((subsDoc&&subsDoc.subscriptions)||[]).filter(s=>(s.type||"rent")===mode);
-  if(!subs.length){el.innerHTML=`<div class="empty">還沒有${mode==="sale"?"買屋":"租屋"}訂閱。點下方「＋ 新增訂閱」設定第一組條件。</div>`;return;}
-  el.innerHTML=subs.map((s,i)=>`
-    <div class="sub-card ${s.enabled?"":"disabled"}" style="--edge:${EDGE[i%EDGE.length]}">
-      <div class="sub-name">${esc(s.name)||"未命名訂閱"}${s.enabled?"":'<span class="off-tag">已暫停</span>'}</div>
-      <div class="chips"><span class="chip">👤 ${esc(s.group||"我")}</span>${summaryChips(s)}</div>
-      <div class="sub-actions">
-        <button class="btn-line" onclick="openEditor('${s.id}')">✏️ 編輯</button>
-        <button class="btn-line" onclick="toggleSub('${s.id}')">${s.enabled?"⏸ 暫停":"▶️ 啟用"}</button>
-        <button class="btn-danger" onclick="delSub('${s.id}')">刪除</button>
-      </div>
-    </div>`).join("");
-}
-
-const DRAFT_KEY="rent591_subs_draft";
-function saveDraft(){try{localStorage.setItem(DRAFT_KEY,JSON.stringify({savedAt:Date.now(),doc:subsDoc}));}catch(e){}}
-function clearDraft(){try{localStorage.removeItem(DRAFT_KEY);}catch(e){}}
-function markDirty(){subsDirty=true;saveDraft();updateSaveBar();}
-function updateSaveBar(){document.getElementById("saveBar").classList.toggle("show",subsDirty);}
-async function commitChanges(){
-  if(!subsDirty) return;
-  if(!hasToken()){needToken();return;}
-  const btn=document.getElementById("saveBarBtn");btn.disabled=true;const label=btn.textContent;btn.textContent="儲存中…";
-  try{
-    await ghPutFile("subscriptions.json",subsDoc,"更新訂閱設定");
-    subsDirty=false;clearDraft();updateSaveBar();
-    showToast("已存回 GitHub ✓（約數分鐘後排程生效）");
-  }catch(e){showToast("⚠️ "+e.message);}
-  finally{btn.disabled=false;btn.textContent=label;}
-}
-async function discardChanges(){
-  if(!subsDirty) return;
-  if(!confirm("捨棄所有未儲存的訂閱變更，還原成 GitHub 上的版本？"))return;
-  try{
-    const s=await pubGet("../subscriptions.json");
-    subsDoc=s||{subscriptions:[],settings:{}};
-    subsDirty=false;clearDraft();updateSaveBar();renderSubs();
-    showToast("已還原為 GitHub 版本");
-  }catch(e){showToast("⚠️ 還原失敗："+e.message);}
-}
-function maybeRestoreDraft(){
-  let d=null;try{d=JSON.parse(localStorage.getItem(DRAFT_KEY)||"null");}catch(e){}
-  if(!d||!d.doc) return;
-  if(JSON.stringify(d.doc)===JSON.stringify(subsDoc)){clearDraft();return;}
-  const when=new Date(d.savedAt||Date.now()).toLocaleString();
-  if(confirm(`偵測到上次未儲存的訂閱編輯（${when}）。\n\n按「確定」接續這些編輯（記得之後按儲存）；\n按「取消」捨棄、使用 GitHub 上的版本。`)){
-    subsDoc=d.doc;subsDirty=true;
-  }else{
-    clearDraft();
-  }
-  updateSaveBar();
-}
-window.addEventListener("beforeunload",(e)=>{
-  if(subsDirty || readDirty){
-    e.preventDefault();
-    e.returnValue="";
-  }
-});
-
-function openEditor(id){
-  editingId=id||null;
-  const s=id?subsDoc.subscriptions.find(x=>x.id===id):null;
-  form=s?{group:s.group||"我",type:s.type||"rent",region:s.region,sections:[...(s.sections||[])],kind:s.kind||(s.type==="sale"?"9":"1"),layout:[...(s.layout||[])],shape:[...(s.shape||[])],name:s.name||"",price_min:s.price_min??"",price_max:s.price_max??"",acreage_min:s.acreage_min??"",acreage_max:s.acreage_max??"",houseage_max:s.houseage_max??"",include_open_plan:!!s.include_open_plan}:blankForm();
-  const isSale=(form.type||"rent")==="sale";
-  document.getElementById("panelTitle").textContent=(id?"編輯":"新增")+(isSale?"買屋":"租屋")+"訂閱";
-  document.getElementById("f-group").value=form.group||"我";
-  document.getElementById("f-name").value=form.name;
-  document.getElementById("f-priceMin").value=form.price_min??"";
-  document.getElementById("f-priceMax").value=form.price_max??"";
-  document.getElementById("f-acreMin").value=form.acreage_min??"";
-  document.getElementById("f-acreMax").value=form.acreage_max??"";
-  document.getElementById("f-houseage").value=form.houseage_max??"";
-  document.getElementById("f-openplan").checked=!!form.include_open_plan;
-  document.getElementById("f-kind-wrap").classList.toggle("hide",isSale);
-  document.getElementById("f-houseage-wrap").classList.toggle("hide",!isSale);
-  document.getElementById("f-openplan-wrap").classList.toggle("hide",!isSale);
-  document.getElementById("f-price-label").textContent=isSale?"總價（萬）":"租金（元/月）";
-  document.getElementById("f-priceMin").step=isSale?100:1000;
-  document.getElementById("f-priceMax").step=isSale?100:1000;
-  renderOpts();
-  document.getElementById("editOverlay").classList.add("show");
-}
-function closeEditor(){document.getElementById("editOverlay").classList.remove("show");}
-function renderOpts(){
-  document.getElementById("f-region").innerHTML=Object.entries(REGIONS).map(([id,r])=>`<div class="opt ${form.region===id?"on":""}" onclick="setRegion('${id}')">${r.name}</div>`).join("");
-  renderSections();
-  const isSale=(form.type||"rent")==="sale";
-  document.getElementById("f-kind").innerHTML=Object.entries(KINDS).map(([id,n])=>`<div class="opt ${form.kind===id?"on":""}" onclick="form.kind='${id}';renderOpts()">${n}</div>`).join("");
-  const shapes=isSale?SALE_SHAPES:SHAPES;
-  document.getElementById("f-layout").innerHTML=Object.entries(LAYOUTS).map(([id,n])=>`<div class="opt ${form.layout.includes(id)?"on":""}" onclick="toggleArr('layout','${id}')">${n}</div>`).join("");
-  document.getElementById("f-shape").innerHTML=Object.entries(shapes).map(([id,n])=>`<div class="opt ${form.shape.includes(id)?"on":""}" onclick="toggleArr('shape','${id}')">${n}</div>`).join("");
-}
-function setRegion(id){if(form.region!==id){form.region=id;form.sections=[];}renderOpts();}
-function toggleArr(k,id){const a=form[k];const i=a.indexOf(id);i>=0?a.splice(i,1):a.push(id);renderOpts();}
-function renderSections(){
-  const secs=REGIONS[form.region].sections;
-  const avail=Object.entries(secs).filter(([id])=>!form.sections.includes(id));
-  document.getElementById("f-section-select").innerHTML=
-    `<option value="">＋ 選擇區域…</option>`+avail.map(([id,n])=>`<option value="${id}">${n}</option>`).join("");
-  const chips=document.getElementById("f-section-chips");
-  chips.innerHTML=form.sections.length
-    ? form.sections.map(id=>`<span class="sel-chip">${esc(secs[id]||id)}<button type="button" onclick="removeSection('${id}')">×</button></span>`).join("")
-    : `<div class="sel-empty">尚未選擇區域（可選多個）</div>`;
-}
-function addSection(id){if(id&&!form.sections.includes(id)){form.sections.push(id);renderSections();}}
-function removeSection(id){const i=form.sections.indexOf(id);if(i>=0){form.sections.splice(i,1);renderSections();}}
-async function saveSub(){
-  if(!hasToken()){needToken();return;}
-  form.name=document.getElementById("f-name").value.trim();
-  form.group=document.getElementById("f-group").value.trim()||"我";
-  const isSale=(form.type||"rent")==="sale";
-  const pmin=num(document.getElementById("f-priceMin").value),pmax=num(document.getElementById("f-priceMax").value);
-  const amin=num(document.getElementById("f-acreMin").value),amax=num(document.getElementById("f-acreMax").value);
-  if(!form.sections.length){showToast("請至少選一個區域");return;}
-  if(!form.name) form.name=form.sections.map(id=>REGIONS[form.region].sections[id]).join("・")+((form.layout||[]).length?" "+form.layout.map(l=>LAYOUTS[l]).join("/"):"");
-  const rec={id:editingId||("sub-"+Date.now()),type:form.type||"rent",name:form.name,group:form.group,enabled:true,region:form.region,sections:form.sections,kind:isSale?(form.kind||"9"):form.kind,layout:form.layout,shape:form.shape,price_min:pmin,price_max:pmax,acreage_min:amin,acreage_max:amax,sort:"posttime_desc"};
-  if(isSale){rec.houseage_max=num(document.getElementById("f-houseage").value);rec.include_open_plan=document.getElementById("f-openplan").checked;}
-  if(editingId){const i=subsDoc.subscriptions.findIndex(x=>x.id===editingId);rec.enabled=subsDoc.subscriptions[i].enabled;subsDoc.subscriptions[i]=rec;}
-  else subsDoc.subscriptions.push(rec);
-  closeEditor();renderSubs();markDirty();
-}
-function toggleSub(id){if(!hasToken()){needToken();return;}const s=subsDoc.subscriptions.find(x=>x.id===id);s.enabled=!s.enabled;renderSubs();markDirty();}
-function delSub(id){if(!hasToken()){needToken();return;}const s=subsDoc.subscriptions.find(x=>x.id===id);if(!confirm(`確定刪除「${s.name}」？`))return;subsDoc.subscriptions=subsDoc.subscriptions.filter(x=>x.id!==id);renderSubs();markDirty();}
-
-// ===== 關注 =====
-async function toggleWatch(id){
-  if(!hasToken()){needToken();return;}
-  if(watchDoc.items[id]) delete watchDoc.items[id];
-  else{
-    const r=(latest&&latest.listings&&latest.listings[id])||{};
-    watchDoc.items[id]={added_at:new Date().toISOString().slice(0,10),note:"",title:r.title||"",url:r.url||`https://rent.591.com.tw/${id}`};
-  }
-  renderStatus();renderWatch();
-  try{await ghPutFile("watchlist.json",watchDoc,`更新關注清單`);showToast("關注已更新 ✓");}
-  catch(e){showToast("⚠️ "+e.message);}
-}
-function renderWatch(){
-  const el=document.getElementById("view-watch");
-  const listings=(latest&&latest.listings)||{};
-  const ids=Object.keys(watchDoc.items||{}).filter(id=>listings[id]);
-  if(!ids.length){el.innerHTML=`<div class="empty">此模式還沒有關注的物件。<br>在「狀態」頁點物件右側的 ☆ 即可加入關注，排程會持續追蹤其降價與下架。</div>`;return;}
-  const rows=ids.map(id=>{
-    const live=listings[id]; const w=watchDoc.items[id];
-    return {...live,listing_id:id,title:live.title||w.title||("物件 "+id),url:live.url||w.url,note:w.note};
-  });
-  const wgroups=[...new Set([...configuredGroups(),...rows.flatMap(r=>r.groups||[])])];
-  if(watchPerson&&!wgroups.includes(watchPerson)) watchPerson="";
-  const byP=r=>!watchPerson||(r.groups||[]).includes(watchPerson);
-  const pRows=rows.filter(byP);
-  const cnt={};pRows.forEach(r=>{const d=r.district||"其他";cnt[d]=(cnt[d]||0)+1;});
-  const dists=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]);
-  if(watchFilter&&!cnt[watchFilter]) watchFilter="";
-  const shown=pRows.filter(r=>!watchFilter||(r.district||"其他")===watchFilter).sort(byRecency);
-  const personSelect=wgroups.length>1
-    ? `<div class="field" style="margin-bottom:10px"><label>看誰的</label>`+
-      `<select class="sel-input" onchange="onWatchPerson(this.value)">`+
-      `<option value="">全部人（${rows.length}）</option>`+
-      wgroups.map(g=>`<option value="${esc(g)}" ${watchPerson===g?"selected":""}>${esc(g)}（${rows.filter(r=>(r.groups||[]).includes(g)).length}）</option>`).join("")+
-      `</select></div>` : "";
-  el.innerHTML=personSelect+
-    `<div class="field" style="margin-bottom:12px"><label>只看區域</label>`+
-    `<select class="sel-input" onchange="onWatchFilter(this.value)">`+
-    `<option value="">全部區域（${pRows.length}）</option>`+
-    dists.map(d=>`<option value="${esc(d)}" ${watchFilter===d?"selected":""}>${esc(d)}（${cnt[d]}）</option>`).join("")+
-    `</select></div>`+
-    `<div class="summary">關注 ${shown.length} 筆 排程會持續追蹤狀態變化</div>`+
-    shown.map(r=>listingCard(r,{stripe:r.status==="removed"?"var(--danger)":"var(--accent)",flag:r.status==="removed"?{cls:"flag-off",txt:mode==="sale"?"❌ 已下架/成交":"❌ 已下架"}:null})).join("");
-}
-function onWatchPerson(v){watchPerson=v;watchFilter="";writeUrl();renderWatch();document.getElementById("view-watch").scrollIntoView({block:"start"});}
-function onWatchFilter(v){watchFilter=v;writeUrl();renderWatch();document.getElementById("view-watch").scrollIntoView({block:"start"});}
-
-// ===== 立即更新（觸發 GitHub Actions）=====
-async function triggerRun(btn){
-  if(!hasToken()){needToken();return;}
-  const before=latest?latest.generated_at:null;
-  const wf=mode==="sale"?"monitor-sale.yml":"monitor.yml";
-  try{
-    const r=await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/actions/workflows/${wf}/dispatches`,
-      {method:"POST",headers:{Authorization:`Bearer ${cfg.token}`,Accept:"application/vnd.github+json"},body:JSON.stringify({ref:cfg.branch})});
-    if(r.status===204){
-      showToast("已觸發更新，等結果中…");
-      if(btn){btn.disabled=true;btn.textContent="⏳ 更新中…";}
-      pollUpdate(before,btn,0);
-    }else if(r.status===403){
-      showToast("⚠️ token 缺 Actions 權限，請幫 token 補上 Actions: Read and write");
-    }else{showToast(`⚠️ 觸發失敗（${r.status}）`);}
-  }catch(e){showToast("⚠️ "+e.message);}
-}
-async function pollUpdate(before,btn,tries){
-  if(tries>=18){
-    if(btn){btn.disabled=false;btn.textContent="🔄 立即更新";}
-    showToast("更新仍在跑，稍後可自行重新整理");return;
-  }
-  const dataFile=mode==="sale"?"../data/sale.json":"../data/latest.json";
-  setTimeout(async()=>{
-    try{
-      const json=await pubGet(dataFile);
-      if(json&&json.generated_at!==before){
-        if(mode==="sale") latestSale=json; else latestRent=json;
-        latest=json;
-        if(btn){btn.disabled=false;btn.textContent="🔄 立即更新";}
-        updateHeader();renderStatus();renderWatch();
-        showToast("已更新為最新資料 ✓");
-        return;
-      }
-    }catch(e){}
-    pollUpdate(before,btn,tries+1);
-  },10000);
-}
-
-// ===== 設定 =====
-function openSettings(){
-  document.getElementById("s-owner").value=cfg?.owner||"";
-  document.getElementById("s-repo").value=cfg?.repo||"";
-  document.getElementById("s-branch").value=cfg?.branch||"main";
-  document.getElementById("s-token").value=cfg?.token||"";
-  document.getElementById("settingsOverlay").classList.add("show");
-}
-function closeSettings(){document.getElementById("settingsOverlay").classList.remove("show");}
-function saveSettings(){
-  const det=detectRepo()||{};
-  const owner=document.getElementById("s-owner").value.trim()||det.owner||"";
-  const repo=document.getElementById("s-repo").value.trim()||det.repo||"";
-  const branch=document.getElementById("s-branch").value.trim()||det.branch||"main";
-  const token=document.getElementById("s-token").value.trim();
-  if(!token){showToast("請貼上 Token（只看資料的話免 token，直接按取消即可）");return;}
-  if(!owner||!repo){showToast("無法自動判斷 owner/repo，請展開進階手動填");return;}
-  cfg={owner,repo,branch,token};
-  localStorage.setItem(CFG_KEY,JSON.stringify(cfg));
-  closeSettings();boot();
-}
-
-function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),2600);}
-
-boot();
-</script>
-</body>
-</html>
+  if(r.total_price!=null
