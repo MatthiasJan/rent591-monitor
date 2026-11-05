@@ -478,6 +478,8 @@ function saleMeta(r){
   if(r.shape_name) m.push(`<span class="mchip">${esc(r.shape_name)}</span>`);
   if(r.floor) m.push(`<span class="mchip">${esc(r.floor)}</span>`);
   if(r.has_carport) m.push(`<span class="mchip">${esc(r.cart_model||"有車位")}</span>`);
+  if(r.nearby_metro) m.push(`<span class="mchip">🚇 ${esc(r.nearby_metro)}</span>`);
+  
   return m.join("");
 }
 function listingMeta(r){
@@ -488,6 +490,8 @@ function listingMeta(r){
   if(r.rooms){let g=`${r.rooms}房`;if(r.halls)g+=`${r.halls}廳`;if(r.baths)g+=`${r.baths}衛`;m.push(`<span class="mchip">${g}</span>`);}
   if(r.size_ping) m.push(`<span class="mchip">${r.size_ping}坪</span>`);
   if(r.floor) m.push(`<span class="mchip">${esc(r.floor)}</span>`);
+  if(r.nearby_metro) m.push(`<span class="mchip">🚇 ${esc(r.nearby_metro)}</span>`);
+  // 管理費
   const fees=r.fee_included||[],tags=r.tags||[];
   if(fees.includes("管理費")) m.push(`<span class="mchip">含管理費</span>`);
   else if(tags.includes("免管理費")) m.push(`<span class="mchip">免管理費</span>`);
