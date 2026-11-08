@@ -78,7 +78,7 @@
       "type": "rent",
       "name": "中正・中山・大同・松山・大安・士林・南港・信義 1房",
       "group": "我",
-      "enabled": false,
+      "enabled": true,
       "region": "1",
       "sections": [
         "1",
